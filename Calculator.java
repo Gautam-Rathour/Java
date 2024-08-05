@@ -14,6 +14,7 @@ public class Calculator {
 
         System.out.println("Chose Your Option");
         int choice = sc.nextInt();
+        
 
         switch(choice){
             case 1 :  System.out.println("Add");
