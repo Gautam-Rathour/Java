@@ -55,7 +55,6 @@ public class Calculator {
             case 5 : System.out.println("Result =" + "You Chose The Wrong Option");
             break;
 
-
          }
     }
 }
