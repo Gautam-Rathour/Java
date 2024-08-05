@@ -1,6 +1,5 @@
 import java.util.*;
 
-
 public class Calculator {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -14,7 +13,7 @@ public class Calculator {
 
         System.out.println("Chose Your Option");
         int choice = sc.nextInt();
-        
+
 
         switch(choice){
             case 1 :  System.out.println("Add");
