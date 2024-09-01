@@ -1955,31 +1955,80 @@ public class second{
 
 // Print Fibonacci-Series  in Recursion :- 
 
-public class Recursion {
-    public static void FibonacciSeries(int a, int b, int n) {
-        if(n == 0) {
-            return;
-        }
-        int c = a + b;
-        System.out.print(c + ", ");
-        FibonacciSeries(b, c, n-1);
-   
-    }
-    public static void main(String args[]) {
-        int a = 0, b = 1;
-        System.out.print(a + ", ");
-        System.out.print(b + ", "); 
-        int n = 10;
-        
-        FibonacciSeries(a, b, n-2);
+// public class Recursion {
+//     public static void printFibonacciSeries(int a, int b, int n) {
+//         if(n == 0) {
+//             return;
+//         }
 
+//         int c = a + b; 
+//         System.out.print(c + " ");
+//         printFibonacciSeries(b, c, n-1);
+//     }
+//     public static void main (String args[]) {
+//         int a = 0, b = 1;
+//         System.out.print(a + " ");
+//         System.out.print(b + " ");
+//         int n = 10;
+
+//         printFibonacciSeries(a, b, n-2);
+
+//     }
+// }
+
+// //====================================================================================================
+// //==================================================================================================== 
+
+// // Print x^n (stack height = n)
+
+// public class Recursion {
+//     public static int printPower(int x, int n) {
+//         if(n == 0) {           
+//             return 1;
+//         }
+        
+        
+//         return x * printPower(x, n-1);
+//     }
+
+//     public static void main(String args[]) {
+//         int x = 5;
+//         int n = 3;
+
+//         int result = printPower(x, n); 
+//         System.out.println(result);    
+//     }
+// }
+
+// //====================================================================================================
+// //==================================================================================================== 
+
+// Print x^n (stack height = n)
+
+public class Recursion {
+    public static int printPower(int x, int n) {
+        if(n == 0) {           
+            return 1;
+        }
+        
+        if(n % 2 == 0) { // if n is Even
+        return printPower(x, n/2) * printPower(x, n/2);
+        } else { // if n is Odd
+            return printPower(x, n/2) * printPower(x, n/2) * x;
+        }
+    }
+
+    public static void main(String args[]) {
+        int x = 5;
+        int n = 3;
+
+        int result = printPower(x, n); 
+        System.out.println(result);    
     }
 }
 
-
-
-
-
+// //====================================================================================================
+// //==================================================================================================== 
 
 
 
