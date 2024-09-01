@@ -2041,7 +2041,7 @@ public class Recursion {
         towerOfHanoi(n-1, helper, src, dest);
     }
     public static void main (String args[]) {
-        int n = 4;
+        int n = 3;
 
         towerOfHanoi(n, "S", "H", "D");
     }
