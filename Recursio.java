@@ -2003,34 +2003,49 @@ public class second{
 // //====================================================================================================
 // //==================================================================================================== 
 
-// Print x^n (stack height = n)
+// // Print x^n (stack height = n)
 
-public class Recursion {
-    public static int printPower(int x, int n) {
-        if(n == 0) {           
-            return 1;
-        }
+// public class Recursion {
+//     public static int printPower(int x, int n) {
+//         if(n == 0) {           
+//             return 1;
+//         }
         
-        if(n % 2 == 0) { // if n is Even
-        return printPower(x, n/2) * printPower(x, n/2);
-        } else { // if n is Odd
-            return printPower(x, n/2) * printPower(x, n/2) * x;
-        }
-    }
+//         if(n % 2 == 0) { // if n is Even
+//         return printPower(x, n/2) * printPower(x, n/2);
+//         } else { // if n is Odd
+//             return printPower(x, n/2) * printPower(x, n/2) * x;
+//         }
+//     }
 
-    public static void main(String args[]) {
-        int x = 5;
-        int n = 3;
+//     public static void main(String args[]) {
+//         int x = 5;
+//         int n = 3;
 
-        int result = printPower(x, n); 
-        System.out.println(result);    
-    }
-}
+//         int result = printPower(x, n); 
+//         System.out.println(result);    
+//     }
+// }
 
 // //====================================================================================================
 // //==================================================================================================== 
 
+public class Recursio {
+    public static void towerOfHanoi(int n, String src, String helper, String dest) {
+        if (n == 1) {
+            System.out.println("transfer disk " + n + " from " + src + " to " + dest);
+            return;
+        }
+        towerOfHanoi(n-1, src, dest, helper);
+        System.out.println("transfer disk " + n + " from " + src + " to " + dest);
+        towerOfHanoi(n-1, helper, src, dest);
+    }
+    public static void main (String args[]) {
+        int n = 4;
 
+        towerOfHanoi(n, "S", "H", "D");
+    }
+}
 
 
 
