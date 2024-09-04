@@ -2030,31 +2030,150 @@ public class second{
 // //====================================================================================================
 // //==================================================================================================== 
 
-public class Recursion {
-    public static void towerOfHanoi(int n, String src, String helper, String dest) {
-        if (n == 1) {
-            System.out.println("transfer disk " + n + " from " + src + " to " + dest);
-            return;
-        }
-        towerOfHanoi(n-1, src, dest, helper);
-        System.out.println("transfer disk " + n + " from " + src + " to " + dest);
-        towerOfHanoi(n-1, helper, src, dest);
-    }
-    public static void main (String args[]) {
-        int n = 3;
+// This is little complex :-   ( Please read carfully )
 
-        towerOfHanoi(n, "S", "H", "D");
+// public class Recursion {
+//     public static void towerOfHanoi(int n, String src, String helper, String dest) {
+//         if (n == 1) {
+//             System.out.println("transfer disk " + n + " from " + src + " to " + dest);
+//             return;
+//         }
+//         towerOfHanoi(n-1, src, dest, helper);
+//         System.out.println("transfer disk " + n + " from " + src + " to " + dest);
+//         towerOfHanoi(n-1, helper, src, dest);
+//     }
+//     public static void main (String args[]) {
+//         int n = 3;
+
+//         towerOfHanoi(n, "S", "H", "D");
+//     }
+// }
+
+// //====================================================================================================
+// //==================================================================================================== 
+
+// public class First {
+//     public static void main (String args[]) {
+//         String src = "abcd";
+
+//         for(int i=src.length()-1; i>=0; i--) {
+//             System.out.print(src.charAt(i));
+//         }
+//     }
+// }
+
+// //==================================================================================================== 
+
+// public class Recursion {
+//      // Recursive method to print the string in reverse order.
+//    public static void printrev(String src, int idx) {
+//     if(idx == 0) {
+//         System.out.print(src.charAt(idx));
+//         return;
+//     }
+//     System.out.print(src.charAt(idx));
+//     printrev(src, idx-1);
+//     }
+//     public static void main (String args[]) {
+//         String src = "abcd";
+//         printrev(src, src.length()-1);
+//     }
+// }
+
+// //====================================================================================================
+// //==================================================================================================== 
+
+
+// public class Recursion {
+//     public static int first = -1;
+//     public static int last = -1;
+
+//    public static void findOccuration (String str, int idx, char element) {
+//     if (idx == str.length()) {
+//         System.out.println(first);
+//         System.out.println(last);
+//         return;
+//     }
+//         char currChar = str.charAt(idx);
+//         if(currChar == element) {
+//             if(first == -1) {
+//                 first = idx;
+//             } else {
+//                 last = idx;
+//             }
+//         }
+
+//         findOccuration(str, idx+1, element);
+//    }
+//    public static void main (String args[]) {
+//        String src = "abaacdaefaah";
+//        findOccuration(src, 0, 'a');
+//    }
+// }
+
+
+
+// //====================================================================================================
+// //==================================================================================================== 
+// //====================================================================================================
+// //==================================================================================================== 
+// //====================================================================================================
+// //==================================================================================================== 
+
+// OOPS : - 
+
+class Pen {
+    String color;
+    String type;
+
+    public void write() {
+        System.out.println("Write Sonthing");
+    }
+    public void printColor() {
+        System.out.println(this.color);
+        System.out.println(type);
     }
 }
 
+public class OOPS {
+    public static void main (String args []) {
+        Pen mypen = new Pen();
+        mypen.color = "yellow";
+        mypen.type = "Ballpoint";        
+
+        mypen.printColor();
+    }
+}
+
+// //==================================================================================================== 
 
 
+// class Student {
+//     String name;
+//     int age;
 
+//     public void printInfo() {
+//         System.out.println(this.name);
+//         System.out.println(this.age);
 
+//     }
+//     Student(String name, int age) {
+//         this.name = name;
+//         this.age = age;
 
+        
+//     }
+// }
+// public class OOPS {
+//     public static void main (String args []) {
 
+//         Student s1 = new Student("raju" , 34);
+//         // s1.name = "Ramu";
+//         // s1.age = 28;
 
-
+//         s1.printInfo();
+//     }
+// }
 
 
 
