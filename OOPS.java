@@ -2066,17 +2066,18 @@ public class second{
 
 // public class Recursion {
 //      // Recursive method to print the string in reverse order.
-//    public static void printrev(String src, int idx) {
+//    public static void printrev(String str, int idx) {
 //     if(idx == 0) {
-//         System.out.print(src.charAt(idx));
+//         System.out.print(str.charAt(idx));
 //         return;
 //     }
-//     System.out.print(src.charAt(idx));
-//     printrev(src, idx-1);
+//     System.out.print(str.charAt(idx));
+//     printrev(str, idx-1);
 //     }
 //     public static void main (String args[]) {
-//         String src = "abcd";
-//         printrev(src, src.length()-1);
+//         String str = "abcd";
+//         int idx = str.length()-1;
+//         printrev(str, idx);
 //     }
 // }
 
@@ -2122,63 +2123,83 @@ public class second{
 
 // OOPS : - 
 
-class Pen {
-    String color;
-    String type;
+// class Pen {
+//     String color;
+//     String type;
 
-    public void write() {
-        System.out.println("Write Sonthing");
-    }
-    public void printColor() {
-        System.out.println(this.color);
-        System.out.println(type);
+//     public void write() {
+//         System.out.println("Write Sonthing");
+//     }
+//     public void printColor() {
+//         System.out.println(this.color);
+//         System.out.println(type);
+//     }
+// }
+
+// public class OOPS {
+//     public static void main (String args []) {
+//         Pen mypen = new Pen();
+//         mypen.color = "yellow";
+//         mypen.type = "Ballpoint";        
+
+//         mypen.printColor();
+//     }
+// }
+
+// //==================================================================================================== 
+// class Student {
+//     String name ;
+//     int age ;
+//     int height ;
+
+//     public void printInfo() {
+//         // System.out.println("Name :- " + name + " Age :- " + age + " Height :- " + height);
+//         System.out.println("Name:- " + name);        
+//         System.out.println("Age:- " + age);
+//         System.out.println("Height:- " + height);  
+//     }
+//     // Constructor
+//     Student(String name, int age, int height) {
+//         this.name = name;
+//         this.age = age;
+//         this.height = height;
+//     }
+//     // Copy Constructor :-
+//     Student(Student s2) {
+//         this.name = s2.name;
+//         this.age = s2.age;
+//         this.height = s2.height;
+//     }
+// }
+
+// public class OOPS {
+//     public static void main (String args []) {
+//         Student s1 = new Student("Ram", 23, 69);
+       
+//         s1.printInfo();
+
+//         Student s2 = new Student(s1);
+//         s2.printInfo();
+//     }
+// }
+// //====================================================================================================
+// //==================================================================================================== 
+
+class Shape {
+    String color;
+}
+class Triangle extends Shape {
+    public void area (int l, int h) {
+        System.out.println(1/2*l*h);
     }
 }
 
 public class OOPS {
-    public static void main (String args []) {
-        Pen mypen = new Pen();
-        mypen.color = "yellow";
-        mypen.type = "Ballpoint";        
-
-        mypen.printColor();
+    public static void main(String args[]) {
+        Triangle t1 = new Triangle();
+        t1.color = "red";       
     }
 }
-
-// //==================================================================================================== 
-
-
-// class Student {
-//     String name;
-//     int age;
-
-//     public void printInfo() {
-//         System.out.println(this.name);
-//         System.out.println(this.age);
-
-//     }
-//     Student(String name, int age) {
-//         this.name = name;
-//         this.age = age;
-
-        
-//     }
-// }
-// public class OOPS {
-//     public static void main (String args []) {
-
-//         Student s1 = new Student("raju" , 34);
-//         // s1.name = "Ramu";
-//         // s1.age = 28;
-
-//         s1.printInfo();
-//     }
-// }
-
-// //====================================================================================================
-// //==================================================================================================== 
-
-
 
 
 
