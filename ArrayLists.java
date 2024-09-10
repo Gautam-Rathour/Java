@@ -2138,11 +2138,17 @@ public class second{
 
 // public class OOPS {
 //     public static void main (String args []) {
-//         Pen mypen = new Pen();
-//         mypen.color = "yellow";
-//         mypen.type = "Ballpoint";        
+//         Pen car = new Pen();
+//         car.color = "yellow";
+//         car.type = "4";        
 
-//         mypen.printColor();
+//         car.printColor();
+
+//         Pen tractor = new Pen ();
+//         tractor.color = "red";
+//         tractor.type = "6";
+
+//         tractor.printColor();
 //     }
 // }
 
@@ -2185,21 +2191,318 @@ public class second{
 // //====================================================================================================
 // //==================================================================================================== 
 
-class Shape {
-    String color;
-}
-class Triangle extends Shape {
-    public void area (int l, int h) {
-        System.out.println(1/2*l*h);
-    }
-}
+// class Shape {
+//     String color;
+// }
+// class Triangle extends Shape {
+//     public void area (int l, int h) {
+//         System.out.println(1/2*l*h);
+//     }
+// }
 
-public class OOPS {
-    public static void main(String args[]) {
-        Triangle t1 = new Triangle();
-        t1.color = "blue";       
-    }
-}
+// public class OOPS {
+//     public static void main(String args[]) {
+//         Triangle t1 = new Triangle();
+//         t1.color = "blue";       
+//     }
+// }
+// //====================================================================================================
+// //==================================================================================================== 
+// polymorphism :- 
+
+// class Student {
+//     String name;
+//     int age;
+    
+//     public void printInfo(String name) {
+//         System.out.println(name);
+//     }
+//     public void printInfo(int age) {
+//         System.out.println(age);
+//     }
+//     public void printInfo(String name, int age) {
+//         System.out.println(name + " " + age);
+//     }
+// }
+// public class OOPS {
+// public static void main (String args[]) {
+//     Student stu = new Student();
+//     stu.name = "raju bhai";
+//     stu.age = 34;
+
+//     stu.printInfo(stu.name);
+//     }
+// }
+
+// //====================================================================================================
+// //==================================================================================================== 
+//  Inheritance :- 
+
+// Simple Inheritance 
+// import java.util.*;
+// import bank;
+
+// class Animal {
+//     void OtherFood () {
+//         System.out.println("The Animal Eat food");
+//     }
+// }
+// class Dog extends Animal {
+//     void Eat () {
+//         System.out.println("Eat veg");
+//     }
+// }
+// // Multilevel Inheritance :-
+// class Cow extends Dog {
+//     void Eat () {
+//         System.out.println("Eat veg");
+//     }
+// }
+// // Hierarchical Inheritance :-
+// class Cat extends Animal {
+//     void sound() {
+//         System.out.println("The cat meows");
+//     }
+// }
+// // Hybrid Inheritance :- 
+
+// //
+// //
+// //
+// //
+
+// public class OOPS {
+//     public static void main(String args[]) {
+//         // Dog Mydog = new Dog ();
+//         // Mydog.OtherFood();      
+//     }
+// }
+
+// //====================================================================================================
+// //==================================================================================================== 
+
+// // Encapsulation :-
+
+// class Account {
+//     public String name ;
+//     protected String email ;
+//     private String password ;
+
+//     // Getters
+//     public String getPassword() {
+//         return this.password;
+//     }
+//     // Setters
+//     public void setPassword (String pass) {
+//         this.password = pass;
+//     }
+// }
+
+// public class OOPS {
+//     public static void main (String args []) {
+//         Account account1 = new Account ();
+//         account1.name = "Rajubaba";
+//         account1.email = "rajubaba@gmail.com";
+//         account1.setPassword("abcd");
+
+//         System.out.println("Name => " + account1.name);
+//         System.out.println("Email => " + account1.email);
+//         System.out.println("Password => " + account1.getPassword());
+//     }
+// }
+
+// //====================================================================================================
+// //==================================================================================================== 
+
+// Abstraction :- 
+
+// abstract class Animal {
+//     abstract void walk ();
+// }
+// class Horse extends Animal {
+//     public void walk () {
+//         System.out.println("Horse walks on 4 leg");
+//     }
+// }
+// class Hen extends Animal {
+//     public void walk () {
+//         System.out.println("Hen walks on 2 leg");
+//     }
+// }
+
+// public class OOPS {
+// public static void main (String args[]) {
+//         Horse h1 = new Horse();
+//         h1.walk();
+
+//         Animal animal = new Animal();
+//         animal.walk();
+//     }
+// }
+
+// //====================================================================================================
+// //==================================================================================================== 
+
+// abstract class Animal {
+//     abstract void walk();
+//     void breathe() {
+//         System.out.println("This animal breathes air\n");
+//   }
+//     Animal() {
+//         System.out.println("\nYou are about to create an Animal.");
+//     }
+//  }
+//  class Horse extends Animal {
+//     Horse() {
+//         System.out.println("Wow, you have created a Horse!");
+//     }
+//   void walk() {
+//         System.out.println("Horse walks on 4 legs");
+//     }
+//  }
+//  class Chicken extends Animal {
+//     Chicken() {
+//         System.out.println("Wow, you have created a Chicken!");
+//     }
+//     void walk() {
+//         System.out.println("Chicken walks on 2 legs");
+//     }
+//  }
+ 
+//  public class OOPS {
+//     public static void main(String args[]) {
+//        Horse horse = new Horse();
+//        horse.walk();
+//        horse.breathe();
+//     }
+//  }
+ 
+// //====================================================================================================
+// //==================================================================================================== 
+ 
+// // Interface :-
+// interface Animal {
+//     int eyes = 2;
+//     void walk();
+// }
+// interface Herbivore {
+
+// }
+// class Horse implements Animal , Herbivore  {
+//     public void walk () {
+//         System.out.println("Horse walk on 4 leg");
+//     }
+// }
+// public class OOPS {
+//     public static void main(String args[]) {
+//        Horse horse = new Horse();
+//        horse.walk();
+//     }
+//  }
+
+// //====================================================================================================
+// //==================================================================================================== 
+
+//  // Static Keyword :-
+
+// class Student {
+//     String name ;
+//     static String School ;
+
+//     public static void changeSchool () {
+//         School = "LPU";
+//     }
+// }
+
+// public class OOPS { 
+// public static void main (String agrs[]) {
+//     Student.School = "SSs(Ramgarh)\n";
+
+//     Student student1 = new Student();
+//     student1.name = "Ram";
+//     System.out.println(student1.name);
+//     System.out.println(student1.School);
+    
+//     Student student2 = new Student();
+//     student2.name = "Mohen";
+//     System.out.println(student2.name);
+//     System.out.println(student1.School);
+//     }
+// }
+
+// //====================================================================================================
+// //==================================================================================================== 
+
+// ArrayList :-
+
+// import java.util.ArrayList;
+// import java.util.Collections;
+
+// class ArrayLists {
+//     public static void main (String args[]) {
+//         ArrayList <Integer> list = new ArrayList<Integer>();
+
+//         // add Elements :-
+//         list.add(0);
+//         list.add(2);
+//         list.add(3);
+
+//         System.out.println(list);
+
+//         // get Elements
+//         int element = list.get(1);
+//         System.out.println(element);
+
+//         // add Elements in between
+//         list.add(1,1);
+//         list.add(4,4);
+//         System.out.println(list);
+
+//         // Set Elements
+//         list.set(0,6);
+//         System.out.println(list);
+
+//         // delete/remove Elements
+//         list.remove(3);
+//         System.out.println(list);
+
+//         // size of Elements
+//          int size = list.size();
+//         System.out.println(size);
+
+//         // Loops 
+//         for(int i=0; i<list.size(); i++) {
+//             System.out.print(list.get(i));
+//         }
+//         System.out.println();
+
+//         // Sorting
+//         Collections.sort(list);
+//         System.out.println(list);
+//     }
+// }
+
+// //====================================================================================================
+// //==================================================================================================== 
+// //====================================================================================================
+// //==================================================================================================== 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
