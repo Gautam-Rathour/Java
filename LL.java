@@ -2487,110 +2487,232 @@ public class second{
 // //==================================================================================================== 
 // //====================================================================================================
 
-class LL {
-    Node head;
+// class LL {
+//     Node head;
+//     private int size;
 
-    class Node {
-        String data;
-        Node next;
+//     LL () {
+//         this.size = 0;
+//     }
 
-        Node (String data) {
-            this.data = data;
-            this.next = null;
-        }
-    }
+//     class Node {
+//         String data;
+//         Node next;
 
-    // add - first , last
-    public void addFirst(String data) {
-        Node newNode = new Node(data);
-        if(head == null) {
-            head = newNode;
-            return;
-        } 
-        newNode.next = head;
-        head = newNode;
-    }
+//         Node (String data) {
+//             this.data = data;
+//             this.next = null;
+//             size++;
+//         }
+//     }
 
-    // add last :-
-    public void addLast(String data) {
-        Node newNode = new Node(data);
-        if(head == null) {
-            head = newNode;
-            return;
-        }
-        Node currNode = head;
-        while(currNode.next != null) {
-            currNode = currNode.next;
-        }
-        currNode.next = newNode;
-    }
+//     // add - first , last
+//     public void addFirst(String data) {
+//         Node newNode = new Node(data);
+//         if(head == null) {
+//             head = newNode;
+//             return;
+//         } 
+//         newNode.next = head;
+//         head = newNode;
+//     }
 
-    // print
-    public void printList() {
-        if(head == null) {
-            System.out.println("List is Empty");
-            return;
-        }
-        Node currNode = head;
-        while(currNode != null) {
-            System.out.print(currNode.data + " -> ");
-            currNode = currNode.next;
-        }
-        System.out.println("Null");
-    }
+//     // add last :-
+//     public void addLast(String data) {
+//         Node newNode = new Node(data);
+//         if(head == null) {
+//             head = newNode;
+//             return;
+//         }
+//         Node currNode = head;
+//         while(currNode.next != null) {
+//             currNode = currNode.next;
+//         }
+//         currNode.next = newNode;
+//     }
 
-    // delete First :- 
-    public void deleteFirst() {
-        if(head == null) {
-            System.out.println("The list is Empty");
-            return;
-        }
-        head = head.next;
-    }
+//     // print
+//     public void printList() {
+//         if(head == null) {
+//             System.out.println("List is Empty");
+//             return;
+//         }
+//         Node currNode = head;
+//         while(currNode != null) {
+//             System.out.print(currNode.data + " -> ");
+//             currNode = currNode.next;
+//         }
+//         System.out.println("Null");
+//     }
 
-    // delete Last :-
-    public void deleteLast() {
-        if(head == null) {
-            System.out.println("The list is Empty");
-        }
+//     // delete First :- 
+//     public void deleteFirst() {
+//         if(head == null) {
+//             System.out.println("The list is Empty");
+//             return;
+//         }
+//         size--;
+//         head = head.next;
+//     }
 
-        if(head.next == null) {
-            head = null;
-            return;
-        }
+//     // delete Last :-
+//     public void deleteLast() {
+//         if(head == null) {
+//             System.out.println("The list is Empty");
+//             return;
+//         }
 
-        Node secondLast = head;
-        Node lastNode = head.next; // head.next = null -> lastNode = null
-        while(lastNode.next != null) { // null.next
-            lastNode = lastNode.next;
-            secondLast = secondLast.next;
-        }
-    }
+//         size--;
+//         if(head.next == null) {
+//             head = null;
+//             return;
+//         }
+
+//         Node secondLast = head;
+//         Node lastNode = head.next; // head.next = null -> lastNode = null
+//         while(lastNode.next != null) { // null.next
+//             lastNode = lastNode.next;
+//             secondLast = secondLast.next;
+//         }
+//         secondLast.next = null;
+//     }
 
 
-    public static void main (String args[]) {
-        LL list = new LL();
-        list.addFirst("a");
-        list.addFirst("is");
+//     public int getSize () {
+//         return size;
+//     }
 
-        list.printList();
+//     public static void main (String args[]) {
+//         LL list = new LL();
+//         list.addFirst("a");
+//         list.addFirst("is");
 
-        list.addLast("list");
-        list.printList();
+//         list.printList();
 
-        list.addFirst("This");
-        list.printList();
+//         list.addLast("list");
+//         list.printList();
 
-        list.deleteFirst();
-        list.printList();
-    }
-}
+//         list.addFirst("This");
+//         list.printList();
+
+//         list.deleteFirst();
+//         list.printList();
+
+//         list.deleteLast();
+//         list.printList();
+
+//         System.out.println(list.getSize());
+
+//         list.addFirst("This");
+//         list.printList();
+//         System.out.println(list.getSize());
+//     }
+// }
+
+// //==================================================================================================== 
+// //====================================================================================================
+// // Revision :-
+
+// class LL {
+
+//     Node head;
+
+//     class Node {
+//         String data;
+//         Node next;
+
+//         Node(String data) {
+//             this.data = data;
+//             this.next = null;
+//         }
+//     }
+
+//     // add first & last :-
+//     public void addFirst(String data) {
+//         Node newNode = new Node(data);
+//         if(head == null) {
+//             head = newNode;
+//             return;
+//         }
+//         newNode.next = head;
+//         head = newNode;
+//     }
+
+//     // add last :-
+//     public void addLast(String data) {
+//         Node newNode = new Node (data);
+//         if(head == null) {
+//             head = newNode;
+//             return;
+//         }
+
+//         Node currNode = head;
+//         while(currNode.next != null) {
+//             currNode = currNode.next;
+//         }
+//         currNode.next = newNode;
+//     }
+
+//     // print :-
+//     public void printList() {
+//         if(head == null) {
+//             System.out.println("This list is empty");
+//             return;
+//         }
+//         Node currNode = head;
+//         while(currNode != null) {
+//             System.out.print(currNode.data + " -> ");
+//             currNode = currNode.next;
+//         }
+//         System.out.print("null");
+//     }
+// }
+
+// public static void main (String args[]) {
+//     LL list = new LL ();
+//     list.addFirst("a");
+//     list.addFirst("is");
+//     list.printList();
+
+//     list.addLast("list");
+//     list.addFirst("This");
+//     list.printList();
+// }
 
 
 // //==================================================================================================== 
 // //====================================================================================================
 
+// import java.util.*;
 
+// class LL {
+//     public static void main (String args[]) {
+//         LinkedList <String> list = new LinkedList <String>();
+
+//         list.addFirst("a");
+//         list.addFirst("is");
+//         System.out.println(list);
+
+//         list.addFirst("This");
+//         list.addLast("list");
+//         System.out.println(list);
+
+//         System.out.println(list.size());
+
+//         for(int i=0; i<list.size(); i++) {
+//             System.out.print(list.get(i) + " -> ");
+//         }
+//         System.out.println("null");
+
+//         // list.removeFirst();
+//         // System.out.println(list);
+//         // list.removeLast();
+//         // System.out.println(list);
+
+//         list.remove(3);
+//         System.out.println(list);
+//     }
+// }
 
 
 
