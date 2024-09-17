@@ -2848,6 +2848,11 @@ public class second{
 class LL {
 
     Node head;
+    private int size;
+
+    LL () {
+        this.size = 0;
+    }
 
     class Node {
         String data;
@@ -2856,6 +2861,7 @@ class LL {
         Node (String data) {
             this.data = data;
             this.next = null;
+            size++;
         }
     }
   
@@ -2891,8 +2897,10 @@ class LL {
         if(head == null) {
             System.out.println("List is Empty");
             return;
+
         }
         head = head.next;
+        size--;
     }
 
     // delete-Last :-
@@ -2908,6 +2916,39 @@ class LL {
             LastNode = LastNode.next;
         }
         SecondLast.next = null;
+        size--;
+    }
+
+    // Reverse Linked-list :-
+    // Iterative Method 
+    public void reverseIterate() {
+        if(head == null || head.next == null) {
+            return;
+        }
+
+        Node prevNode = head;
+        Node currNode = head.next;
+        while(currNode != null) {
+            Node NextNode = currNode.next;
+            currNode.next = prevNode;
+
+            // Update :-
+            prevNode = currNode;
+            currNode = NextNode;
+        }
+        head.next = null;
+        head = prevNode;
+    }
+    // Recursive Method
+    public Node reverseRecursive (Node head) { 
+    if(head == null || head.next == null) {
+        return head;
+        }
+        Node newHead = reverseRecursive(head.next);
+        head.next.next = head;
+        head.next = null;
+
+        return newHead;
     }
 
     // print :-
@@ -2937,10 +2978,18 @@ class LL {
         list.addLast("boy");
         list.printList();
 
-        list.deleteFirst();
-        list.deleteLast();
-        list.printList();
+        // list.deleteFirst();
+        // list.deleteLast();
+        // list.printList();
 
+         int size = list.size;
+        System.out.println(size);
+
+        // list.reverseIterate();
+        // list.printList();
+
+        list.head = list.reverseRecursive(list.head);
+        list.printList();
     }
 }
 
