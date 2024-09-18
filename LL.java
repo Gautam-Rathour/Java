@@ -2845,159 +2845,187 @@ public class second{
 // //==================================================================================================== 
 // //====================================================================================================
 
-class LL {
+// class LL {
 
-    Node head;
-    private int size;
+//     Node head;
+//     private int size;
 
-    LL () {
-        this.size = 0;
-    }
+//     LL () {
+//         this.size = 0;
+//     }
 
-    class Node {
-        String data;
-        Node next;
+//     class Node {
+//         String data;
+//         Node next;
 
-        Node (String data) {
-            this.data = data;
-            this.next = null;
-            size++;
-        }
-    }
+//         Node (String data) {
+//             this.data = data;
+//             this.next = null;
+//             size++;
+//         }
+//     }
   
-    // add-First :-
-    public void addFirst(String data) {
-        Node newNode = new Node (data);
-        if(head == null) {
-            head = newNode;
-            return;
-        }
+//     // add-First :-
+//     public void addFirst(String data) {
+//         Node newNode = new Node (data);
+//         if(head == null) {
+//             head = newNode;
+//             return;
+//         }
         
-        newNode.next = head;
-        head = newNode;
-    }
+//         newNode.next = head;
+//         head = newNode;
+//     }
 
-    // add-Last :-
-    public void addLast(String data) {
-        Node newNode = new Node (data);
-        if(head == null) {
-            head = newNode;
-            return;
-        }
+//     // add-Last :-
+//     public void addLast(String data) {
+//         Node newNode = new Node (data);
+//         if(head == null) {
+//             head = newNode;
+//             return;
+//         }
 
-        Node currNode = head;
-        while (currNode.next != null) {
-            currNode = currNode.next;
-        }
-        currNode.next = newNode;
-    }
+//         Node currNode = head;
+//         while (currNode.next != null) {
+//             currNode = currNode.next;
+//         }
+//         currNode.next = newNode;
+//     }
 
-    // delete-First :-
-    public void deleteFirst() {
-        if(head == null) {
-            System.out.println("List is Empty");
-            return;
+//     // delete-First :-
+//     public void deleteFirst() {
+//         if(head == null) {
+//             System.out.println("List is Empty");
+//             return;
 
-        }
-        head = head.next;
-        size--;
-    }
+//         }
+//         head = head.next;
+//         size--;
+//     }
 
-    // delete-Last :-
-    public void deleteLast() {
-        if(head == null) {
-            System.out.println("List is Empty");
-            return;
-        }
-        Node SecondLast = head;
-        Node LastNode = head.next;
-        while(LastNode.next != null) {
-            SecondLast = SecondLast.next;
-            LastNode = LastNode.next;
-        }
-        SecondLast.next = null;
-        size--;
-    }
+//     // delete-Last :-
+//     public void deleteLast() {
+//         if(head == null) {
+//             System.out.println("List is Empty");
+//             return;
+//         }
+//         Node SecondLast = head;
+//         Node LastNode = head.next;
+//         while(LastNode.next != null) {
+//             SecondLast = SecondLast.next;
+//             LastNode = LastNode.next;
+//         }
+//         SecondLast.next = null;
+//         size--;
+//     }
 
-    // Reverse Linked-list :-
-    // Iterative Method 
-    public void reverseIterate() {
-        if(head == null || head.next == null) {
-            return;
-        }
+//     // Reverse Linked-list :-
+//     // Iterative Method 
+//     public void reverseIterate() {
+//         if(head == null || head.next == null) {
+//             return;
+//         }
 
-        Node prevNode = head;
-        Node currNode = head.next;
-        while(currNode != null) {
-            Node NextNode = currNode.next;
-            currNode.next = prevNode;
+//         Node prevNode = head;
+//         Node currNode = head.next;
+//         while(currNode != null) {
+//             Node NextNode = currNode.next;
+//             currNode.next = prevNode;
 
-            // Update :-
-            prevNode = currNode;
-            currNode = NextNode;
-        }
-        head.next = null;
-        head = prevNode;
-    }
-    // Recursive Method
-    public Node reverseRecursive (Node head) { 
-    if(head == null || head.next == null) {
-        return head;
-        }
-        Node newHead = reverseRecursive(head.next);
-        head.next.next = head;
-        head.next = null;
+//             // Update :-
+//             prevNode = currNode;
+//             currNode = NextNode;
+//         }
+//         head.next = null;
+//         head = prevNode;
+//     }
+//     // Recursive Method
+//     public Node reverseRecursive (Node head) { 
+//     if(head == null || head.next == null) {
+//         return head;
+//         }
+//         Node newHead = reverseRecursive(head.next);
+//         head.next.next = head;
+//         head.next = null;
 
-        return newHead;
-    }
+//         return newHead;
+//     }
 
-    // print :-
-    public void printList() {
-        if(head == null) {
-            System.out.println ("This list is Empty");
-            return;
-        }
+//     // print :-
+//     public void printList() {
+//         if(head == null) {
+//             System.out.println ("This list is Empty");
+//             return;
+//         }
 
-        Node currNode = head;
-        while (currNode != null) {
-            System.out.print(currNode.data + " ->");
-            currNode = currNode.next;
-        }
-        System.out.println("null");   
-    }
+//         Node currNode = head;
+//         while (currNode != null) {
+//             System.out.print(currNode.data + " ->");
+//             currNode = currNode.next;
+//         }
+//         System.out.println("null");   
+//     }
     
-    public static void main (String args[]) {
-        LL list = new LL ();
+//     public static void main (String args[]) {
+//         LL list = new LL ();
 
-        list.addFirst("a");
-        list.addFirst("is");
-        list.addFirst("Raju");
-        list.printList();
+//         list.addFirst("a");
+//         list.addFirst("is");
+//         list.addFirst("Raju");
+//         list.printList();
 
-        list.addLast("good");
-        list.addLast("boy");
-        list.printList();
+//         list.addLast("good");
+//         list.addLast("boy");
+//         list.printList();
 
-        // list.deleteFirst();
-        // list.deleteLast();
-        // list.printList();
+//         // list.deleteFirst();
+//         // list.deleteLast();
+//         // list.printList();
 
-         int size = list.size;
-        System.out.println(size);
+//          int size = list.size;
+//         System.out.println(size);
 
-        // list.reverseIterate();
-        // list.printList();
+//         // list.reverseIterate();
+//         // list.printList();
 
-        list.head = list.reverseRecursive(list.head);
-        list.printList();
-    }
-}
+//         list.head = list.reverseRecursive(list.head);
+//         list.printList();
+//     }
+// }
 
 // //====================================================================================================
 // //====================================================================================================
 
+// Question :- 
+// 1. Make a Linked List & add the following elements to it : (1, 5, 7, 3 , 8, 2, 3). Search for the number 7 & display its index.
+
+// import java.util.*;
+// public class LL {
+//     public static void main (String args []) {
+//         LinkedList<Integer> list = new LinkedList<Integer>();
+//         list.add(1);
+//         list.add(7);
+//         list.add(5);
+//         list.add(4);
+//         list.add(8);
+//         list.add(6);
 
 
+        // int size1 = list.size();
+        // System.out.println(size1);// Prints the size of the list
+
+        // System.out.println(list);
+
+        // for(int i=0; i<size1; i++) {
+        //     if( list.get(i) == 8) {
+
+        //         System.out.println(i);
+        //     }
+        // }
+
+
+//     }
+// }
 
 
 
