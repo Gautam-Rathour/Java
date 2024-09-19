@@ -3081,88 +3081,88 @@ public class second{
 // Take elements(numbers in the range of 1-50) of a Linked List as input from the user. 
 // Delete all nodes which have values greater than 25.
 
-// import java.util.Scanner;
+import java.util.Scanner;
 
-// class Node {
-//     int data;
-//     Node next;
-//     Node(int data) {
-//         this.data = data;
-//         this.next = null;
-//     }
-// }
+class Node {
+    int data;
+    Node next;
+    Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
 
-// public class LinkedList {
-//     Node head;
+public class LinkedList {
+    Node head;
 
-//     // Method to insert a new node
-//     public void insert(int data) {
-//         Node newNode = new Node(data);
-//         if (head == null) {
-//             head = newNode;
-//         } else {
-//             Node current = head;
-//             while (current.next != null) {
-//                 current = current.next;
-//             }
-//             current.next = newNode;
-//         }
-//     }
+    // Method to insert a new node
+    public void insert(int data) {
+        Node newNode = new Node(data);
+        if (head == null) {
+            head = newNode;
+        } else {
+            Node current = head;
+            while (current.next != null) {
+                current = current.next;
+            }
+            current.next = newNode;
+        }
+    }
 
-//     // Method to delete nodes with value greater than 25
-//     public void deleteGreaterThan25() {
-//         while (head != null && head.data > 25) {
-//             head = head.next;
-//         }
-//         Node current = head;
-//         while (current != null && current.next != null) {
-//             if (current.next.data > 25) {
-//                 current.next = current.next.next;
-//             } else {
-//                 current = current.next;
-//             }
-//         }
-//     }
+    // Method to delete nodes with value greater than 25
+    public void deleteGreaterThan25() {
+        while (head != null && head.data > 25) {
+            head = head.next;
+        }
+        Node current = head;
+        while (current != null && current.next != null) {
+            if (current.next.data > 25) {
+                current.next = current.next.next;
+            } else {
+                current = current.next;
+            }
+        }
+    }
 
-//     // Method to display the linked list
-//     public void display() {
-//         Node current = head;
-//         while (current != null) {
-//             System.out.print(current.data + " ");
-//             current = current.next;
-//         }
-//         System.out.println();
-//     }
+    // Method to display the linked list
+    public void display() {
+        Node current = head;
+        while (current != null) {
+            System.out.print(current.data + " ");
+            current = current.next;
+        }
+        System.out.println();
+    }
 
-//     public static void main(String[] args) {
-//         LinkedList list = new LinkedList();
-//         Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) {
+        LinkedList list = new LinkedList();
+        Scanner sc = new Scanner(System.in);
 
-//         System.out.println("Enter numbers in the range 1-50 (enter -1 to stop):");
-//         while (true) {
-//             int num = sc.nextInt();
-//             if (num == -1) {
-//                 break;
-//             }
-//             if (num >= 1 && num <= 50) {
-//                 list.insert(num);
-//             }
-//         }
+        System.out.println("Enter numbers in the range 1-50 (enter -1 to stop):");
+        while (true) {
+            int num = sc.nextInt();
+            if (num == -1) {
+                break;
+            }
+            if (num >= 1 && num <= 50) {
+                list.insert(num);
+            }
+        }
 
-//         System.out.println("Original List:");
-//         list.display();
+        System.out.println("Original List:");
+        list.display();
 
-//         list.deleteGreaterThan25();
+        list.deleteGreaterThan25();
 
-//         System.out.println("Modified List (values <= 25):");
-//         list.display();
+        System.out.println("Modified List (values <= 25):");
+        list.display();
 
-//         sc.close();
-//     }
-// }
+        sc.close();
+    }
+}
 
-// //====================================================================================================
-// //====================================================================================================
+// //===================================================================================================
+// //===================================================================================================
 
 
 
