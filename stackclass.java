@@ -3271,48 +3271,106 @@ public class second{
 // //===================================================================================================
 // //===================================================================================================
 
-// Stacks :-
+// // Stacks :-
 
-import java.util.ArrayList;
-public class stackclass {
-    static class Stack {
-        static ArrayList <Integer> list = new ArrayList<>();
-        public static boolean isEmpty() {
-            return list.size() == 0;
-        }
+// import java.util.ArrayList;
+// public class stackclass {
+//     static class Stack {
+//         static ArrayList <Integer> list = new ArrayList<>();
+//         public static boolean isEmpty() {
+//             return list.size() == 0;
+//         }
 
-        // push
-        public static void push (int data) {
-            list.add(data);
-        }
+//         // push
+//         public static void push (int data) {
+//             list.add(data);
+//         }
 
-        // pop
-        public static int pop () {
-            if (isEmpty()) {
-                return -1;
-            }
-            int top = list.get(list.size()-1);
-            list.remove(list.size()-1);
-            return top ;
-        }
+//         // pop
+//         public static int pop () {
+//             if (isEmpty()) {
+//                 return -1;
+//             }
+//             int top = list.get(list.size()-1);
+//             list.remove(list.size()-1);
+//             return top ;
+//         }
 
-        // peek
-        public static int peek () {
-            if (isEmpty()) {
-                return -1;
-            }
-            return list.get(list.size()-1);
+//         // peek
+//         public static int peek () {
+//             if (isEmpty()) {
+//                 return -1;
+//             }
+//             return list.get(list.size()-1);
             
-        }
-    }
+//         }
+//     }
 
+//     public static void main (String args[]) {
+//         Stack s = new Stack();
+//         s.push(1);
+//         s.push(2);
+//         s.push(3);
+//         s.push(4);
+
+
+//         while(!s.isEmpty()) {
+//             System.out.println(s.peek());
+//             s.pop();
+//         }
+//     }
+
+// }
+
+// //===================================================================================================
+// //===================================================================================================
+
+// // Stacks  with the help of collection :-
+// import java.util.*;
+
+// public class stackclass {
+    
+//     public static void main (String args[]) {
+//         Stack<Integer> s = new Stack<>();
+//         s.push(1);
+//         s.push(2);
+//         s.push(3);
+//         s.push(4);
+
+
+//         while(!s.isEmpty()) {
+//             System.out.println(s.peek());
+//             s.pop();
+//         }
+//     }
+
+// }
+
+// //===================================================================================================
+// //===================================================================================================
+
+import java.util.*;
+
+public class stackclass {
+    public static void pushAtBottom(int data, Stack<Integer> s) {
+        if(s.isEmpty()) {
+            s.push(data);
+            return;
+        }
+        
+        int top = s.pop();
+        pushAtBottom(data, s);
+        s.push(top);
+    }
+    
     public static void main (String args[]) {
-        Stack s = new Stack();
+        Stack<Integer> s = new Stack<>();
         s.push(1);
         s.push(2);
         s.push(3);
-        s.push(4);
-        s.push(5);
+        
+        pushAtBottom(data, s)
+
 
         while(!s.isEmpty()) {
             System.out.println(s.peek());
@@ -3322,8 +3380,39 @@ public class stackclass {
 
 }
 
-// //===================================================================================================
-// //===================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
