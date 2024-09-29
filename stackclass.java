@@ -3211,62 +3211,62 @@ public class second{
 
 // // Stacks :-
 
-public class stackclass {
-    static class Node {
-        int data;
-        Node next;
-        public Node (int  data){
-            this.data = data;
-            next = null;
-        }
-    }
-    static class Stack {
-        public static Node head;
-        public static boolean isEmpty() {
-            return head == null;
-        }
-        public static void push(int data) {
-            Node newNode = new Node (data);
-            if(isEmpty()) {
-                head = newNode;
-                return;
-            }
+// public class stackclass {
+//     static class Node {
+//         int data;
+//         Node next;
+//         public Node (int  data){
+//             this.data = data;
+//             next = null;
+//         } 
+//     }
+//     static class Stack {
+//         public static Node head;
+//         public static boolean isEmpty() {
+//             return head == null;
+//         }
+//         public static void push(int data) {
+//             Node newNode = new Node (data);
+//             if(isEmpty()) {
+//                 head = newNode;
+//                 return;
+//             }
 
-            newNode.next = head;
-            head = newNode;
-        }
+//             newNode.next = head;
+//             head = newNode;
+//         }
 
-        public static int pop() {
-            if(isEmpty()) {
-                return -1;
-            }
-            int top = head.data;
-            head = head.next;
-            return top;
-        }
+//         public static int pop() {
+//             if(isEmpty()) {
+//                 return -1;
+//             }
+//             int top = head.data;
+//             head = head.next;
+//             return top;
+//         }
 
-        public static int peek() {
-            if(isEmpty()) {
-                return -1;
-            }
-            return head.data;
-        }
-    }
+//         public static int peek() {
+//             if(isEmpty()) {
+//                 return -1;
+//             }
+//             return head.data;
+//         }
+//     }
 
-    public static void main (String args[]) {
-        Stack s = new Stack();
-        s.push(1);
-        s.push(2);
-        s.push(3);
-        s.push(4);
-        s.push(5);
+//     public static void main (String args[]) {
+//         Stack s = new Stack();
+//         s.push(1);
+//         s.push(2);
+//         s.push(3);
+//         s.push(4);
+//         s.push(5);
 
-        while(!s.isEmpty()) {
-            System.out.println(s.peek());
-            s.pop();
-        }
-    }
-}
+//         while(!s.isEmpty()) {
+//             System.out.println(s.peek());
+//             s.pop();
+//         }
+//     }
+// }
     
 // //===================================================================================================
 // //===================================================================================================
@@ -3397,7 +3397,75 @@ public class stackclass {
 // //====================================================================================================
 // //====================================================================================================
 
+//  stack : -
 
+public class stackclass {
+    static class Node {
+        int data;
+        Node next;
+
+        // Constructor
+        public Node (int data) {
+            this.data = data;
+            next = null ;
+        }
+    }
+    static class Stack {
+        public static Node head;
+        // Method to check if the stack is empty.
+        public static boolean isEmpty() {
+            return head == null;
+        }
+
+        // Method to push (add) a new element onto the stack.
+        public static void push(int data) {
+            Node newNode = new Node (data);
+            if(isEmpty()) {
+                head = newNode;
+                return;
+            }
+
+            newNode.next = head;
+            head = newNode;
+        }
+
+        // Method to pop (remove) the top element from the stack.
+        public static int pop () {
+            if(isEmpty()) {
+                return -1;
+            }
+
+            int top = head.data;
+            head = head.next;
+            return top;
+        }
+
+        // Method to peek (view) the top element of the stack without removing it.
+        public static int peek () {
+            if(isEmpty()) {
+                return -1; // If stack is empty, return -1.
+            }
+
+            return head.data; // Return the data at the top of the stack.
+        }
+    }
+
+    // Main method to test the stack implementation.
+    public static void main (String args []) {
+        Stack s = new Stack();
+        // Push elements onto the stack.
+        s.push(1);
+        s.push(2);
+        s.push(3);
+        s.push(4);
+        s.push(5);
+
+        while(!s.isEmpty()) {
+            System.out.println(s.peek()); // Print the top element.
+            s.pop(); // Remove the top element.
+        }
+    }
+}
 
 
 
