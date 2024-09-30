@@ -3198,14 +3198,6 @@ public class second{
 
 // //===================================================================================================
 // //===================================================================================================
-
-// public class Solution {
-//     public boolean hasCycle(ListNode head) {
-
-    
-//     }
-// }
-
 // //====================================================================================================
 // //====================================================================================================
 
@@ -3319,7 +3311,6 @@ public class second{
 //             s.pop();
 //         }
 //     }
-
 // }
 
 // //===================================================================================================
@@ -3397,83 +3388,149 @@ public class second{
 // //====================================================================================================
 // //====================================================================================================
 
-//  stack : -
+// //  stack : -
 
-public class stackclass {
-    static class Node {
-        int data;
-        Node next;
+// public class stackclass {
+//     static class Node {
+//         int data;
+//         Node next;
 
-        // Constructor
-        public Node (int data) {
-            this.data = data;
-            next = null ;
-        }
-    }
-    static class Stack {
-        public static Node head;
-        // Method to check if the stack is empty.
-        public static boolean isEmpty() {
-            return head == null;
-        }
+//         // Constructor
+//         public Node (int data) {
+//             this.data = data;
+//             next = null ;
+//         }
+//     }
+//     static class Stack {
+//         public static Node head;
+//         // Method to check if the stack is empty.
+//         public static boolean isEmpty() {
+//             return head == null;
+//         }
 
-        // Method to push (add) a new element onto the stack.
-        public static void push(int data) {
-            Node newNode = new Node (data);
-            if(isEmpty()) {
-                head = newNode;
-                return;
-            }
+//         // Method to push new element on the stack.
+//         public static void push(int data) {
+//             Node newNode = new Node (data);
+//             if(isEmpty()) {
+//                 head = newNode;
+//                 return;
+//             }
 
-            newNode.next = head;
-            head = newNode;
-        }
+//             newNode.next = head;
+//             head = newNode;
+//         }
 
-        // Method to pop (remove) the top element from the stack.
-        public static int pop () {
-            if(isEmpty()) {
-                return -1;
-            }
+//         // Method to pop (remove) the top element from the stack.
+//         public static int pop () {
+//             if(isEmpty()) {
+//                 return -1;
+//             }
 
-            int top = head.data;
-            head = head.next;
-            return top;
-        }
+//             int top = head.data;
+//             head = head.next;
+//             return top;
+//         }
 
-        // Method to peek (view) the top element of the stack without removing it.
-        public static int peek () {
-            if(isEmpty()) {
-                return -1; // If stack is empty, return -1.
-            }
+//         // Method to peek (view) the top element of the stack without removing it.
+//         public static int peek () {
+//             if(isEmpty()) {
+//                 return -1; // If stack is empty, return -1.
+//             }
 
-            return head.data; // Return the data at the top of the stack.
-        }
-    }
+//             return head.data; // Return the data at the top of the stack.
+//         }
+//     }
 
-    // Main method to test the stack implementation.
-    public static void main (String args []) {
-        Stack s = new Stack();
-        // Push elements onto the stack.
+//     // Main method to test the stack implementation.
+//     public static void main (String args []) {
+//         Stack s = new Stack();
+//         // Push elements onto the stack.
+//         s.push(1);
+//         s.push(2);
+//         s.push(3);
+//         s.push(4);
+//         s.push(5);
+
+//         while(!s.isEmpty()) {
+//             System.out.println(s.peek()); // Print the top element.
+//             s.pop(); // Remove the top element.
+//         }
+//     }
+// }
+
+// //====================================================================================================
+// //====================================================================================================
+
+// // Stacks :- (By help of - ArrayList)  --------
+
+// import java.util.ArrayList;
+// public class StackClass {
+//     static class Stack {
+//         static ArrayList<Integer> list = new ArrayList<>();
+//         public static boolean isEmpty() {
+//             return list.size() == 0;
+//         }
+
+//         // push
+//         public static void push (int data) {
+//             list.add(data);
+//         }
+
+//         // pop
+//         public static int pop () {
+//             if(isEmpty()) {
+//                 return -1;
+//             }
+//             int top = list.get(list.size()-1);
+//             list.remove(list.size()-1);
+//             return top;
+//         }
+
+//         // peek 
+//         public static int peek () {
+//             if(isEmpty()) {
+//                 return -1;
+//             }
+
+//             return list.get(list.size()-1);
+//         }
+//     }
+
+//     public static void main (String args[]) {
+//         Stack s = new Stack();
+//         s.push(1);
+//         s.push(2);
+//         s.push(3);
+//         s.push(4);
+
+
+//         while(!s.isEmpty()) {
+//             System.out.println(s.peek());
+//             s.pop();
+//         }
+//     }
+// }
+
+// //===============================================================================================
+// //==================================================================================================
+
+// Stack :-  ( By collection framwork --)
+import java.util.*;
+
+public class StackClass {
+    public static void main(String args[]) {
+        Stack<Integer> s = new Stack<>();
         s.push(1);
         s.push(2);
         s.push(3);
         s.push(4);
-        s.push(5);
 
         while(!s.isEmpty()) {
-            System.out.println(s.peek()); // Print the top element.
-            s.pop(); // Remove the top element.
+            System.out.println(s.peek());
+            s.pop();
         }
     }
 }
-
-// //====================================================================================================
-// //====================================================================================================
-
-
-
-
-
 
 
 
