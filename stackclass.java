@@ -3600,7 +3600,6 @@ public class StackClass {
         s.push(3);
 
         reverse(s);
-        pushAtBottom(6,s);
 
         while(!s.isEmpty()) {
             System.out.println(s.peek());
