@@ -150,36 +150,36 @@
 // ======================================================================================================
 // ======================================================================================================
 
-// How to find prime number :-
+// // How to find prime number :-
 
-import java.util.Scanner;
-public  class Revise { 
-public static void main (String args[]) {
+// import java.util.Scanner;
+// public  class Revise { 
+// public static void main (String args[]) {
 
-    Scanner sc = new Scanner(System.in);
-    int n = sc.nextInt();
+//     Scanner sc = new Scanner(System.in);
+//     int n = sc.nextInt();
 
-    boolean isPrime = true;
-    if(n <= 1) {
-        System.out.println(n + " Is not a prime Number");
-        isPrime = false;
-    } else {
-        for(int i=2; i<= n/2 ; i++) {
-            if(n % i == 0) {
-                //System.out.println(n + " Is not a prime Number");
-                isPrime = false;
-                break;
-                }
-            }
-        }
+//     boolean isPrime = true;
+//     if(n <= 1) {
+//         System.out.println(n + " Is not a prime Number");
+//         isPrime = false;
+//     } else {
+//         for(int i=2; i<= n/2 ; i++) {
+//             if(n % i == 0) {
+//                 //System.out.println(n + " Is not a prime Number");
+//                 isPrime = false;
+//                 break;
+//                 }
+//             }
+//         }
 
-        if(isPrime) {
-            System.out.println(n + " Is a prime Number");
-        } else {
-            System.out.println(n + " Is not a prime Number");
-        }
-    }
-}
+//         if(isPrime) {
+//             System.out.println(n + " Is a prime Number");
+//         } else {
+//             System.out.println(n + " Is not a prime Number");
+//         }
+//     }
+// }
 
 
 
