@@ -511,8 +511,8 @@ public class Revise {
 
 public class Revise {
     public static void main (String args[]) {
-        int ram$ 24;
-        System.out.println(ram$);
+        int $ 24;
+        System.out.println($);
     }
 }
 
