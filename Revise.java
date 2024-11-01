@@ -205,6 +205,454 @@
 // ======================================================================================================
 // ======================================================================================================
 
+// public class Revise {
+//     public static void main (String args []) {
+//       int a = 3;
+//       int b = 34;
+//       System.out.println(a);
+
+//       String name = "Tony Stark";
+//       System.out.println(name);
+
+//       a = b;
+//       System.out.println(a);
+
+//     }
+// }
+
+// ======================================================================================================
+// ======================================================================================================
+
+
+// public class Revise {
+//     public static void main (String args []) {
+//     byte b = 8;
+//     System.out.println(b);
+//     char ch = 'a';
+//     System.out.println(ch);
+//     boolean var = false;
+//     float price = 10.5;
+//     int number = 25;
+//     //long
+//     //double
+//     short n = 324;
+
+//     }
+// }
+
+
+// ======================================================================================================
+// ======================================================================================================
+
+/* 
+
+// Code for add two number :- 
+public class Revise {
+    public static void main (String args []) {
+        int a = 10;
+        int b = 5;
+
+        int sum = a + b;
+        System.out.println(sum);
+
+    }
+}
+    */
+
+// ======================================================================================================
+// ======================================================================================================
+
+// import java.util.*;
+// public class Revise {
+//     public static void main (String args []) {
+//         Scanner sc = new Scanner (System.in);
+
+//         // String input = sc.nextLine();
+//         // System.out.println(input);
+
+//         // float price = sc.nextFloat();
+//         // System.out.println(price);
+
+
+//         // int a = sc.nextInt();
+//         // int b = sc.nextInt();
+
+//         // int sum = a + b;
+//         // int multiply = a * b;
+//         // System.out.println("Add of two number " + sum);
+//         // System.out.println("multiply of two number " + multiply);
+
+
+//         // float radius = sc.nextInt();
+//         // float area = 3.14f * radius * radius;
+//         // System.out.println(area);
+
+//     }
+// }
+
+// ======================================================================================================
+// ======================================================================================================
+
+// import java.util.*;
+// public class Revise {
+//     public static void main (String args []) {
+//         Scanner sc = new Scanner (System.in);
+//         // int a = 10;
+//         // long b = a;
+
+//         // long a = 10;
+//         // int b = a;
+//         // System.err.println(b);
+
+//         float number = sc.nextInt();
+//         System.out.println(number);
+
+//     }
+// }
+
+// // ======================================================================================================
+// // ======================================================================================================
+
+// import java.util.*;
+// public class Revise {
+//     public static void main (String args []) {
+//         Scanner sc = new Scanner (System.in);
+//        float a = 99.999f;
+//        int b = (int)a;
+
+//        System.out.println(b);
+
+//     }
+// }
+
+// ======================================================================================================
+// ======================================================================================================
+
+// public class Revise {
+//     public static void main (String args []) {
+//        char ch = 'a';
+//        char ch2 = 'b';
+//         char ch3 = 'd';
+
+//        int number = ch;
+//        int number2 = ch2;
+//        int number3 = ch3;
+//        System.out.println(number);
+//        System.out.println(number2);
+//        System.out.println(number3);
+
+//     }
+// }
+
+// ======================================================================================================
+// ======================================================================================================
+
+// public class Revise {
+//     public static void main (String args []) {
+//        char a = 'a';
+//        char b = 'b';
+//       char c = a - b;
+//     //    System.out.println((int)(b));
+//     //    System.out.println((int)(a));
+//     System.out.println(a);
+//        System.out.println(b-a);
+
+//     }
+// }
+
+
+// // ======================================================================================================
+// // ======================================================================================================
+
+// public class Revise {
+//     public static void main (String args []) {
+//      short a = 5;
+//      byte b = 25;
+//      char c = 'c';
+//      byte bt = (byte)(a + b + c);
+//         System.out.println(bt);
+//     }
+// }
+
+
+// ======================================================================================================
+// ======================================================================================================
+
+// public class Revise {
+//     public static void main (String args []) {
+//     int a = 10;
+//     float b = 20.25f;
+//     long c = 25;
+//     double d = 30;
+//     double ans = a + b + c + d;
+//     System.out.println(ans);
+
+//     }
+// }
+
+
+// ======================================================================================================
+// ======================================================================================================
+
+// public class Revise {
+//     public static void main (String args []) {
+//    byte b = 5 ;
+//    byte a = (byte) (b * 2);
+//    System.out.println(a);
+
+//     }
+// }
+
+// ======================================================================================================
+// ======================================================================================================
+// ======================================================================================================
+// ======================================================================================================
+
+// import java.util.*;
+
+// public class Revise {
+//     public static void main (String args []) {
+//     Scanner sc = new Scanner (System.in);
+//     int a = sc.nextInt();
+//     int b = sc.nextInt();
+//     int c = sc.nextInt();
+
+//     int sum = a + b + c;
+//     int avg = sum / 3 ;
+//     System.out.println(avg);
+        
+//     }
+// }
+
+// // ======================================================================================================
+// // ======================================================================================================
+// // :Inaprogram,input3numbers:A,BandC.Youhavetooutputtheaverageofthese 3 numbers
+// import java.util.*;
+
+// public class Revise {
+//     public static void main (String args []) {
+//     Scanner sc = new Scanner (System.in);
+//     int n = sc.nextInt();
+   
+//         int sum = 0;
+//         for(int i=1; i<=n; i++) {
+//             int num = sc.nextInt();
+//             sum = sum + num;
+//         }
+//          int avg = sum / n;       
+        
+//          System.out.println(avg);
+//     }
+// }
+
+// // ======================================================================================================
+// // ======================================================================================================
+// // 2:In a program,input the side of asquare. You have to out put the area of the square
+// import java.util.*;
+// public class Revise {
+//     public static void main (String args []) {
+//    Scanner sc = new Scanner (System.in);
+//         int side = sc.nextInt();
+//         int area = side * side;
+
+//         System.out.println(area);
+
+//     }
+// }
+
+// // ======================================================================================================
+// // ======================================================================================================
+// // Importent Question :-
+
+// // 2: In a program,input the side of asquare. You have to out put the area of the square
+// import java.util.*;
+// public class Revise {
+//     public static void main (String args []) {
+//    Scanner sc = new Scanner (System.in);
+//       float pencil = sc.nextFloat();
+//       float pen = sc.nextFloat();
+//       float eraser = sc.nextFloat();
+
+//       double total_bill = pencil + pen + eraser;
+//       System.out.println(" Total = " + total_bill);
+
+//       double avg = total_bill / 3;
+//       System.out.println("Avg = " + avg);
+
+//       //  Adding 18% gst tax to the items in the bill
+//         double GST = total_bill * 18 / 100;
+//         System.out.println("Total GST = " + GST);
+
+//         double Final_amount = total_bill + GST;
+//         System.out.println("Total Amount + GST = " + Final_amount);
+//     }
+// }
+
+// // ======================================================================================================
+// // ======================================================================================================
+// What will be the type of result in thefollowing Java code?
+
+// public class Revise {
+//     public static void main (String args[]) {
+//         byte b = 4;
+//         char c = 'a';
+//         short s = 512;
+//         int i = 1000;
+//         float f = 3.14f;
+//         double d = 99.9954;
+
+//         double result = (f * b) + (i % c) - (d * s);
+//         System.out.println(result);
+//     }
+// }
+
+// // ======================================================================================================
+// // ======================================================================================================
+
+public class Revise {
+    public static void main (String args[]) {
+        int ram$ 24;
+        System.out.println(ram$);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
