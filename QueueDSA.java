@@ -3705,72 +3705,72 @@ public class second{
 // //======================================================================================================
 // //======================================================================================================
 
-// Queue data structer :-
+// // Queue data structer :-
 
-public class Queue {
-    static class Queue {
-        private int arr[];
-        private int size;
-        private int rear = -1;
+// public class QueueDSA {
+//     static class Queue {
+//         private int arr[];
+//         private int size;
+//         private int rear = -1;
         
-        Queue(int size) {
-            arr = new int[size]; 
-            this.size = size;   
-        }
+//         Queue(int size) {
+//             arr = new int[size]; 
+//             this.size = size;   
+//         }
         
-        public boolean isEmpty() {
-            return rear == -1;
-        }
+//         public boolean isEmpty() {
+//             return rear == -1;
+//         }
         
-        // Enqueue :- O(1)
-        public void add(int data) {
-            if (rear == size - 1) {
-                System.out.println("Full Queue"); 
-                return;
-            }
-            rear++;
-            arr[rear] = data;
-        }
+//         // Enqueue :- O(1)
+//         public void add(int data) {
+//             if (rear == size - 1) {
+//                 System.out.println("Full Queue"); 
+//                 return;
+//             }
+//             rear++;
+//             arr[rear] = data;
+//         }
         
-        // Dequeue :- O(n)
-        public int remove() {
-            if (isEmpty()) {
-                System.out.println("Empty Queue"); 
-                return -1;
-            }
+//         // Dequeue :- O(n)
+//         public int remove() {
+//             if (isEmpty()) {
+//                 System.out.println("Empty Queue"); 
+//                 return -1;
+//             }
             
-            int front = arr[0];
-            for (int i = 0; i < rear; i++) {
-                arr[i] = arr[i + 1];
-            }
-            rear--;
-            return front;
-        }
+//             int front = arr[0];
+//             for (int i = 0; i < rear; i++) {
+//                 arr[i] = arr[i + 1];
+//             }
+//             rear--;
+//             return front;
+//         }
         
-        // Peek :- O(n)
-        public int peek() {
-            if (isEmpty()) {
-                System.out.println("Empty Queue"); 
-                return -1;
-            }
-            return arr[0];
-        }
-    }
+//         // Peek :- O(n)
+//         public int peek() {
+//             if (isEmpty()) {
+//                 System.out.println("Empty Queue"); 
+//                 return -1;
+//             }
+//             return arr[0];
+//         }
+//     }
 
-    public static void main(String args[]) {
-        Queue q = new Queue(8);
-        q.add(1);
-        q.add(2);
-        q.add(3);
-        q.add(4);
-        q.add(5);
+//     public static void main(String args[]) {
+//         Queue q = new Queue(8);
+//         q.add(1);
+//         q.add(2);
+//         q.add(3);
+//         q.add(4);
+        
 
-        while (!q.isEmpty()) {
-            System.out.println(q.peek());
-            q.remove();
-        } 
-    }
-}
+//         while (!q.isEmpty()) {
+//             System.out.println(q.peek());
+//             q.remove();
+//         } 
+//     }
+// }
 
 // //======================================================================================================
 // //======================================================================================================
@@ -3794,7 +3794,80 @@ public class Queue {
 
 
 
+public class QueueDSA {
+    static class Queue {
+        static int arr[];
+        static int size;
+        static int rear = -1;
+        static int  front = -1;
+        
+        Queue(int size) {
+            arr = new int[size]; 
+            this.size = size;   
+        }
+        
+        public boolean isEmpty() {
+            return rear == -1 && front == -1;
+        }
 
+        public static boolean isFull() {
+            return (rear+1) % size == front;
+        }
+        
+        // Enqueue :- O(1)
+        public void add(int data) {
+            if (isFull()) {
+                System.out.println("Full Queue"); 
+                return;
+            }
+            // 1st element add 
+            if(front == -1) {
+                front = 0;
+            }
+            rear = (rear + 1) % size;
+            arr[rear] = data;
+        }
+        
+        // Dequeue :- O(n)
+        public int remove() {
+            if (isEmpty()) {
+                System.out.println("Empty Queue"); 
+                return -1;
+            }
+            
+            int result = arr[front];
+            if(rear == front) {
+                rear = front = -1;
+            } else { 
+                front = (front + 1) % size;
+            }
+            return result;
+        }
+        
+        // Peek :- O(n)
+        public int peek() {
+            if (isEmpty()) {
+                System.out.println("Empty Queue"); 
+                return -1;
+            }
+            return arr[0];
+        }
+    }
+
+    public static void main(String args[]) {
+        Queue q = new Queue(8);
+        q.add(1);
+        q.add(2);
+        q.add(3);
+        q.add(4);
+        
+
+        while (!q.isEmpty()) {
+            System.out.println(q.peek());
+            q.remove();
+        } 
+    }
+}
 
 
 
