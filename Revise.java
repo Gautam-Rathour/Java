@@ -598,6 +598,62 @@ public class Revise {
 // ======================================================================================================
 // ======================================================================================================
 
+// // Find Armstrong num :-
+// public class Revise {
+//     public static boolean isArmstrong(int n) {
+//         int copyN = n;
+//         int sumofCube = 0;
+        
+//         while(n != 0) {
+//             int digit = n % 10;
+//             System.out.println(digit);
+//             sumofCube += digit * digit * digit;
+
+//             n = n / 10;
+//         }
+//        return sumofCube == copyN;
+//     }
+//     public static void main (String args[]) {
+//         int n = 111;
+
+//         if(isArmstrong(n)) {
+//             System.out.println("Yes it is Armstrong num");
+//         } else {
+//             System.out.println("No it is not Armstrong num");
+//         }
+//     }
+// }
+
+// ======================================================================================================
+// ======================================================================================================
+
+// // Find the GCD :-
+// public class Revise {
+
+//     // public static int GCD (int a, int b) {
+//     //     while(a > 0 && b > 0) {
+//     //         if(a > b) {
+//     //             a = a % b;
+//     //         } else {
+//     //             b = b % a;
+//     //         }
+//     //     }
+//     //     return(a == 0) ? b : a;
+//     // }
+
+//     // Find GCD by Recursion :-
+//     public static int gcdrecursion (int a , int b) {
+//         if(b == 0) return a;
+
+//         return gcdrecursion (b , a % b);
+//     }
+//     public static void main (String args []) {
+//         // System.out.println(GCD(60,10));
+//         System.out.println(gcdrecursion(60,200));
+//     }
+// }
+// ======================================================================================================
+// Find the CD :- 
 
 
 
@@ -609,15 +665,29 @@ public class Revise {
 
 
 
+// ======================================================================================================
+// ======================================================================================================
 
+// Find the LCM :- 
 
+public class Revise {
 
+    // Find GCD by Recursion :-
+    public static int gcdrecursion (int a , int b) {
+        if(b == 0) return a;
 
-
-
-
-
-
+        return gcdrecursion (b , a % b);
+    }
+    // Find LCM :- 
+    public static int LCM (int a , int b) {
+        int gcd = gcdrecursion(a , b);
+        return (a * b) / gcd;
+    }
+    public static void main (String args []) {
+        // System.out.println(GCD(60,10));
+        System.out.println(LCM(60,200));
+    }
+}
 
 
 
