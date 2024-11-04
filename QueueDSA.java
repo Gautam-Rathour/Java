@@ -3792,75 +3792,241 @@ public class second{
 // //======================================================================================================
 // //======================================================================================================
 
+// circular Queue data Stracture :-
 
+// public class QueueDSA {
+//     static class Queue {
+//         static int arr[];
+//         static int size;
+//         static int rear = -1;
+//         static int  front = -1;
+        
+//         Queue(int size) {
+//             arr = new int[size]; 
+//             this.size = size;   
+//         }
+        
+//         public boolean isEmpty() {
+//             return rear == -1 && front == -1;
+//         }
 
-public class QueueDSA {
-    static class Queue {
-        static int arr[];
-        static int size;
-        static int rear = -1;
-        static int  front = -1;
+//         public static boolean isFull() {
+//             return (rear+1) % size == front;
+//         }
         
-        Queue(int size) {
-            arr = new int[size]; 
-            this.size = size;   
-        }
+//         // Enqueue :- O(1)
+//         public void add(int data) {
+//             if (isFull()) {
+//                 System.out.println("Full Queue"); 
+//                 return;
+//             }
+//             // 1st element add 
+//             if(front == -1) {
+//                 front = 0;
+//             }
+//             rear = (rear + 1) % size;
+//             arr[rear] = data;
+//         }
         
-        public boolean isEmpty() {
-            return rear == -1 && front == -1;
-        }
-
-        public static boolean isFull() {
-            return (rear+1) % size == front;
-        }
-        
-        // Enqueue :- O(1)
-        public void add(int data) {
-            if (isFull()) {
-                System.out.println("Full Queue"); 
-                return;
-            }
-            // 1st element add 
-            if(front == -1) {
-                front = 0;
-            }
-            rear = (rear + 1) % size;
-            arr[rear] = data;
-        }
-        
-        // Dequeue :- O(n)
-        public int remove() {
-            if (isEmpty()) {
-                System.out.println("Empty Queue"); 
-                return -1;
-            }
+//         // Dequeue :- O(n)
+//         public int remove() {
+//             if (isEmpty()) {
+//                 System.out.println("Empty Queue"); 
+//                 return -1;
+//             }
             
-            int result = arr[front];
-            if(rear == front) {
-                rear = front = -1;
-            } else { 
-                front = (front + 1) % size;
-            }
-            return result;
-        }
+//             int result = arr[front];
+//             if(rear == front) {
+//                 rear = front = -1;
+//             } else { 
+//                 front = (front + 1) % size;
+//             }
+//             return result;
+//         }
         
-        // Peek :- O(n)
-        public int peek() {
-            if (isEmpty()) {
-                System.out.println("Empty Queue"); 
+//         // Peek :- O(n)
+//         public int peek() {
+//             if (isEmpty()) {
+//                 System.out.println("Empty Queue"); 
+//                 return -1;
+//             }
+//             return arr[0];
+//         }
+//     }
+
+//     public static void main(String args[]) {
+//         Queue q = new Queue(8);
+//         q.add(1);
+//         q.add(2);
+//         q.add(3);
+//         q.add(4);
+//         q.add(5);
+        
+
+//         while (!q.isEmpty()) {
+//             System.out.println(q.peek());
+//             q.remove();
+//         } 
+//     }
+// }
+
+// //======================================================================================================
+// //======================================================================================================
+
+// // Queue data Strecture by help of  ( LinkedList ) :-
+
+// public class QueueDSA {
+//     static class Node {
+//         int data;
+//         Node next;
+
+//         Node (int data) {
+//             this.data = data;
+//             next = null;
+//         }
+//     }
+//     static class Queue {
+//        static Node head = null;
+//        static Node tail = null;
+        
+//           public boolean isEmpty() {
+//             return head == null && tail == null;
+//         }
+
+//         // Enqueue :- O(1)
+//         public void add(int data) {
+//             Node newNode = new Node (data);
+//             if(tail == null) {
+//                 tail = head = newNode;
+//                 return;
+//             }
+//             tail.next = newNode;
+//             tail = newNode;
+//         }
+
+//         // Dequeue :- O(n)
+//         public int remove() {
+//             if (isEmpty()) {
+//                 System.out.println("Empty Queue"); 
+//                 return -1;
+//             }
+           
+//             int front = head.data;
+//             if(head == tail) {
+//                 tail = null;
+//             }
+//             head = head.next;
+
+//             return front;
+//         }
+        
+//         // Peek :- O(n)
+//         public int peek() {
+//             if (isEmpty()) {
+//                 System.out.println("Empty Queue"); 
+//                 return -1;
+//             }
+            
+//             return head.data;
+//         }
+//     }
+
+//     public static void main(String args[]) {
+//         Queue q = new Queue();
+//         q.add(1);
+//         q.add(2);
+//         q.add(3);
+//         q.add(4);
+//         q.add(5);
+        
+
+//         while (!q.isEmpty()) {
+//             System.out.println(q.peek());
+//             q.remove();
+//         } 
+//     }
+// }
+
+// ======================================================================================================
+// ======================================================================================================
+
+// // Queue by help of Collection Framework :-
+
+// import java.util.*;
+// public class QueueDSA { 
+//     public static void main(String args[]) {
+//         //Queue q = new Queue();
+//         // Queue <Integer> q = new LinkedList<>();
+//         Queue <Integer> q = new ArrayDeque<>();
+//         q.add(1);
+//         q.add(2);
+//         q.add(3);
+//         q.add(4);
+//         q.add(5);
+        
+
+//         while (!q.isEmpty()) {
+//             System.out.println(q.peek());
+//             q.remove();
+//         } 
+//     }
+// }
+
+// ======================================================================================================
+// ======================================================================================================
+
+// Queue  :-
+
+import java.util.*;
+public class QueueDSA { 
+    static class Queue {
+        static Stack<Integer> s1 = new Stack<>();
+        static Stack<Integer> s2 = new Stack<>();
+
+        public static boolean isEmpty() {
+            return s1.isEmpty();
+        }
+
+        public static void add (int data) {
+            while(!s1.isEmpty()) {
+                s2.push(s1.pop());
+            }
+
+            s1.push(data);
+
+            while(!s2.isEmpty()) {
+                s1.push(s2.pop());
+            }
+        }
+
+        public static int remove () {
+            if(isEmpty()) {
+                System.out.println("Empty Queue");
                 return -1;
             }
-            return arr[0];
+            return s1.pop();
+        }
+
+        public static int peek() {
+            if(isEmpty()) {
+                System.out.println("Empty Queue");
+                return -1;
+            }
+            return s1.peek();
         }
     }
-
     public static void main(String args[]) {
-        Queue q = new Queue(8);
+        //Queue q = new Queue();
+        // Queue <Integer> q = new LinkedList<>();
+        // Queue <Integer> q = new ArrayDeque<>();
+        Queue q = new Queue();
         q.add(1);
         q.add(2);
         q.add(3);
         q.add(4);
-        
+        q.add(5);
+        q.add(6);
+
 
         while (!q.isEmpty()) {
             System.out.println(q.peek());
@@ -3868,6 +4034,20 @@ public class QueueDSA {
         } 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

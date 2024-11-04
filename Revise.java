@@ -670,26 +670,49 @@ public class Revise {
 
 // Find the LCM :- 
 
+// public class Revise {
+
+//     // Find GCD by Recursion :-
+//     public static int gcdrecursion (int a , int b) {
+//         if(b == 0) return a;
+
+//         return gcdrecursion (b , a % b);
+//     }
+//     // Find LCM :- 
+//     public static int LCM (int a , int b) {
+//         int gcd = gcdrecursion(a , b);
+//         return (a * b) / gcd;
+//     }
+//     public static void main (String args []) {
+//         // System.out.println(GCD(60,10));
+//         System.out.println(LCM(60,200));
+//     }
+// }
+
+// ======================================================================================================
+// ======================================================================================================
+
+// Reverse a number :-
 public class Revise {
-
-    // Find GCD by Recursion :-
-    public static int gcdrecursion (int a , int b) {
-        if(b == 0) return a;
-
-        return gcdrecursion (b , a % b);
-    }
-    // Find LCM :- 
-    public static int LCM (int a , int b) {
-        int gcd = gcdrecursion(a , b);
-        return (a * b) / gcd;
-    }
     public static void main (String args []) {
-        // System.out.println(GCD(60,10));
-        System.out.println(LCM(60,200));
+        int reverse(int n) {
+            int revNum = 0;
+
+            while(n != 0) {
+                int dig = n % 10;
+
+                if(revNum > INT_MAX || revNum > INT_MIN) {
+                    return 0;
+                }
+                
+                revNum = revNum * 10 + dig;
+                n = n / 10; 
+            }
+
+            System.out.println(revNum);
+        }
     }
-}
-
-
+}  
 
 
 
