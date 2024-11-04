@@ -788,31 +788,50 @@ public class Revise {
 // ======================================================================================================
 // ======================================================================================================
 
-import java.util.*;
-public class Revise {
-    public static void main (String args[]) {
-        Scanner sc = new Scanner (System.in);
-        int inc = sc.nextInt();
-        int tex = 0;
+// import java.util.*;
+// public class Revise {
+//     public static void main (String args[]) {
+//         Scanner sc = new Scanner (System.in);
+//         int inc = sc.nextInt();
+//         int tex = 0;
 
-        if(inc < 500000) {
-            tex = 0;
-        } else if (inc >= 500000 && inc <= 1000000) {
-            tex = (int)(inc * (0.2));
-        } else {
-            tex = (int)(inc * 0.3);
+//         if(inc < 500000) {
+//             tex = 0;
+//         } else if (inc >= 500000 && inc <= 1000000) {
+//             tex = (int)(inc * (0.2));
+//         } else {
+//             tex = (int)(inc * 0.3);
 
-        }
-        System.out.println("Your tax is = " + tex);
+//         }
+//         System.out.println("Your tax is = " + tex);
         
-    }
-}
+//     }
+// }
 
 // ======================================================================================================
 // ======================================================================================================
 
+// import java.util.*;
+// public class Revise {
+//     public static void main (String args[]) {
+//         Scanner sc = new Scanner (System.in);
+//        int a = 11;
+//        int b = 9;
+//        int c = 6;
+
+//        if (a >= b && a >= c) {
+//         System.out.println("A is greater");
+//        } else if (b >= c) {
+//         System.out.println("B is greater");
+//        } else {
+//         System.out.println("C is greater");
+//        }
+//     }
+// }
 
 
+// ======================================================================================================
+// ======================================================================================================
 
 
 
