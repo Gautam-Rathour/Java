@@ -769,26 +769,47 @@ public class Revise {
 // ======================================================================================================
 // ======================================================================================================
 
+// import java.util.*;
+// public class Revise {
+//     public static void main (String args[]) {
+//         Scanner sc = new Scanner (System.in);
+//         int age = sc.nextInt();
+        
+//         if(age >= 18) {
+//             System.out.println("Adult");
+//         } else if (age >= 13) {
+//             System.out.println("Teenager");
+//         } else {
+//             System.out.println("Child");
+//         }
+//     }
+// }
+
+// ======================================================================================================
+// ======================================================================================================
+
 import java.util.*;
 public class Revise {
     public static void main (String args[]) {
         Scanner sc = new Scanner (System.in);
-        int age = sc.nextInt();
-        
-        if(age >= 18) {
-            System.out.println("Adult");
-        } else if (age >= 13) {
-            System.out.println("Teenager");
+        int inc = sc.nextInt();
+        int tex = 0;
+
+        if(inc < 500000) {
+            tex = 0;
+        } else if (inc >= 500000 && inc <= 1000000) {
+            tex = (int)(inc * (0.2));
         } else {
-            System.out.println("Child");
+            tex = (int)(inc * 0.3);
+
         }
+        System.out.println("Your tax is = " + tex);
+        
     }
 }
 
-
-
-
-
+// ======================================================================================================
+// ======================================================================================================
 
 
 
