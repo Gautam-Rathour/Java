@@ -693,39 +693,97 @@ public class Revise {
 // ======================================================================================================
 
 // Reverse a number :-
-public class Revise {
-    public static void main (String args []) {
-        int reverse(int n) {
-            int revNum = 0;
+// public class Revise {
+//     public static void main (String args []) {
+//         int reverse(int n) {
+//             int revNum = 0;
 
-            while(n != 0) {
-                int dig = n % 10;
+//             while(n != 0) {
+//                 int dig = n % 10;
 
-                if(revNum > INT_MAX || revNum > INT_MIN) {
-                    return 0;
-                }
+//                 if(revNum > INT_MAX || revNum > INT_MIN) {
+//                     return 0;
+//                 }
                 
-                revNum = revNum * 10 + dig;
-                n = n / 10; 
-            }
+//                 revNum = revNum * 10 + dig;
+//                 n = n / 10; 
+//             }
 
-            System.out.println(revNum);
+//             System.out.println(revNum);
+//         }
+//     }
+// }  
+
+// ======================================================================================================
+// ======================================================================================================
+
+// public class Revise {
+//     public static void main (String args[]) {
+//         int age = 15;
+//         if(age > 18) {
+//             System.out.println("He/She is adult : drive , vote");
+//         } 
+//         if( age > 13 && age < 18) {
+//             System.out.println("He/She is teenager : study");
+//         }
+//         else {
+//             System.out.println("He/She is not adult : not drive , not vote");
+//         }
+//     }
+// }
+
+// ======================================================================================================
+// ======================================================================================================
+
+// public class Revise {
+//     public static void main (String args[]) {
+
+//         int a = 23;
+//         int b = 53;
+//         if(a >= b) {
+//             System.out.println("A is gratter");
+//         } 
+//         else {
+//             System.out.println("B is gratter");
+//         }
+//     }
+// }
+
+// ======================================================================================================
+// ======================================================================================================
+// import java.util.*;
+// public class Revise {
+//     public static void main (String args[]) {
+//         Scanner sc = new Scanner (System.in);
+//         int n = sc.nextInt();
+
+//         if(n % 2 == 0) {
+//             System.out.println("Even Number");
+//         } 
+//         else {
+//             System.out.println("Odd Number");
+//         }
+//     }
+// }
+
+// ======================================================================================================
+// ======================================================================================================
+
+import java.util.*;
+public class Revise {
+    public static void main (String args[]) {
+        Scanner sc = new Scanner (System.in);
+        int age = sc.nextInt();
+        
+        if(age >= 18) {
+            System.out.println("Adult");
+        } else if (age >= 13) {
+            System.out.println("Teenager");
+        } else {
+            System.out.println("Child");
         }
     }
-}  
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
 
