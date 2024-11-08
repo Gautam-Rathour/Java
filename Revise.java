@@ -1254,49 +1254,134 @@ public class Revise {
 // // =======================================================================================================
 // // =======================================================================================================
 
-import java.util.*;
-public class Revise {
-    public static void main (String args[]) {
-        Scanner sc = new Scanner (System.in);
-        int num = sc.nextInt();
+// import java.util.*;
+// public class Revise {
+//     public static void main (String args[]) {
+//         Scanner sc = new Scanner (System.in);
+//         int num = sc.nextInt();
 
-        boolean isPrime = true;
+//         boolean isPrime = true;
 
-         if(num <= 1) {
-                isPrime = false;
-            }
+//          if(num <= 1) {
+//                 isPrime = false;
+//             }
 
-        for(int i=2; i <= num/2; i++) {
+//         for(int i=2; i <= num/2; i++) {
            
 
 
-            if(num % i == 0) {
-                isPrime = false;
-                break;
-            }
-        }
+//             if(num % i == 0) {
+//                 isPrime = false;
+//                 break;
+//             }
+//         }
         
-        if(isPrime) {
-            System.out.println("This number is prime ");
-        } else {
-            System.out.println("This number is not prime ");
+//         if(isPrime) {
+//             System.out.println("This number is prime ");
+//         } else {
+//             System.out.println("This number is not prime ");
+//         }
+//     }
+// }
+
+
+// // =======================================================================================================
+// // =======================================================================================================
+
+// public class Revise {
+//     public static void main (String[]args){
+//         for(int i=0; i<5; i++) {
+//             System.out.println("Hello");
+//             i+=2;
+//         }
+//     }
+// }
+
+// // =======================================================================================================
+// // =======================================================================================================
+// Write a program that reads a set of integers , and then prints the sum of the even and odd integers
+
+// import java.util.*;
+// public class Revise {
+//     public static void main (String[]args){
+//         Scanner sc = new Scanner (System.in);
+
+//         int odd = 0;
+//         int even = 0;
+
+//         for(int i=1; i<=4; i++) {
+//             int number = sc.nextInt();
+
+//             if(number % 2 == 0) {
+//                 even += number;
+//             }
+//             if(number % 2 == 1) {
+//                 odd += number;
+//             }   
+//         }
+//         System.out.println("Sum of even numbers is: " + even);
+//         System.out.println("Sum of odd numbers is: " + odd);
+//     }
+// }
+
+// // =======================================================================================================
+// // =======================================================================================================
+
+// //  Factorial
+
+// import java.util.*;
+
+// public class Revise {
+//     public static void main (String[]args){
+//         Scanner sc = new Scanner(System.in);
+//         int num = sc.nextInt();
+//         int factorial = 1;
+
+//         for(int i=num; i>=1; i--) {
+//             factorial *= i;  
+//         }
+
+//         System.out.println(factorial);
+//     }
+// }
+
+// // =======================================================================================================
+// // =======================================================================================================
+
+// //  Table :-
+
+// import java.util.*;
+
+// public class Revise {
+//     public static void main (String[]args){
+//         Scanner sc = new Scanner(System.in);
+//         int num = sc.nextInt();
+//         int multiplaction = 0;
+        
+
+//         for(int i=1; i<=10; i++) {
+//             multiplaction = num * i;
+//             System.out.println("5 * " + i + " = "  + multiplaction);
+//         }  
+//     }
+// }
+
+// // =======================================================================================================
+// // =======================================================================================================
+
+// Question :- 
+
+public class Revise {
+    public static void main (String[]args){
+
+        for(int i=1; i<=5; i++) {
+            System.out.println("i = " + i);
         }
     }
 }
 
-
 // // =======================================================================================================
 // // =======================================================================================================
-
-
-
-
-
-
-
-
-
-
 
 
 
