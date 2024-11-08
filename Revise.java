@@ -1134,37 +1134,122 @@ public class Revise {
 // // ======================================================================================================
 // // ======================================================================================================
 
+// // Loops :- 
+
+// import java.util.*;
+// public class Revise {
+//     public static void main (String args[]) {
+//         Scanner sc = new Scanner(System.in);
+//         int num = 10899;
+
+//         int rev = 0;
+//         while(num != 0) {
+//             int rem = num % 10;
+//             System.out.print(rem + " ");
+
+//             rev = rev * 10 + rem;
+
+//             num = num / 10;
+
+//         } 
+//        System.out.println();   
+//        System.out.println(rev);
+//     }
+// }
+
+// // =======================================================================================================
+// // =======================================================================================================
+
+
+// // Loops :- 
+
+// import java.util.*;
+// public class Revise {
+//     public static void main (String args[]) {
+//         Scanner sc = new Scanner(System.in);
+//         int n = 1;
+
+//         do{
+//             System.out.println(n + ". hello");
+//             n++;
+//         } while(n <= 10);
+//         } 
+   
+//     }
+
+
+// // =======================================================================================================
+// // =======================================================================================================
+
+// // Loops :- 
+
+// import java.util.*;
+// public class Revise {
+//     public static void main (String args[]) {
+//         Scanner sc = new Scanner(System.in);
+//         int n = 1;
+
+//         for(int i=1; i<=10; i++) {
+//             if(i == 5) {
+//                 break;
+//             }
+//             System.out.println(i + ". hello");
+//         }
+   
+//     }
+// }
+
+// // // =======================================================================================================
+// // // =======================================================================================================
+
+// // Loops :- 
+
+// import java.util.*;
+// public class Revise {
+//     public static void main (String args[]) {
+//         Scanner sc = new Scanner(System.in);
+        
+
+//         do{
+//             System.out.print("Enter Your Number :  ");
+//             int n = sc.nextInt();
+//             if(n % 10 == 0) {
+//                 break;
+//             }
+//             System.out.println("You enterd this number :- " + n);
+
+//         } while(true);
+
+//         System.out.println("You are out from this loop.");
+        
+   
+//     }
+// }
+
+// // =======================================================================================================
+// // =======================================================================================================
+
 // Loops :- 
 
 import java.util.*;
 public class Revise {
     public static void main (String args[]) {
         Scanner sc = new Scanner(System.in);
-        int num = 10899;
+        
 
-        int rev = 0;
-        while(num != 0) {
-            int rem = num % 10;
-            System.out.print(rem + " ");
+        do{
+            System.out.print("Enter Your Number :  ");
+            int n = sc.nextInt();
+            if(n % 10 == 0) {
+                continue;
+            }
+            System.out.println("You enterd this number :- " + n);
 
-            rev = rev * 10 + rem;
-
-            num = num / 10;
-
-        } 
-       System.out.println();   
-       System.out.println(rev);
+        } while(true);
+        
+   
     }
 }
-
-// // =======================================================================================================
-// // =======================================================================================================
-
-
-
-
-
-
 
 
 
