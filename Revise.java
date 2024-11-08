@@ -1231,31 +1231,62 @@ public class Revise {
 
 // Loops :- 
 
+// import java.util.*;
+// public class Revise {
+//     public static void main (String args[]) {
+//         Scanner sc = new Scanner(System.in);
+        
+
+//         do{
+//             System.out.print("Enter Your Number :  ");
+//             int n = sc.nextInt();
+//             if(n % 10 == 0) {
+//                 continue;
+//             }
+//             System.out.println("You enterd this number :- " + n);
+
+//         } while(true);
+        
+   
+//     }
+// }
+
+// // =======================================================================================================
+// // =======================================================================================================
+
 import java.util.*;
 public class Revise {
     public static void main (String args[]) {
-        Scanner sc = new Scanner(System.in);
-        
+        Scanner sc = new Scanner (System.in);
+        int num = sc.nextInt();
 
-        do{
-            System.out.print("Enter Your Number :  ");
-            int n = sc.nextInt();
-            if(n % 10 == 0) {
-                continue;
+        boolean isPrime = true;
+
+         if(num <= 1) {
+                isPrime = false;
             }
-            System.out.println("You enterd this number :- " + n);
 
-        } while(true);
+        for(int i=2; i <= num/2; i++) {
+           
+
+
+            if(num % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
         
-   
+        if(isPrime) {
+            System.out.println("This number is prime ");
+        } else {
+            System.out.println("This number is not prime ");
+        }
     }
 }
 
+
 // // =======================================================================================================
 // // =======================================================================================================
-
-
-
 
 
 
