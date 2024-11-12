@@ -1691,25 +1691,217 @@ public class Revise {
 //     }
 // }
 
+// // =======================================================================================================
+// // =======================================================================================================
+
+// public class Revise {
+//     public static void printHello() {
+
+//         System.out.println("Hello");  
+//         System.out.println("Hello"); 
+//         System.out.println("Hello");  
+//     }
+//     public static void main (String args[]) {
+//         printHello();
+
+//     }  
+// }
+
+// // =======================================================================================================
+// // =======================================================================================================
+
+// import java.util.*;
+// public class Revise {
+//     public static int addTwoNum(int a , int b) {
+//         int sum = a + b;
+//         return sum;
+//     }
+//     public static void main (String args[]) {
+//         Scanner sc = new Scanner (System.in);
+//         int a = sc.nextInt();
+//         int b = sc.nextInt();
+
+//         int sum = addTwoNum(a,b);
+//         System.out.println("Sum of = " + sum);
+
+//     }  
+// }
+
+// // =======================================================================================================
+// // =======================================================================================================
+
+// import java.util.*;
+// public class Revise {
+//     public static void swap(int a , int b) {
+//         int temp = a; 
+//             a = b;
+//             b = temp;
+
+//             System.out.println("This is the value of a = " + a);
+//             System.out.println("This is the value of b = " + b);
+//     }
+//     public static void main (String args[]) {
+//         Scanner sc = new Scanner (System.in);
+//         int a = 5;
+//         int b = 7;
+
+//         swap(a,b);
+//     }  
+// }
+
+// // =======================================================================================================
+// // =======================================================================================================
+
+// import java.util.*;
+// public class Revise {
+//     public static int multipleTwoNum(int a , int b) {
+//         int multipl = a * b;
+//         System.out.println(multipl);
+//         return multipl;
+//     }
+//     public static void main (String args[]) {
+//         Scanner sc = new Scanner (System.in);
+//         int a = 7;
+//         int b = 7;
+
+//         multipleTwoNum(a,b);
+//     }  
+// }
+
+// // =======================================================================================================
+// // =======================================================================================================
+
+// import java.util.*;
+// public class Revise {
+//     public static int factorial(int a) {
+//         int factorial = 1;
+//         for(int i=1; i<=a; i++) {
+//         factorial *= i;
+            
+//         }
+//         System.out.println(factorial);
+//         return factorial;
+//     }
+//     public static void main (String args[]) {
+//         Scanner sc = new Scanner (System.in);
+//         int a = 4;
+
+//         factorial(a);
+//     }  
+// }
+
+// // =======================================================================================================
+// // =======================================================================================================
+
+// import java.util.*;
+// public class Revise {
+//     public static int factorial(int n) {
+//         int factorial = 1;
+//         for(int i=1; i<=n; i++) {
+//             factorial *= i;   
+//         }
+//        return factorial;
+//     }
+
+//     public static int Bfactorial(int n , int r) {
+//         int fact_n = factorial(n);
+//         int fact_r = factorial(r);
+//         int fact_nmr = factorial(n-r);
+//         int bc = fact_n / (fact_r * fact_nmr);
+//         return bc;
+//     }
+//     public static void main (String args[]) {
+//         Scanner sc = new Scanner (System.in);
+//         int n = sc.nextInt();
+//         int r = sc.nextInt();
+        
+        
+
+//         System.out.println(Bfactorial(n,r));
+//     }  
+// }
+
+// // =======================================================================================================
+// // =======================================================================================================
+
+// import java.util.*;
+// public class Revise {
+//     // public static int sum(int a , int b) {
+    //  return a+b;
+    // }
+
+    // public static int sum(int a, int b, int c) {
+    //     return a+b+c;
+    // }
+
+    // public static int sum (int a , int b) {
+    //     return a+b;
+    // }
+
+    // public static float sum (float a , float b ) {
+    //     return a+b;
+    // }
+
+    // public static boolean isPrime(int n) {
+
+    //     if(n <= 1) {
+            
+    //         return false;
+    //     }
+    //     for(int i=2; i<=Math.sqrt(n); i++) {
+    //         if(n % i == 0) {
+    //             return false;
+
+    //         }
+    //     }
+
+    //   return true;
+    // }
+
+//     public static void primerange(int n) {
+//         for(int i=2; i<=n; i++) { 
+//             if(isPrime(i)){
+//                 System.out.print(i + " ");
+//             }
+//         } 
+//         System.out.println();
+//     }
+//     public static void main (String args[]) {
+
+//         // System.out.println(sum(5,3));
+//         // System.out.println(sum(5.5f,3.5f));  
+
+//         primerange(200);
+          
+//     }
+// }
+
 // =======================================================================================================
 // =======================================================================================================
 
+import java.util.*;
+public class Revise {
+    public static void binToDic(int binNum) {
+        int myNum = binNum;
+        int pow = 0;
+        int decNum = 0;
 
+        while(binNum > 0) {
+            int lastDigit = binNum % 10;
+            decNum = decNum + (lastDigit * (int)Math.pow(2 , pow));
 
+            pow++;
+            binNum = binNum / 10;
 
+        }
+        System.out.println("Decimal of " + myNum + " = " + decNum);
+    }
+    public static void main (String args[]) {
+        binToDic(111);
 
-
-
-
-
-
-
-
-
-
-
-
-
+          
+    }
+}
 
 
 
