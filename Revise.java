@@ -1456,7 +1456,7 @@ public class Revise {
         
 
 //         for(int i=1; i<=4; i++) {
-//             for(int j=1; j<=(4-i+1); j++) {
+//             for(int j=1; j<=(4-i); j++) {
 //                 System.out.print("  ");
                 
 //             }
@@ -1498,7 +1498,7 @@ public class Revise {
 
 //         for(int i=1; i<=5; i++) {
 //             for(int j=1; j<=i; j++) {
-//                 System.out.print(num);
+//                 System.out.print(num + " ");
 //                 num++;
                 
 //             }
@@ -1526,9 +1526,6 @@ public class Revise {
 //                        }
                          
 //                     }
-
-
-
 //             System.out.println();
 //         }
 //     }
@@ -1547,8 +1544,8 @@ public class Revise {
 //                 System.out.print("* ");
 //             }
 
-//             for(int j=1; j<=(4-i); j++) {
-//                 System.out.print("    ");
+//             for(int j=1; j<=2*(4-i); j++) {
+//                 System.out.print("  ");
 //             }
 
 //             for(int j=1; j<=i; j++) {
@@ -1564,8 +1561,8 @@ public class Revise {
 //                 System.out.print("* ");
 //             }
 
-//             for(int j=1; j<=(4-i); j++) {
-//                 System.out.print("    ");
+//             for(int j=1; j<=2*(4-i); j++) {
+//                 System.out.print("  ");
 //             }
 
 //             for(int j=1; j<=i; j++) {
@@ -1618,38 +1615,38 @@ public class Revise {
 // =======================================================================================================
 // =======================================================================================================
 
-// public class Revise {
-//     public static void main (String args[]) {
-//         for(int i=1; i<=4; i++) {
-//             for(int j=1; j<=4-i; j++) {
-//             System.out.print("  ");
-//             } 
+public class Revise {
+    public static void main (String args[]) {
+        for(int i=1; i<=4; i++) {
+            for(int j=1; j<=4-i; j++) {
+            System.out.print("  ");
+            } 
 
-//             for(int j=1; j<=i; j++) {
-//                 System.out.print("* ");
-//             }
-//             for(int j=1; j<=i-1; j++) { 
-//                 System.out.print("* ");
-//             }
-//             System.out.println(); 
-//         }
+            for(int j=1; j<=i; j++) {
+                System.out.print("* ");
+            }
+            for(int j=1; j<=i-1; j++) { 
+                System.out.print("* ");
+            }
+            System.out.println(); 
+        }
 
 
-//         for(int i=4; i>=1; i--) {
-//             for(int j=1; j<=4-i; j++) {
-//             System.out.print("  ");
-//             } 
+        for(int i=4; i>=1; i--) {
+            for(int j=1; j<=4-i; j++) {
+            System.out.print("  ");
+            } 
 
-//             for(int j=1; j<=i; j++) {
-//                 System.out.print("* ");
-//             }
-//             for(int j=1; j<=i-1; j++) { 
-//                 System.out.print("* ");
-//             }
-//             System.out.println(); 
-//         }
-//     }
-// }
+            for(int j=1; j<=i; j++) {
+                System.out.print("* ");
+            }
+            for(int j=1; j<=i-1; j++) { 
+                System.out.print("* ");
+            }
+            System.out.println(); 
+        }
+    }
+}
 
 // // =======================================================================================================
 // // =======================================================================================================
@@ -1879,32 +1876,180 @@ public class Revise {
 // =======================================================================================================
 // =======================================================================================================
 
-import java.util.*;
-public class Revise {
-    public static void binToDic(int binNum) {
-        int myNum = binNum;
-        int pow = 0;
-        int decNum = 0;
+// import java.util.*;
+// public class Revise {
+//     public static void binToDic(int binNum) {
+//         int myNum = binNum;
+//         int pow = 0;
+//         int decNum = 0;
 
-        while(binNum > 0) {
-            int lastDigit = binNum % 10;
-            decNum = decNum + (lastDigit * (int)Math.pow(2 , pow));
+//         while(binNum > 0) {
+//             int lastDigit = binNum % 10;
+//             decNum = decNum + (lastDigit * (int)Math.pow(2 , pow));
 
-            pow++;
-            binNum = binNum / 10;
+//             pow++;
+//             binNum = binNum / 10;
 
-        }
-        System.out.println("Decimal of " + myNum + " = " + decNum);
-    }
-    public static void main (String args[]) {
-        binToDic(111);
+//         }
+//         System.out.println("Decimal of " + myNum + " = " + decNum);
+//     }
+//     public static void main (String args[]) {
+//         binToDic(111);
 
           
-    }
-}
+//     }
+// }
 
 // =======================================================================================================
 // =======================================================================================================
+
+// import java.util.*;
+// public class Revise {  
+// public static void decToBin(int n) {
+//     int myNum = n;
+//     int pow = 0;
+//     int binNum = 0;
+
+//     while(n > 0) {
+//         int rem = n % 2;
+//         binNum = binNum + (rem * (int)Math.pow(10, pow));
+//         pow++;
+//         n = n/2;
+//     }
+
+//     System.out.println("binary form of " + myNum + " = " + binNum);
+// }
+
+// public static void main (String args[]) {
+//     Scanner scanner = new Scanner(System.in);
+//     int n = scanner.nextInt();
+//     decToBin(n);
+// }
+// }
+
+// // =======================================================================================================
+// // =======================================================================================================
+
+// import java.util.*;
+// public class Revise {
+//     public static void main(String args[]) {
+//       Scanner scanner = new Scanner (System.in);
+//       int a = scanner.nextInt();
+//       int b = scanner.nextInt();
+//       int c = scanner.nextInt();
+
+//       float sum = a + b + c;
+//       float average = sum / 3;
+//       System.out.println(average);
+
+//     }
+// }
+
+// =======================================================================================================
+// =======================================================================================================
+
+// import java.util.*;
+// public class Revise {
+//     public static void main(String args[]) {
+//       Scanner scanner = new Scanner (System.in);
+     
+      
+
+//     }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
