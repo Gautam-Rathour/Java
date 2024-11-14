@@ -1894,14 +1894,12 @@ public class Revise {
 //         System.out.println("Decimal of " + myNum + " = " + decNum);
 //     }
 //     public static void main (String args[]) {
-//         binToDic(111);
-
-          
+//         binToDic(1010001);      
 //     }
 // }
 
-// =======================================================================================================
-// =======================================================================================================
+// =========================================================================================================
+// =========================================================================================================
 
 // import java.util.*;
 // public class Revise {  
@@ -1921,10 +1919,10 @@ public class Revise {
 // }
 
 // public static void main (String args[]) {
-//     Scanner scanner = new Scanner(System.in);
-//     int n = scanner.nextInt();
-//     decToBin(n);
-// }
+//         Scanner scanner = new Scanner(System.in);
+//         int n = scanner.nextInt();
+//         decToBin(n);
+//     }
 // }
 
 // // =======================================================================================================
@@ -1961,11 +1959,53 @@ public class Revise {
 // =======================================================================================================
 // =======================================================================================================
 
+// import java.util.*;
+// public class Revise {
+//     public static void main (String args[]) {
+//         Scanner scanner = new Scanner(System.in);
+//         int num = scanner.nextInt();
 
+//         boolean isEven = true;
 
+//         if(num % 2 == 1) {
+//             isEven = false;
+//         }
+//         if(isEven) {
+//             System.out.println("This number is even");
+//         } else {
+//             System.out.println("This number is odd");
+//         }
+//     }
+// }
 
+// =======================================================================================================
+// =======================================================================================================
 
+// import java.util.*;
+// public class Revise {
+//     public static boolean isEven(int num ) {
+//         if(num % 2 == 0) {
+//             return true;
+//         } else {
+//             return false;
+//         }
+//     }
+       
+//     public static void main(String[] args) {
+//         Scanner scanner = new Scanner(System.in);
+//         int num = scanner.nextInt();
+//         isEven(num);
 
+//          if(isEven(num)) {
+//             System.out.println("isEven");
+//         } else {
+//             System.out.println("isOdd");
+//         }
+//     }
+// }
+
+// =======================================================================================================
+// =======================================================================================================
 
 
 
