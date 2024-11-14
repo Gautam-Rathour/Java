@@ -2007,8 +2007,34 @@ public class Revise {
 // =======================================================================================================
 // =======================================================================================================
 
+// // check the numbe is isPalindrome :- 
 
+// import java.util.*;
+// public class Revise {
+//     public static void main (String args []) {
+//         Scanner scanner = new Scanner(System.in);
+//         int n = scanner.nextInt();
+//         int myNum = n;
+//         int dig = 0;
+//         int rev = 0;
 
+//         while(n > 0) {
+//             dig = n % 10;
+//             rev = rev * 10 + dig;
+            
+
+//             n = n / 10; 
+//         }
+//         if(myNum == rev) {
+//             System.out.println("You Enter " + myNum + " is Palindrom.");
+//         } else {
+//             System.out.println("You Enter " + myNum + " is not Palindrom.");
+//         }
+//     }
+// }
+
+// =======================================================================================================
+// =======================================================================================================
 
 
 
