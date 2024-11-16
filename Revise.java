@@ -2033,12 +2033,95 @@ public class Revise {
 //     }
 // }
 
-// =======================================================================================================
-// =======================================================================================================
+// // =======================================================================================================
+// // =======================================================================================================
+
+// import java.util.*;
+// public class Revise {
+//     public static void main(String[] args) {
+//         Scanner scanner = new Scanner(System.in);
+//         int n = 5;
+
+//         for(int i=1; i<=n; i++) {
+//             for(int j=1; j<=(n-i); j++) {
+//                 System.out.print("  ");
+//             }
+
+//             int number = 1;
+//             boolean increasing = true;
+//             while(number > 0) {
+//                 System.out.print(number + " ");
+
+//                 if(number == i) {
+//                     increasing = false;
+//                 }
+
+//                 if(increasing == true) {
+//                     number++;
+//                 } else {
+//                     number--;
+//                 }
+//             }
 
 
+//             // // For Loop se :-
+
+//             // for(int j=1; j<=( 2 * i)-1; j++) {
+//             //     System.out.print(number + " ");
+
+//             //     if(j < i) {
+//             //         number++;
+//             //     } else {
+//             //         number--;
+//             //     }
+//             // }
+//             System.out.println();
+//         }
+//     }
+// }
+
+// // =======================================================================================================
+// // =======================================================================================================
+
+// public class Revise {
+//     public static void main(String args[]) {
+//         int n = 5;
+//         int spaces = 1;
+
+//         for(int i=1; i <= (2*n)-1; i++) {
+//             // Print empty spaces
+//             if(i <= n) {
+//                 //print ( n-i )
+//                 for(int j = 1; j <= n - i; j++) {
+//                     System.out.print(" ");
+//                 }
+//             } else {
+//                 //print ( i - n )
+//                 for(int j = 1; j <= i - n; j++) {
+//                     System.out.print(" ");
+//                 }
+//             }
 
 
+//             //Print the stars
+//             if(i == 1 || i == (2*n-1)) {
+//                 System.out.print("*");
+//             } else {
+//                 System.out.print("*");
+//                 for(int j=1; j<= spaces; j++) {
+//                     System.out.print(" ");
+//                 }
+//                 System.out.print("*");
+//                 if(i < n) {
+//                     spaces += 2;
+//                 } else {
+//                     spaces -= 2; 
+//                 }
+//             }
+//             System.out.println();
+//         }
+//     }
+// }
 
 
 
