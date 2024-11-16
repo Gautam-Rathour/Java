@@ -1617,8 +1617,9 @@ public class Revise {
 
 // public class Revise {
 //     public static void main (String args[]) {
-//         for(int i=1; i<=4; i++) {
-//             for(int j=1; j<=4-i; j++) {
+//         int n = 6;
+//         for(int i=1; i<=n-1; i++) {
+//             for(int j=1; j<=n-i; j++) {
 //             System.out.print("  ");
 //             } 
 
@@ -1632,8 +1633,8 @@ public class Revise {
 //         }
 
 
-//         for(int i=4; i>=1; i--) {
-//             for(int j=1; j<=4-i; j++) {
+//         for(int i=n; i>=1; i--) {
+//             for(int j=1; j<=n-i; j++) {
 //             System.out.print("  ");
 //             } 
 
@@ -2089,14 +2090,13 @@ public class Revise {
 //         int spaces = 1;
 
 //         for(int i=1; i <= (2*n)-1; i++) {
+
 //             // Print empty spaces
 //             if(i <= n) {
-//                 //print ( n-i )
 //                 for(int j = 1; j <= n - i; j++) {
 //                     System.out.print(" ");
 //                 }
 //             } else {
-//                 //print ( i - n )
 //                 for(int j = 1; j <= i - n; j++) {
 //                     System.out.print(" ");
 //                 }
