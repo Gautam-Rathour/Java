@@ -1617,7 +1617,7 @@ public class Revise {
 
 // public class Revise {
 //     public static void main (String args[]) {
-//         int n = 6;
+//         int n = 5;
 //         for(int i=1; i<=n-1; i++) {
 //             for(int j=1; j<=n-i; j++) {
 //             System.out.print("  ");
@@ -1644,7 +1644,7 @@ public class Revise {
 //             for(int j=1; j<=i-1; j++) { 
 //                 System.out.print("* ");
 //             }
-//             System.out.println(); 
+//         //     System.out.println(); 
 //         }
 //     }
 // }
@@ -2144,39 +2144,209 @@ public class Revise {
 // // =======================================================================================================
 // // =======================================================================================================
 
+// import java.util.*;
+// public class Revise{
+//     public static void main (String args[]) {
+//         Scanner scanner = new Scanner(System.in);
+//         int marks[] = new int[10];
+
+//         // marks[0] = scanner.nextInt();
+//         // marks[1] = scanner.nextInt();
+//         // marks[2] = scanner.nextInt();
+
+//         // System.out.println("physics : " + marks[0]);
+//         // System.out.println("chemistery : " +marks[1]);
+//         // System.out.println("math : " + marks[2]);
+
+        
+//         // int percentage = (marks[0]+ marks[1]+ marks[2]) / 3;
+//         // System.out.println("percentage : " + percentage + "%");
+
+//         System.out.println("Lenght of Array : " + marks.length);
+//     }
+// } 
+
+// // =======================================================================================================
+// // =======================================================================================================
+
+// import java.util.*;
+// public class Revise{
+//     public static void update(int marks[]) {
+//         for(int i=0; i<marks.length; i++) {
+//             marks[i] += 1;
+//         }
+//     }
+//     public static void main (String args[]) {
+//         int marks[] = {97, 98, 99};
+//         update(marks);
+
+//         //print our marks :-
+//         for(int i=0; i<marks.length; i++) {
+//             System.out.print("marks : " + marks[i] + " ");
+//         }
+//         System.out.println();
+//     }
+// } 
+
+// // =======================================================================================================
+// // =======================================================================================================
+
+// Linear Search :-
+
+// import java.util.*;
+// public class Revise {
+//     public static int linearSearch(int number[], int key) {
+//           for(int i=0; i<number.length; i++) {
+//             if(number[i] == key) {
+//                 return i;
+//                 // System.out.println("Key found at index :" + i);
+//             }
+//         }
+//         return -1;
+//     }
+//     public static void main (String args[]) {
+//         int number[] = {2, 4, 6, 8, 10, 12, 14, 16};
+//         int key = 10;
+
+//         int index = linearSearch(number, key);
+
+//         if(index == -1) {
+//             System.out.println("Not found");
+//         } else {
+//             System.out.println("Key found at index : " + index);
+//         }
+//     }
+// }
+
+
+// // =======================================================================================================
+// // =======================================================================================================
+
+// Linear Search :-
+
+// import java.util.*;
+// public class Revise {
+//     public static int linearSearch(String menu[], String key) {
+//           for(int i=0; i<menu.length; i++) {
+//             if(menu[i] == key) {
+//                 return i;
+//                 // System.out.println("Key found at index :" + i);
+//             }
+//         }
+//         return -1;
+//     }
+//     public static void main (String args[]) {
+//         String menu[] = {"dosa", "chole bhature", "samosa" };
+//         String key = "samosa";
+
+//         int index = linearSearch(menu, key);
+
+//         if(index == -1) {
+//             System.out.println("Not found");
+//         } else {
+//             System.out.println("Key found at index : " + index);
+//         }
+//     }
+// }
+
+// =======================================================================================================
+// =======================================================================================================
+
+// Find Smallest and Largest Number in the array :-
+
+// import java.util.*;
+// public class Revise {
+//     public static int getLargest(int num[]){
+//         int largest = Integer.MIN_VALUE;
+//         int smallest = Integer.MAX_VALUE;
+
+//         for(int i=0; i<num.length; i++) {
+//             if(largest < num[i]) {
+//                 largest = num[i];
+//             }
+
+//             if(smallest > num[i]) {
+//                 smallest = num[i];
+//             }
+//         }
+//         System.out.println("This is the smallest num in this array : " + smallest);
+//         return largest;
+//     }
+//     public static void main (String args[]) {
+//         int num[] = {2, 4, 6, 8, 10, 5, 7, 12, 11};
+       
+//         System.out.println("This this the largest num in this array : " + getLargest(num));
+
+//     }
+// }
+
+// // =======================================================================================================
+// // =======================================================================================================
+
+// // Binary Search :-
+
+// import java.util.*;
+// public class Revise {
+//     public static int binarySearch (int num[], int key) {
+//         int start = 0;
+//         int end = num.length-1;
+
+//         while(start <= end) {
+//             int mid = (start + end) / 2;
+
+//             //comparisons
+//             if(num[mid] == key) {
+//                 return mid;
+//             }
+
+//             if(num[mid] < key) { // right
+//                 start = mid + 1;
+//             } else { // left
+//                 end = mid - 1;
+//             }
+//         }
+//         return -1;
+//     }
+//     public static void main (String args[]) {
+//         int num[] = {2, 4, 6, 8, 10, 12, 14};
+//         int key = 6;
+
+//         int index = binarySearch(num, key);
+//         System.out.println("The index of key : " + index);
+//     }
+// }
+
+// =======================================================================================================
+// =======================================================================================================
+
+// Reverse an Array :-
+
 import java.util.*;
-public class Revise{
-    public static void main (String args[]) {
-        Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
+public class Revise {
+    public static void reverseArray(int num[]) {
+        int start = 0;
+        int end = num.length-1;
 
+        while(start < end) {
+            // Swap
+            int temp = num[start];
+            num[start] = num[end];
+            num[end] = end;
 
+            start++;
+            end--;
+        }
+    }
+    public static void reverseArray(int num[]) {
+        int num[] = {2, 4, 6, 8, 10};
+        
+        reverseArray(num);
+        for(int i=1; i<=num.length; i++) {
+            System.out.println(num[i]);
+        }
+        System.out.println();
     }
 }
-
-// // =======================================================================================================
-// // =======================================================================================================
-
-
-
-
-
-
-
-// // =======================================================================================================
-// // =======================================================================================================
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
