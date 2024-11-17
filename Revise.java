@@ -2126,10 +2126,32 @@ public class Revise {
 // // =======================================================================================================
 // // =======================================================================================================
 
+// // Array :-
 
+// import java.util.*;
+// public class Revise {
+//     public static void main (String args[]) {
+//         int marks[] = new int[50];
 
+//         int numbers[] = {1,2,3};
+//         int moreNumber[] = {4,5,6};
+//         String fruits[] = {"apple", "mango", "orange"};
 
+//         System.out.println(fruits);
+//     }
+// }
 
+// // =======================================================================================================
+// // =======================================================================================================
+
+import java.util.*;
+public class Revise{
+    public static void main (String args[]) {
+        Scanner scanner = new Scanner(System.in);
+
+        
+    }
+}
 
 
 
