@@ -2049,33 +2049,33 @@ public class Revise {
 //             }
 
 //             int number = 1;
-//             boolean increasing = true;
-//             while(number > 0) {
-//                 System.out.print(number + " ");
-
-//                 if(number == i) {
-//                     increasing = false;
-//                 }
-
-//                 if(increasing == true) {
-//                     number++;
-//                 } else {
-//                     number--;
-//                 }
-//             }
-
-
-//             // // For Loop se :-
-
-//             // for(int j=1; j<=( 2 * i)-1; j++) {
+//             // boolean increasing = true;
+//             // while(number > 0) {
 //             //     System.out.print(number + " ");
 
-//             //     if(j < i) {
+//             //     if(number == i) {
+//             //         increasing = false;
+//             //     }
+
+//             //     if(increasing == true) {
 //             //         number++;
 //             //     } else {
 //             //         number--;
 //             //     }
 //             // }
+
+
+//             // // For Loop se :-
+
+//             for(int j=1; j<=(2*i)-1; j++) {
+//                 System.out.print(number + " ");
+
+//                 if(j < i) {
+//                     number++;
+//                 } else {
+//                     number--;
+//                 }
+//             }
 //             System.out.println();
 //         }
 //     }
@@ -2316,43 +2316,139 @@ public class Revise {
 //     }
 // }
 
-// =======================================================================================================
-// =======================================================================================================
+// // =======================================================================================================
+// // =======================================================================================================
 
-// Reverse an Array :-
+// // Reverse an Array :-
 
-import java.util.*;
-public class Revise {
-    public static void reverseArray(int num[]) {
-        int start = 0;
-        int end = num.length-1;
+// import java.util.*;
+// public class Revise {
+//     public static void reverseArray(int num[]) {
+//         int start = 0;
+//         int end = num.length-1;
 
-        while(start < end) {
-            // Swap
-            int temp = num[start];
-            num[start] = num[end];
-            num[end] = end;
+//         while(start < end) {
+//             // Swap
+//             int temp = num[start];
+//             num[start] = num[end];
+//             num[end] = temp;
 
-            start++;
-            end--;
-        }
-    }
-    public static void reverseArray(int num[]) {
-        int num[] = {2, 4, 6, 8, 10};
+//             start++;
+//             end--;
+//         }
+//     }
+//     public static void main(String args[]){
+//         int num[] = {2, 4, 6, 8, 10};
         
-        reverseArray(num);
-        for(int i=1; i<=num.length; i++) {
-            System.out.println(num[i]);
-        }
-        System.out.println();
-    }
-}
+//         reverseArray(num);
+//         for(int i=0; i<num.length; i++) {
+//             System.out.print(num[i] + " ");
+//         }
+//         System.out.println();
+//     }
+// }
+
+// // =======================================================================================================
+// // =======================================================================================================
+
+// import java.util.*;
+// public class Revise {
+//     public static void findPair(int num[]) {
+//         for(int i=0; i<num.length; i++) {
+//             int curr = num[i];
+            
+//             for(int j=i+1; j<num.length; j++) {
+//                 System.out.print("(" + curr + "," + j + ")");
+//             }
+//             System.out.println();
+//         }
+//     }
+//     public static void main(String args[]) {
+//         int num[] = {2, 4, 7, 9, 10};
+
+//         findPair(num);
+//     }
+// }
+
+// // =======================================================================================================
+// // =======================================================================================================
+
+// // Find the sub-array of a Array :-
+
+// import java.util.*;
+// public class Revise {
+//     public static void printSubarrays(int num[]) {
+//         int ts = 0;
+
+//         for(int i=0; i<num.length; i++) {
+//             int start = i;
+//             for(int j=i; j<num.length; j++) {
+//                 int end = j;
+//                 for(int k=start; k<=end; k++) {
+//                     System.out.print(num[k] + " ");
+//                 }
+//                 ts++;
+//                 System.out.println();
+//             }
+//             System.out.println();
+//         }
+//         System.out.println("Total numbers of sub array : " + ts);
+//     }
+//     public static void main(String args[]) {
+//         int num[] = {2, 4, 7, 9, 10};
+
+//         printSubarrays(num);
+//     }
+// }
 
 
+// =======================================================================================================
+// =======================================================================================================
 
+// // Find the sum of sub-array of a Array :-
 
+// import java.util.*;
+// public class Revise {
+//     public static void printSubarrays(int num[]) {
+//         int ts = 0;
+//         int largest = Integer.MIN_VALUE;
+//         int smallest = Integer.MAX_VALUE;
 
+//         for(int i=0; i<num.length; i++) {
+//             int start = i;
+//             for(int j=i; j<num.length; j++) {
+//                 int end = j;
 
+//                 int sum = 0;
+//                 for(int k=start; k<=end; k++) {
+//                     System.out.print(num[k] + " ");
+//                     sum +=  num[k];
+//                 }
+
+//                 if(largest < sum) {
+//                     largest = sum;
+//                 }
+//                 if(smallest > sum) {
+//                     smallest = sum;
+//                 }
+
+//                 System.out.println("Sum of sub-array : " + sum);
+//                 ts++;
+//                 System.out.println();
+//             }
+//             System.out.println();
+//         }
+//         System.out.println("Total numbers of sub array : " + ts);
+//         System.out.println("Largest sum of sub array : " + largest);
+//         System.out.println("Smallest sum of sub array : " + smallest);
+
+//     }
+//     public static void main(String args[]) {
+//         int num[] = {2, 4, 7, 9, 10};
+
+//         printSubarrays(num);
+//     }
+// }
 
 
 
