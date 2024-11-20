@@ -454,51 +454,78 @@
 // // =======================================================================================================
 // // =======================================================================================================
 
-// Trapping Rainwater :-
-import java.util.*;
-//    { 4, 2, 0, 6, 3, 2, 5}
-public class Array {
-    public static int trappedRainwater(int height[] ) {
-        int n = height.length;
-        //calculate left max boundary - array
-        int leftMax[] = new int[n];
-        leftMax[0] = height[0];
-        for(int i=1; i<n; i++) {
-            leftMax[i] = Math.max(height[i], leftMax[i-1]);
-        }
+// // Trapping Rainwater :-
+// import java.util.*;
+// //    { 4, 2, 0, 6, 3, 2, 5}
+// public class Array {
+//     public static int trappedRainwater(int height[] ) {
+//         int n = height.length;
+//         //calculate left max boundary - array
+//         int leftMax[] = new int[n];
+//         leftMax[0] = height[0];
+//         for(int i=1; i<n; i++) {
+//             leftMax[i] = Math.max(height[i], leftMax[i-1]);
+//         }
 
-        //calculate right max boundary - array
-        int rightMax[] = new int[n];
-        rightMax[n-1] = height[n-1];
-        for(int i=n-2; i>=0; i--) {
-            rightMax[i] = Math.max(height[i], rightMax[i+1]);
-        }
+//         //calculate right max boundary - array
+//         int rightMax[] = new int[n];
+//         rightMax[n-1] = height[n-1];
+//         for(int i=n-2; i>=0; i--) {
+//             rightMax[i] = Math.max(height[i], rightMax[i+1]);
+//         }
 
-        int trappedWater = 0;
-        //loop
-        for(int i=0; i<n; i++) {
-            //waterLevel = min(leftmax bound, rightmax bound)
-            int waterLevel = Math.min(leftMax[i], rightMax[i]);
+//         int trappedWater = 0;
+//         //loop
+//         for(int i=0; i<n; i++) {
+//             //waterLevel = min(leftmax bound, rightmax bound)
+//             int waterLevel = Math.min(leftMax[i], rightMax[i]);
 
-            //trapped water = waterLevel - height[i]
-            trappedWater += waterLevel - height[i];
-        }
+//             //trapped water = waterLevel - height[i]
+//             trappedWater += waterLevel - height[i];
+//         }
 
-        return trappedWater;
-    }
+//         return trappedWater;
+//     }
 
-    public static void main(String args[]) {
-        int height[] = {4, 2, 0, 6, 3, 2, 5};
+//     public static void main(String args[]) {
+//         int height[] = {4, 2, 0, 6, 3, 2, 5};
 
-        int result = trappedRainwater(height);
-        System.out.println("Trapped Water : " + result);
+//         int result = trappedRainwater(height);
+//         System.out.println("Trapped Water : " + result);
 
-    }
-}
+//     }
+// }
 
+// =======================================================================================================
+// =======================================================================================================
 
+// import java.util.*;
+// public class Array {
+//     public static int buyAndSellStocks(int prices[]) {
+//         int buyPrice = Integer.MAX_VALUE;
+//         int maxProfit = 0;
 
+//         for(int i=0; i<prices.length; i++) {
+//             if(buyPrice < prices[i]) {// profit
+//                 int profit = prices[i] - buyPrice; // today's profit
+//                 maxProfit = Math.max(maxProfit, profit);
+//             } else {
+//                 buyPrice = prices[i];
+//             }
+//         }
+//         return maxProfit;
+//     }
 
+//     public static void main(String args[]) {
+//         int prices[] = {7, 1, 5, 3, 6, 4};
+
+//         int result = buyAndSellStocks(prices);
+//         System.out.println("Max Profit : " + result);
+//     }
+// }
+
+// =======================================================================================================
+// =======================================================================================================
 
 
 
