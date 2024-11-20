@@ -2534,23 +2534,31 @@ public class Revise {
 
 
 
+// // =======================================================================================================
+// // =======================================================================================================
+
+// import java.util.*;
+// public class Revise {
+//     public static void main(String args[]) {
+//         double a = 9.281;
+//         double b = 9.279;
+
+//         double result1 = Math.max(a,b);
+//         double result2 = Math.min(a,b);
+//         System.out.println("This is the greatest Number : " + result1);
+//         System.out.println("This is the smallest Number : " + result2);
+
+//     }
+// }
 // =======================================================================================================
 // =======================================================================================================
 
 import java.util.*;
 public class Revise {
     public static void main(String args[]) {
-        double a = 9.281;
-        double b = 9.279;
-
-        double result1 = Math.max(a,b);
-        double result2 = Math.min(a,b);
-        System.out.println("This is the greatest Number : " + result1);
-        System.out.println("This is the smallest Number : " + result2);
-
+      
     }
 }
-
 
 
 
