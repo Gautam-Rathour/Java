@@ -44,7 +44,7 @@
 //         for(int i=0; i<n-1; i++) {
 //             int minPos = i;
 //             for(int j=i+1; j<=n-1; j++) {
-//                 if(arr[minPos] < arr[j]) {
+//                 if(arr[minPos] > arr[j]) {
 //                     minPos = j;
 //                 }
 //             }
@@ -65,8 +65,51 @@
 
 // =======================================================================================================
 // =======================================================================================================
+// // Selection short : -  ( Revise )
+// import java.util.*;
+// public class Sorting {
+//     public static void selectionSort(int arr[]) {
+//         for(int i=0; i<arr.length-1; i++) {
+//             int minPon = i;
+//             for(int j=i+1; j<arr.length; j++) {
+//                 if(arr[minPon] > arr[j]) {
+//                     minPon = j;
+//                 }
+//             }
+//             // swap
+//             int temp = arr[minPon];
+//             arr[minPon] = arr[i];
+//             arr[i] = temp;  
+//         }
+//     }
+//     public static void main (String args[]) {
+//         int arr[] = {5, 4, 1, 3, 2};
+
+//         selectionSort(arr);
+//         for(int i=0; i<arr.length; i++) {
+//             System.out.print(arr[i] + " ");
+//         }  
+//     }
+// }
 
 
+
+// =======================================================================================================
+// =======================================================================================================
+
+// Insertion Sort :-
+
+// import java.util.*;
+// public class Sorting {
+  
+//     public static void main(String args[]) {
+//         int arr[] = {5, 4, 1, 3, 2};
+//         selectionSort(arr);
+//         for(int i = 0; i < arr.length; i++) {
+//             System.out.print(arr[i] + " ");
+//         }
+//     }
+// }
 
 
 
