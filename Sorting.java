@@ -1,7 +1,6 @@
 // // =======================================================================================================
 // // =======================================================================================================
 
-
 // Bubble short : - 
 
 // public class Sorting {
@@ -27,7 +26,6 @@
         
 //         bubbleSort(arr);
 //         printArr(arr);
-
 //     }
 // }
 
@@ -35,8 +33,8 @@
 // =======================================================================================================
 // =======================================================================================================
 
-
 // // Selection short : - 
+
 // import java.util.*;
 // public class Sorting {
 //     public static void selectionSort(int arr[]) {
@@ -66,6 +64,7 @@
 // =======================================================================================================
 // =======================================================================================================
 // // Selection short : -  ( Revise )
+
 // import java.util.*;
 // public class Sorting {
 //     public static void selectionSort(int arr[]) {
@@ -97,35 +96,115 @@
 // =======================================================================================================
 // =======================================================================================================
 
-// Insertion Sort :-
+// // Insertion Sort :-
 
 // import java.util.*;
 // public class Sorting {
-  
+//     public static void insertionSort(int arr[]) {
+//         for(int i=1; i<arr.length; i++) {
+//             int curr = arr[i];
+//             int prev = i-1;
+//             // finding out the correct pos to insert
+//             while(prev >= 0 && arr[prev] > curr) {
+//                 arr[prev+1] = arr[prev];
+//                 prev--;
+//             }
+//             // insertion
+//             arr[prev+1] = curr;
+//         }
+//     }
 //     public static void main(String args[]) {
 //         int arr[] = {5, 4, 1, 3, 2};
-//         selectionSort(arr);
+//         insertionSort(arr);
 //         for(int i = 0; i < arr.length; i++) {
 //             System.out.print(arr[i] + " ");
 //         }
 //     }
 // }
 
+// =======================================================================================================
+// =======================================================================================================
+
+// // Inbuilt short :-
+
+// import java.util.Arrays;
+// import java.util.Collections;
+// public class Sorting {
+//     public static void main (String args[]) {
+//         Integer arr[] = {5, 4, 1, 3, 2};
+
+//         // Arrays.sort(arr);
+//         // Arrays.sort(arr, 0, 3 );
+//         // Arrays.sort(arr, Collections.reverseOrder());
+//         Arrays.sort(arr, 0, 3, Collections.reverseOrder());
 
 
+//         for(int i = 0; i < arr.length; i++) {
+//             System.out.print(arr[i] + " ");
+//         }
+//         System.out.println();
+//     }
+// }
 
 
 // =======================================================================================================
 // =======================================================================================================
+// // Counting Sort :-
 
+// import java.util.*;
+// public class Sorting {
+//     public static void countingSort(int arr[]) {
+//         int largest = Integer.MIN_VALUE;    
+//         for(int i = 0; i < arr.length; i++) {
+//             largest = Math.max(largest, arr[i]);
+//         }
 
+//         int count[] = new int[largest+1];
+//         for(int i=0; i<arr.length; i++) {
+//             count[arr[i]]++;
+//         }
 
+//         // sorting 
+//         int j = 0;
+//         for(int i=0; i<count.length; i++) {
+//             while(count[i] > 0) {
+//                 arr[j] = i;
+//                 j++;
+//                 count[i]--;
+//             }
+//         }
+//     }
+//     public static void main (String args[]) {
+//         int arr[] = {1, 4, 1, 3, 2, 4, 3, 7};
+//         countingSort(arr);
 
+//         for(int i = 0; i < arr.length; i++) {
+//             System.out.print(arr[i] + " ");
+//         }
+//     }
+// }
 
+// =======================================================================================================
+// =======================================================================================================
 
+// I have to Write all Sorting useing this example :-
+You can use this array as an example :[3,6,2,1,8,7,4,5,3,1]
 
+// Here is the implementation of all sorting algorithms using this example array.
+import java.util.*;
+public class Sorting {
+    public static void main(String args[]) {
+        int arr[] = {3, 6, 2, 1, 8, 7, 4, 5, 3, 1};
+        Bubble Sort(arr);
+        // Selection Sort(arr);
+        // Insertion Sort(arr);
+        // Counting Sort(arr);
 
-
+        for(int i=0; i<arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
 
 
 
