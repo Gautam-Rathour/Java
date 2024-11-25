@@ -170,46 +170,69 @@
 // =======================================================================================================
 // =======================================================================================================
 
-// Search in sorted matrix :-
+// // Search in sorted matrix :-
+
+// import java.util.*;
+// public class Matrices {
+//     public static boolean staircaseSearch(int matrix[][], int key) {
+//         int row = 0, col = matrix[0].length-1;
+
+//         while(row < matrix.length && col >= 0) {
+//             if(matrix[row][col] == key) {
+//                 System.out.println("Found key at (" + row + "," + col + ")");
+//                 return true;
+//             }
+
+//             else if(key < matrix[row][col]) {
+//                 col--;
+//             }
+//             else {
+//                 row++;
+//             }
+//         }
+//         System.out.println("Key not found!");
+//         return false;
+//     }
+//     public static void main(String args[]) {
+//         int matrix[][] = {{10, 20, 30, 40},
+//                           {15, 25, 35, 45},
+//                           {27, 29, 37, 48},
+//                           {32, 33, 39, 50}};
+
+
+
+//         int key = 350;
+//         staircaseSearch(matrix, key);
+
+//     }
+// }
+
+// =======================================================================================================
+// =======================================================================================================
+
+// Question 1 :Print the number of 7’s that are inthe 2d array.
 
 import java.util.*;
 public class Matrices {
-    public static boolean staircaseSearch(int matrix[][], int key) {
-        int row = 0, col = matrix[0].length-1;
+    public static int countSevens(int matrix[][]) {
+        Scanner scanner = new Scanner(System.out);
+        int nums[][] = {{1, 4, 9},
+                        {11, 4, 3},
+                        {2, 2, 3}};
 
-        while(row < matrix.length && col >= 0) {
-            if(matrix[row][col] == key) {
-                System.out.println("Found key at (" + row + "," + col + ")");
-                return true;
-            }
+        int key = 7;
 
-            else if(key < matrix[row][col]) {
-                col--;
-            }
-            else {
-                row++;
+
+        for(int i=0; i<nums.length; i++) {
+            for(int j=0; j<nums.length; j++) {
+                if(nums[i][j] = key) {
+                    System.out.println
+                }
             }
         }
-        System.out.println("Key not found!");
-        return false;
-    }
-    public static void main(String args[]) {
-        int matrix[][] = {{10, 20, 30, 40},
-                          {15, 25, 35, 45},
-                          {27, 29, 37, 48},
-                          {32, 33, 39, 50}};
 
-
-
-        int key = 350;
-        staircaseSearch(matrix, key);
     }
 }
-
-// =======================================================================================================
-// =======================================================================================================
-
-
 
 
 

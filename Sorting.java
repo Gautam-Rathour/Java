@@ -193,6 +193,13 @@ You can use this array as an example :[3,6,2,1,8,7,4,5,3,1]
 // Here is the implementation of all sorting algorithms using this example array.
 import java.util.*;
 public class Sorting {
+    public static int bubbleSort(int arr[]) {
+        int n = arr.length;
+
+        for(int i=0; i<n; i++) {
+            
+        }
+    }
     public static void main(String args[]) {
         int arr[] = {3, 6, 2, 1, 8, 7, 4, 5, 3, 1};
         Bubble Sort(arr);

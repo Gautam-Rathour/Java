@@ -200,31 +200,36 @@
 
 // import java.util.*;
 // public class Array {
-//     public static void main(String args[]) {
-//         int arr[] = {10, 20, 30, 40, 50};
-//         int target = 70;
+//     public static int binarySearch(int arr[], int key) {
+//         int n = arr.length;
 //         int start = 0;
-//         int end = arr.length-1;
-        
-//         while(start <= end) {
+//         int end = n-1;
 
+//         while(start <= end) {
 //             int mid = (start + end) / 2;
 
-
-//             if(arr[mid] == target) {
-//                 System.out.println("Target found at index " + mid);
-//                 return;
+//             if(arr[mid] == key) {
+//                 return mid;
 //             }
 
-//             if(target > arr[mid]) {
+//             if(arr[mid] < key) {
 //                 start = mid + 1;
 //             } else {
-//                 end = mid - 1;
+//                 end = mid -1;
 //             }
 //         }
-//         System.out.println ("Target is not found in this array!");
+//         return -1;
+//     }
+//     public static void main (String args[]) {
+//         int arr[] = {10, 20, 30, 40, 50, 60};
+//         int key = 60;
+
+
+//         int index = binarySearch(arr, key);
+//         System.out.println("The key is fond on index : " + index);
 //     }
 // }
+        
 // // =======================================================================================================
 // // =======================================================================================================
 
@@ -644,7 +649,49 @@
 // =======================================================================================================
 // =======================================================================================================
 
+// Leed-code question :- (number => 33.) -------------
 
+public class Array {
+    public static int search(int nums[], int target) {
+        int n = nums.length;
+
+        int left = 0;
+        int right = n-1;
+        while(left <= right) {
+            int mid = (left + right) / 2;
+
+            if(nums[mid] > nums[right]){
+                left = mid + 1;
+            } else {
+                right = mid;
+            }
+        } // left == right 
+
+        shift = left;
+
+        left = 0;
+        right = n-1;
+
+        while(left <= right) {
+            int mid = (left + right) / 2;
+
+            int realMid = (mid + shift) % n;
+
+            if(arr[realMid] == target) {
+                return realMid;
+            } else if (arr[realMid] < target) {
+                left = mid + 1;
+            } else { 
+                right = mid - 1;
+            }
+
+        }
+        return -1;
+    }
+    public static void main(String args[]) {
+        int[] nums = {4, 5, 6, 7, 0, 1, 2};
+    }
+}
 
 
 
