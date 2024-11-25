@@ -187,36 +187,65 @@
 // =======================================================================================================
 // =======================================================================================================
 
-// I have to Write all Sorting useing this example :-
-You can use this array as an example :[3,6,2,1,8,7,4,5,3,1]
+// // I have to Write all Sorting useing this example :-
 
-// Here is the implementation of all sorting algorithms using this example array.
-import java.util.*;
-public class Sorting {
-    public static int bubbleSort(int arr[]) {
-        int n = arr.length;
+// You can use this array as an example :[3,6,2,1,8,7,4,5,3,1]
 
-        for(int i=0; i<n; i++) {
+// // Here is the implementation of all sorting algorithms using this example array.
+// import java.util.*;
+// public class Sorting {
+//     public static int bubbleSort(int arr[]) {
+//         int n = arr.length;
+
+//         for(int i=0; i<n; i++) {
             
+//         }
+//     }
+//     public static void main(String args[]) {
+//         int arr[] = {3, 6, 2, 1, 8, 7, 4, 5, 3, 1};
+//         Bubble Sort(arr);
+//         // Selection Sort(arr);
+//         // Insertion Sort(arr);
+//         // Counting Sort(arr);
+
+//         for(int i=0; i<arr.length; i++) {
+//             System.out.print(arr[i] + " ");
+//         }
+//     }
+// }
+
+// =======================================================================================================
+// =======================================================================================================
+
+// Live class :-
+public class Sorting {
+    public static void selectionSort(int arr[], int n) {
+        
+        for(int i=0; i<n-1; i++) {
+            int maxIndex = i;
+
+            for(int j=i+1; j<n; j++) {
+                if(arr[j] > arr[maxIndex]) {
+                    maxIndex = j;
+                }
+            }
+            int temp = arr[i];
+            arr[i] = arr[maxIndex];
+            arr[maxIndex] = temp;
+
         }
     }
-    public static void main(String args[]) {
-        int arr[] = {3, 6, 2, 1, 8, 7, 4, 5, 3, 1};
-        Bubble Sort(arr);
-        // Selection Sort(arr);
-        // Insertion Sort(arr);
-        // Counting Sort(arr);
+    public static void main(String[] args) {
+        int arr[] = {1, 3, 5, 7, 9};
+        int n = arr.length;
 
-        for(int i=0; i<arr.length; i++) {
+        selectionSort(arr, n);
+
+        for(int i=0; i<n; i++) {
             System.out.print(arr[i] + " ");
         }
     }
 }
-
-// =======================================================================================================
-// =======================================================================================================
-
-
 
 
 
