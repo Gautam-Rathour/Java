@@ -652,22 +652,22 @@
 // Leed-code question :- (number => 33.) -------------
 
 public class Array {
-    public static int search(int nums[], int target) {
-        int n = nums.length;
+    public static int search(int arr[], int target) {
+        int n = arr.length;
 
         int left = 0;
         int right = n-1;
         while(left <= right) {
             int mid = (left + right) / 2;
 
-            if(nums[mid] > nums[right]){
+            if(arr[mid] > arr[right]){
                 left = mid + 1;
             } else {
                 right = mid;
             }
         } // left == right 
 
-        shift = left;
+        int shift = left;
 
         left = 0;
         right = n-1;
@@ -698,9 +698,6 @@ public class Array {
 
 
 
-
-// =======================================================================================================
-// =======================================================================================================
 
 
 
