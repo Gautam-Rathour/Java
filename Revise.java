@@ -2556,7 +2556,7 @@ public class Revise {
 // Linear Search :-
 import java.util.*;
 public class Revise {
-    public static void main(String args[]) {
+    public static void main(Strings args[]) {
         int arr[] = {1,2,3,4,5,6,7,11};
         int n = arr.length;
         int key = 6;
