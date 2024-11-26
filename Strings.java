@@ -140,26 +140,58 @@
 //     }
 // }
 
+// // =======================================================================================================
+// // =======================================================================================================
+ 
+// public class Strings {
+//     public static String subString(String s1, int start, int end) {
+//         String subStr = "";
+
+//         for(int i=start; i<end; i++) {
+//             subStr += s1.charAt(i);
+//         }
+//         return subStr;
+//     }
+//     public static void main(String args[]) {
+//         String s1 = "HelloWorld";
+
+//         System.out.println(s1.substring(s1, 0, 10));
+//         System.out.println(subString(s1, 5, 10));
+//     }
+// }
+
 // =======================================================================================================
 // =======================================================================================================
  
+// public class Strings {
+//     public static void main(String args[]) {
+//         String fruits[] = {"apple", "mange", "banana"};
+
+//         String largest = fruits[0];
+//         for(int i=1; i<fruits.length; i++) {
+//             if(largest.compareTo(fruits[i]) < 0) {
+//                 largest = fruits[i];           
+//             }
+//         } 
+//         System.out.println(largest);
+//     }
+// }
+
+// =======================================================================================================
+// =======================================================================================================
+ 
+// String builder : - 
+
 public class Strings {
-    public static void printSubString(String s1, int start, int end) {
-        String subStr = 0;
-        for(int i=start; i<end; i++) {
-            subStr += s1.charAt(i);
-        }
-    }
-
     public static void main(String args[]) {
-        String s1 = "Avinashkumar";
+        StringBuilder sb = new StringBuilder("");
 
-        // System.out.println(s1.substring(0,7));
-        System.out.println(printSubString(s1, 0, 7));
+        for(int char='a'; char<'z'; char++) {
+            sb.append(char);
+        }
+        System.out.println(sb);
     }
 }
-
-
 
 
 
