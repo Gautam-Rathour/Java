@@ -180,21 +180,49 @@
 // =======================================================================================================
 // =======================================================================================================
  
-// String builder : - 
+// //String Builder : - 
+// import java.util.*;
+// public class Strings {
+//     public static void main(String args[]) {
+//         StringBuilder sb = new StringBuilder("");
 
-public class Strings {
-    public static void main(String args[]) {
-        StringBuilder sb = new StringBuilder("");
+//         for(char ch='a'; ch<='z'; ch++) {
+//             sb.append(ch);
+//         }
 
-        for(int char='a'; char<'z'; char++) {
-            sb.append(char);
-        }
-        System.out.println(sb);
-    }
-}
+//         System.out.println(sb);
+//     }
+// }
 
+// =======================================================================================================
+// =======================================================================================================
+ 
+// // Uppercase ;-
+// public class Strings {
+//     public static String toUpperCase(String s1) {
+//         StringBuilder sb = new StringBuilder("");
 
+//         char ch = Character.toUpperCase(s1.charAt(0));
+//         sb.append(ch);
 
+//         for(int i=1; i<s1.length(); i++) {
+//             if(s1.charAt(i) == ' ' && i<s1.length()-1) {
+//                 sb.append(s1.charAt(i));
+//                 i++;
+//                 sb.append(Character.toUpperCase(s1.charAt(i)));
+//             } else { 
+//                 sb.append(s1.charAt(i));
+//             }
+//         }
+
+//         return sb.toString();
+//     }
+//     public static void main(String args[]) {
+//         String s1 = "hi, i am shradha";
+
+//         System.out.println(toUpperCase(s1));
+//     }
+// }
 
 
 
