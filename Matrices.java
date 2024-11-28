@@ -214,23 +214,28 @@
 
 import java.util.*;
 public class Matrices {
-    public static int countSevens(int matrix[][]) {
-        Scanner scanner = new Scanner(System.out);
+    public static void main (String args[]) {
         int nums[][] = {{1, 4, 9},
                         {11, 4, 3},
                         {2, 2, 3}};
 
-        int key = 7;
+        int key = 2;
+        int count = 0;
 
 
         for(int i=0; i<nums.length; i++) {
-            for(int j=0; j<nums.length; j++) {
-                if(nums[i][j] = key) {
-                    System.out.println
+            for(int j=0; j<nums[0].length; j++) {
+                if(nums[i][j] == key) {
+                    count++;
                 }
             }
         }
+        if(count == 0) {
+            System.out.println("Key is not avlable in this 2D array .");
 
+        } else {
+            System.out.println("Number is avilable");
+        }
     }
 }
 
