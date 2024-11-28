@@ -210,39 +210,58 @@
 // =======================================================================================================
 // =======================================================================================================
 
-// Question 1 :Print the number of 7’s that are inthe 2d array.
+// // Question 1 :Print the number of 7’s that are inthe 2d array.
 
-import java.util.*;
+// import java.util.*;
+// public class Matrices {
+//     public static void main (String args[]) {
+//         int nums[][] = {{1, 4, 9},
+//                         {11, 4, 3},
+//                         {2, 2, 3}};
+
+//         int key = 2;
+//         int count = 0;
+
+
+//         for(int i=0; i<nums.length; i++) {
+//             for(int j=0; j<nums[0].length; j++) {
+//                 if(nums[i][j] == key) {
+//                     count++;
+//                 }
+//             }
+//         }
+//         if(count == 0) {
+//             System.out.println("Key is not avlable in this 2D array .");
+
+//         } else {
+//             System.out.println("Number is avilable");
+//         }
+//     }
+// }
+
+// =======================================================================================================
+// =======================================================================================================
+
+// 
 public class Matrices {
-    public static void main (String args[]) {
-        int nums[][] = {{1, 4, 9},
-                        {11, 4, 3},
-                        {2, 2, 3}};
+    public static void printSpiral(int[][] matrix) {
+        int x = 4;
+        int col = x;
 
-        int key = 2;
-        int count = 0;
-
-
-        for(int i=0; i<nums.length; i++) {
-            for(int j=0; j<nums[0].length; j++) {
-                if(nums[i][j] == key) {
-                    count++;
-                }
-            }
-        }
-        if(count == 0) {
-            System.out.println("Key is not avlable in this 2D array .");
-
-        } else {
-            System.out.println("Number is avilable");
+        for(int row=0; row<matrix.length; row++) {
+            System.out.println(matrix[row][col]);
         }
     }
+    public static void main(String args[]) {
+        int arr[][] = {{1, 6, 11, 14, 21},
+                        {2, 7, 12, 15, 25},
+                        {3, 8, 13, 16, 22},
+                        {4, 9, 17, 19, 24},
+                        {5, 10, 20, 18, 23}};
+
+                        printSpiral(arr);
+    }
 }
-
-// =======================================================================================================
-// =======================================================================================================
-
-
 
 
 
