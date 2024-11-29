@@ -245,11 +245,17 @@
 // 
 public class Matrices {
     public static void printSpiral(int[][] matrix) {
-        int x = 4;
-        int col = x;
+        // int x = 4;
+        // int col = x;
 
-        for(int row=0; row<matrix.length; row++) {
-            System.out.println(matrix[row][col]);
+        // for(int row=0; row<matrix.length; row++) {
+        //     System.out.print(matrix[row][col]);
+        // }
+
+        int x = 4;
+        int row = x;
+        for(int col=0; col<matrix[0].length; col++) {
+            System.out.print(matrix[row][col] + " ");
         }
     }
     public static void main(String args[]) {
