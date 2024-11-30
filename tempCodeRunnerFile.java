@@ -1,6 +1,6 @@
-   // public static void printSubString(String s1, int start, int end) {
-    //     String subStr = 0;
-    //     for(int i=start; i<end; i++) {
-    //         subStr += s1.charAt(i);
-    //     }
-    // }
+int x = 0;
+        int col = x;
+        for(int row=0; row<=mat.length-1; row++) {
+            System.out.print(mat[row][col] + " ");
+        }
+        System.out.println();

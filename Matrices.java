@@ -245,23 +245,41 @@
 // 
 public class Matrices {
     public static void printSpiral(int mat[][]) {
-        // int x = 4;
-        // int col = x;
+        int startRow = 0;
+        int startCol = 0;
+        int endRow = mat.length - 1;
+        int endCol = mat[0].length - 1;
 
-        // for(int row=0; row<matrix.length; row++) {
-        //     System.out.print(matrix[row][col] + " ");
-        // }
-
-       
-        // int startRow = 0;
-        // int startCol = 0;
-        // int endRow = mat.length - 1;
-        // int endCol = mat[0].length - 1;
-
-        while(startRow <= endRow && startCol <= endCol) {
-            for(int row=0; row<=mat.length; row++) {
-                System.out.print(mat[startRow][row] + " ");
+        while(startRow <= endRow && startCol <= endCol) { 
+            // =========
+            col = startCol;
+            for(int row=0; row<=mat.length-1; row++) {
+                System.out.print(mat[row][col] + " ");
             }
+            startCol++;
+
+            // print ending row from sc to es
+            row = endRow;
+            for(int col=startCol; col<mat[0].length; col++) {
+                System.out.print(mat[row][col] + " ");
+            }
+            endRow--;
+
+            // print ending col from endRow to Startrow
+            col = endCol;
+            for(int row=endRow; row>=0; row--) {
+                System.out.print(mat[row][col] + " ");
+            }
+            endCol--;
+
+
+            // =========
+            row = startRow;
+            for(int col=endCol; col>=0; col--) {
+                System.out.print(mat[row][col] + " ");
+            }
+            startRow++;
+
 
         }
     }
