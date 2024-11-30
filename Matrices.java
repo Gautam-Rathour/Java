@@ -244,18 +244,25 @@
 
 // 
 public class Matrices {
-    public static void printSpiral(int[][] matrix) {
+    public static void printSpiral(int mat[][]) {
         // int x = 4;
         // int col = x;
 
         // for(int row=0; row<matrix.length; row++) {
-        //     System.out.print(matrix[row][col]);
+        //     System.out.print(matrix[row][col] + " ");
         // }
 
-        int x = 4;
-        int row = x;
-        for(int col=0; col<matrix[0].length; col++) {
-            System.out.print(matrix[row][col] + " ");
+       
+        // int startRow = 0;
+        // int startCol = 0;
+        // int endRow = mat.length - 1;
+        // int endCol = mat[0].length - 1;
+
+        while(startRow <= endRow && startCol <= endCol) {
+            for(int row=0; row<=mat.length; row++) {
+                System.out.print(mat[startRow][row] + " ");
+            }
+
         }
     }
     public static void main(String args[]) {
