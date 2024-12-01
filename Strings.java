@@ -257,35 +257,82 @@
 // =======================================================================================================
 // =======================================================================================================
  
+// import java.util.*;
+// public class Strings {
+//     public static void main(String args[]) {
+//         Scanner sc = new Scanner(System.in);
+//         String str = sc.nextLine();
+
+//         int count = 0;
+//         for(int i=0; i<str.length(); i++) {
+//             char ch = str.charAt(i);
+
+//             if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' ||  ch == 'u') {
+//                 count++;
+//             }
+//         }
+//         System.out.println(" Lower Case Vowels is : " + count);
+//     }
+// }
+
+// =======================================================================================================
+// =======================================================================================================
+ 
+// // Compare and Replace-String :- 
+
+// import java.util.*;
+// public class Strings {
+//     public static void main(String args[]) {
+//         String str = "ShradhaDidi";
+//         String str1 = "ApnaCollege";
+//         String str2 = "ShradhaDidi";
+
+//         // System.out.println(str.equals(str1));
+//         // System.out.println(str1.replace("a", "x"));
+//     }
+// }
+
+// // =======================================================================================================
+// // =======================================================================================================
+ 
+// // Change into Upper-Case :- 
+
+// import java.util.*;
+// public class Strings {
+//     public static void main(String args[]) {
+//         String str = "Shradha Didi";
+        
+//         String str1 = str.toUpperCase();
+
+//         System.out.println( str1 );   
+//     }
+// }
+
+// =======================================================================================================
+// =======================================================================================================
+ 
+// Check if two strings are Anagrams :- 
+
 import java.util.*;
 public class Strings {
     public static void main(String args[]) {
-        Scanner sc = new Scanner(System.in);
-        String str = sc.nextLine();
+        String str1 = "eat";
+        String str2 = "yesh";
 
-        int count = 0;
-        for(int i=0; i<str.length(); i++) {
-            char ch = str.charAt(i);
+        char s1Arr[] = str1.toCharArray();
+        char s2Arr[] = str2.toCharArray();
 
-            if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' ||  ch == 'u') {
-                count++;
-            }
-        }
-        System.out.println(" Lower Case Vowels is : " + count);
+        Arrays.sort( s1Arr );
+        Arrays.sort( s2Arr );
+
+        System.out.println( Arrays.equals(s1Arr, s2Arr));
+        
     }
 }
 
 // =======================================================================================================
 // =======================================================================================================
  
-
-
-
-
-
-
-
-
 
 
 
