@@ -242,7 +242,8 @@
 // =======================================================================================================
 // =======================================================================================================
 
-// 
+// Print Spril Matrix :-
+
 public class Matrices {
     public static void printSpiral(int mat[][]) {
         int startRow = 0;
@@ -250,47 +251,47 @@ public class Matrices {
         int endRow = mat.length - 1;
         int endCol = mat[0].length - 1;
 
-        while(startRow <= endRow && startCol <= endCol) { 
-            // =========
-            col = startCol;
-            for(int row=0; row<=mat.length-1; row++) {
-                System.out.print(mat[row][col] + " ");
-            }
-            startCol++;
-
-            // print ending row from sc to es
-            row = endRow;
-            for(int col=startCol; col<mat[0].length; col++) {
-                System.out.print(mat[row][col] + " ");
-            }
-            endRow--;
-
-            // print ending col from endRow to Startrow
-            col = endCol;
-            for(int row=endRow; row>=0; row--) {
-                System.out.print(mat[row][col] + " ");
-            }
-            endCol--;
-
-
-            // =========
-            row = startRow;
-            for(int col=endCol; col>=0; col--) {
-                System.out.print(mat[row][col] + " ");
+        while (startRow <= endRow && startCol <= endCol) { 
+            // Print top row from startCol to endCol
+            for (int col = startCol; col <= endCol; col++) {
+                System.out.print(mat[startRow][col] + " ");
             }
             startRow++;
 
+            // Print rightmost column from startRow to endRow
+            for (int row = startRow; row <= endRow; row++) {
+                System.out.print(mat[row][endCol] + " ");
+            }
+            endCol--;
 
+            // Print bottom row from endCol to startCol (if still within bounds)
+            if (startRow <= endRow) {
+                for (int col = endCol; col >= startCol; col--) {
+                    System.out.print(mat[endRow][col] + " ");
+                }
+                endRow--;
+            }
+
+            // Print leftmost column from endRow to startRow (if still within bounds)
+            if (startCol <= endCol) {
+                for (int row = endRow; row >= startRow; row--) {
+                    System.out.print(mat[row][startCol] + " ");
+                }
+                startCol++;
+            }
         }
     }
-    public static void main(String args[]) {
-        int arr[][] = {{1, 6, 11, 14, 21},
-                        {2, 7, 12, 15, 25},
-                        {3, 8, 13, 16, 22},
-                        {4, 9, 17, 19, 24},
-                        {5, 10, 20, 18, 23}};
 
-                        printSpiral(arr);
+    public static void main(String args[]) {
+        int arr[][] = {
+            {1, 6, 11, 14, 21},
+            {2, 7, 12, 15, 25},
+            {3, 8, 13, 16, 22},
+            {4, 9, 17, 19, 24},
+            {5, 10, 20, 18, 23}
+        };
+
+        printSpiral(arr);
     }
 }
 
