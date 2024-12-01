@@ -271,7 +271,7 @@ public class Strings {
                 count++;
             }
         }
-        System.out.println(count);
+        System.out.println(" Lower Case Vowels is : " + count);
     }
 }
 
