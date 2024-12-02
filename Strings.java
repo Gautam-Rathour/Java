@@ -313,28 +313,77 @@
  
 // Check if two strings are Anagrams :- 
 
-import java.util.*;
-public class Strings {
-    public static void main(String args[]) {
-        String str1 = "eat";
-        String str2 = "tea";
+// import java.util.*;
+// public class Strings {
+//     public static void main(String args[]) {
+//         String str1 = "eat";
+//         String str2 = "tea";
 
-        char s1Arr[] = str1.toCharArray();
-        char s2Arr[] = str2.toCharArray();
+//         char s1Arr[] = str1.toCharArray();
+//         char s2Arr[] = str2.toCharArray();
 
-        Arrays.sort( s1Arr );
-        Arrays.sort( s2Arr );
+//         Arrays.sort( s1Arr );
+//         Arrays.sort( s2Arr );
 
-        System.out.println( Arrays.equals(s1Arr, s2Arr));
+//         System.out.println( Arrays.equals(s1Arr, s2Arr));
         
-    }
-}
+//     }
+// }
+
+// // =======================================================================================================
+// // =======================================================================================================
+ 
+
+// import java.util.*;
+// public class Strings {
+//     public static void main(String args[]) {
+//         String str = "Yash";
+
+//         System.out.println(str.hashCode());
+
+//         str += "D";
+
+//         System.out.println(str.hashCode());
+        
+//     }
+// }
+
+// // =======================================================================================================
+// // =======================================================================================================
+ 
+// import java.util.*;
+// public class Strings {
+//     public static void main(String args[]) {
+//         StringBuilder sb = new StringBuilder("Yash");
+
+//         System.out.println(sb.hashCode());
+
+//         sb.append("D");
+
+//         System.out.println(sb.hashCode());
+        
+//     }
+// }
 
 // =======================================================================================================
 // =======================================================================================================
  
+// Useing of  Intern in java :-
 
+import java.util.*;
+public class Strings {
+    public static void main(String args[]) {
 
+        String str1 = new String("Yash"); // string object -> heap memory
+        
+        String str2 = "Yash"; // string literal -> string pool
+
+        str1 = str1.intern(); // str1 heap -> string pool
+
+        // str1 heap str2 is in string pool
+        System.out.println( str1 == str2);
+    }
+}
 
 
 
