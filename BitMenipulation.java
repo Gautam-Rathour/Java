@@ -85,65 +85,98 @@
 // // ===========================================================================================================
 // // ===========================================================================================================
 
-public class BitMenipulation{
-        // set Ith Bit 
-        public static int setIthBit(int n, int i) {
-        int bitMask = 1<<i;
+// public class BitMenipulation{
+//         // set Ith Bit 
+//         public static int setIthBit(int n, int i) {
+//         int bitMask = 1<<i;
         
-        return n | bitMask;
-    }
+//         return n | bitMask;
+//     }
 
-        // clear Ith Bit
-        public static int clearIthBit(int n, int i) {
-        int bitMask = 1<<i;
-        int tildbitMask = ~(bitMask);
+//         // clear Ith Bit
+//         public static int clearIthBit(int n, int i) {
+//         int bitMask = 1<<i;
+//         int tildbitMask = ~(bitMask);
         
-        return n & tildbitMask;
+//         return n & tildbitMask;
       
-    }
+//     }
 
-    public static int updateIthBit(int n, int i, int newBit) {
-        // if(newBit == 0) {
-        //     return clearIthBit(n, i);
-        // } else {
-        //     return setIthBit(n, i);
-        // }
+//     public static int updateIthBit(int n, int i, int newBit) {
+//         // if(newBit == 0) {
+//         //     return clearIthBit(n, i);
+//         // } else {
+//         //     return setIthBit(n, i);
+//         // }
 
-        n = clearIthBit(n, i);
-        int BitMask = newBit<<i;
-        return n| BitMask;
-    }
+//         n = clearIthBit(n, i);
+//         int BitMask = newBit<<i;
+//         return n| BitMask;
+//     }
 
-    public static int clearIBits(int n, int i) {
+//     public static int clearIBits(int n, int i) {
 
-        int bitMask = (~0) << i;
-        return n & bitMask;
-    }
+//         int bitMask = (~0) << i;
+//         return n & bitMask;
+//     }
 
-public static int clearIBits(int n, int i, int j) {
-    int a = ((~0)<<(j+1));
-    int b = (1<<i)-1;
-    int bitMask = a | b;
-    return n & bitMask;
-}
+// public static int clearIBits(int n, int i, int j) {
+//     int a = ((~0)<<(j+1));
+//     int b = (1<<i)-1;
+//     int bitMask = a | b;
+//     return n & bitMask;
+// }
 
 
-    public static void main(String args[]) {
+//     public static void main(String args[]) {
 
-        // System.out.println(updateIthBit(10, 2, 1));
-        // System.out.println(clearIthBit(10, 2));
+//         // System.out.println(updateIthBit(10, 2, 1));
+//         // System.out.println(clearIthBit(10, 2));
 
-        // System.out.println(clearIBits(15, 2));
-        System.out.println(clearIBits(10, 2, 4));
-    }
-}
+//         // System.out.println(clearIBits(15, 2));
+//         System.out.println(clearIBits(10, 2, 4));
+//     }
+// }
 
 // // ===========================================================================================================
 // // ===========================================================================================================
 
+// public class BitMenipulation {
+//     public static void main(String[] args) { 
+//         // int x = 11;
 
+//         // x = x | (1 << 5);
 
+//         // System.out.println(x);
 
+//         int x = 9;
+//         x = x & (~(1<<3));
+//         System.out.println(x);
+//     }
+// }
+
+// ===========================================================================================================
+// ===========================================================================================================
+
+// Swap the value - Without temp variable :-
+
+public class BitMenipulation {
+    public static void main(String[] args) { 
+        
+        int a = 12;
+        int b = 53;
+
+        a = a ^ b;
+        b = a ^ b;
+        a = a ^ b;
+
+        System.out.println(" A = " + a);
+        System.out.println(" B = " + b);
+    }
+}
+
+// ===========================================================================================================
+// ===========================================================================================================
 
 
 
