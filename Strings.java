@@ -317,7 +317,7 @@ import java.util.*;
 public class Strings {
     public static void main(String args[]) {
         String str1 = "eat";
-        String str2 = "yesh";
+        String str2 = "tea";
 
         char s1Arr[] = str1.toCharArray();
         char s2Arr[] = str2.toCharArray();
