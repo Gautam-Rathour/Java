@@ -141,6 +141,8 @@
 // // ===========================================================================================================
 // // ===========================================================================================================
 
+// Live : - 
+
 // public class BitMenipulation {
 //     public static void main(String[] args) { 
 //         // int x = 11;
@@ -160,27 +162,87 @@
 
 // Swap the value - Without temp variable :-
 
-public class BitMenipulation {
-    public static void main(String[] args) { 
+// public class BitMenipulation {
+//     public static void main(String[] args) { 
         
-        int a = 12;
-        int b = 53;
+//         int a = 12;
+//         int b = 53;
 
-        a = a ^ b;
-        b = a ^ b;
-        a = a ^ b;
+//         a = a ^ b;
+//         b = a ^ b;
+//         a = a ^ b;
 
-        System.out.println(" A = " + a);
-        System.out.println(" B = " + b);
+//         System.out.println(" A = " + a);
+//         System.out.println(" B = " + b);
+//     }
+// }
+
+// // ===========================================================================================================
+// // ===========================================================================================================
+
+// Check the number is power of 2 or not :- 
+
+// public class BitMenipulation {
+//     public static boolean isPowerOfTwo(int n) {
+//         return (n & (n-1)) == 0;
+
+//     }
+//     public static void main(String[] args) { 
+
+//         boolean result = isPowerOfTwo(32);
+//         System.out.println(result);
+
+//     }
+// }
+
+// // ===========================================================================================================
+// // ===========================================================================================================
+
+// // Count Set Bits in a Number :- 
+
+// public class BitMenipulation {
+//     public static int countSetBits(int n) {
+//         int count = 0;
+//         while(n > 0) {
+//             if((n & 1) != 0) {
+//                 count++;
+//             }
+//             n = n >> 1;
+//         }
+//         return count;
+//     }
+//     public static void main(String[] args) { 
+
+//         System.out.println(countSetBits(16));
+
+//     }
+// }
+
+// ===========================================================================================================
+// ===========================================================================================================
+
+// Fast Exponentiation :-
+
+public class BitMenipulation {
+    public static int fastExpo(int a, int n) {
+        int ans = 1;
+
+        while(n > 0) {
+            if((n & 1) != 0) { // check LSB
+                ans = ans * a;
+            }
+            a = a * a;
+            n = n >> 1;
+        }
+        return ans;
+    }
+    
+    public static void main(String[] args) { 
+
+        System.out.println(fastExpo(5, 3));
+
     }
 }
-
-// ===========================================================================================================
-// ===========================================================================================================
-
-
-
-
 
 
 
