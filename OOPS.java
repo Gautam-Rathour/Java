@@ -233,69 +233,238 @@
 // ===========================================================================================================
 // ===========================================================================================================
 
-// Enheritance (Multi Level): - 
+// // Enheritance (Multi Level): - 
+
+// public class OOPS {
+//     public static void main (String args[]) {
+//         Mammals human = new Mammals();
+//         human.eat();
+//         human.walk();
+//         Fish fish = new Fish();
+//         fish.eat();
+//         fish.swim();
+//         Bird bird = new Bird();
+//         bird.eat();
+//         bird.fly();
+
+//     }
+// }
+
+// // Base class 
+// class Animal {
+//     String color;
+
+//     void eat() {
+//         System.out.println("eats");
+//     }
+//     void breathe() {
+//         System.out.println("breathes");
+//     }
+// }
+
+// class Mammals extends Animal {
+//     void walk() {
+//         System.out.println("Walks");
+//     }
+// }
+
+// class Fish extends Animal {
+//     void swim() {
+//         System.out.println("Swime");
+//     }
+// }
+
+// class Bird extends Animal {
+//     void fly () {
+//         System.out.println("Fly");
+//     }
+// }
+
+// ===========================================================================================================
+// ===========================================================================================================
+
+// // Hybrid Inheritance :-
+
+// public class OOPS {
+//     public static void main(String args[]) {
+
+
+//     }
+// }
+// // parent class --------------
+// class Animal {
+//     void eat() {
+//         System.out.println("Eats");
+//     }
+//     void breathe() {
+//         System.out.println("Breathes");
+//     }
+// }
+
+
+// //===============
+// class Fish extends Animal {
+//     void swim () {
+//         System.out.println("Swims");
+//     }
+// }
+// class Tuna extands Fish {
+//     void jump() {
+//         System.out.println("Jump");
+//     }
+// }
+// class Shark extends Fish {
+//     void shark () {
+//         System.out.println("Shark");
+//     }
+// }
+
+
+// //===============
+// class Bird extends Animal {
+//     void fly () {
+//         System.out.println("Fly");
+//     }
+// }
+// class peacock extends Animal {
+//     void dance() {
+//         System.out.println("Dance");
+//     }
+// }
+
+
+// //===============
+// class Mammal extends Animal {
+//     void walk () {
+//         System.out.println("Walks");
+//     }
+// }
+// class Dog extends Mammal {
+//     void bark () {
+//         System.out.println("Barks");
+//     }
+// }
+// class Cat extends Mammal {
+//     void meow () {
+//         System.out.println("Meows");
+//     }
+// }
+// class Human extends Mammal {
+//     void speak () {
+//         System.out.println("Speaks");
+//     }
+// }
+
+// // ===========================================================================================================
+// // ===========================================================================================================
+
+
+// // Method Overloading :-
+
+// public class OOPS {
+//     public static void main (String args[]) {
+//         Calculator calc = new Calculator();
+//         System.out.println(calc.sum(3, 1));
+//         System.out.println(calc.sum((float)3.7 , (float)5.7));
+//         System.out.println(calc.sum(3, 1, 2));
+
+
+//     }
+// }
+
+// class Calculator {
+//     int sum(int a , int b) {
+//         return a + b;
+//     }
+//     float sum(float a, float b) {
+//         return a + b;
+//     }
+//     int sum(int a, int b, int c) {
+//         return a + b + c;
+//     }
+// }
+
+// // ===========================================================================================================
+// // ===========================================================================================================
+
+
+// // Method Overriding :-
+
+// public class OOPS {
+//     public static void main (String args[]) {
+//         Deer d = new Deer();
+//         d.eat();
+
+
+//     }
+// }
+
+// class Animal {
+//     void eat() {
+//         System.out.println("Eat anything......");
+//     }
+// }
+
+// class Deer extends Animal {
+//     void eat() {
+//         System.out.println("Eat grasss");
+//     }
+// }
+
+
+// class Calculator {
+//     int sum(int a , int b) {
+//         return a + b;
+//     }
+//     float sum(float a, float b) {
+//         return a + b;
+//     }
+//     int sum(int a, int b, int c) {
+//         return a + b + c;
+//     }
+// }
+
+
+// ===========================================================================================================
+// ===========================================================================================================
+
+
+// Abstraction :-
 
 public class OOPS {
     public static void main (String args[]) {
-        Mammals human = new Mammals();
-        human.eat();
-        human.walk();
-        Fish fish = new Fish();
-        fish.eat();
-        fish.swim();
-        Bird bird = new Bird();
-        bird.eat();
-        bird.fly();
+        Horse h = new Horse();
+        h.eat();
+        h.walk();
+
+        Chicken c = new Chicken();
+        c.eat();
+        c.walk();
 
     }
 }
 
-// Base class 
-class Animal {
-    String color;
-
+abstract class Animal {
     void eat() {
-        System.out.println("eats");
+        System.out.println("animal eats");
     }
-    void breathe() {
-        System.out.println("breathes");
-    }
+    abstract void walk();
 }
 
-class Mammals extends Animal {
+class Horse extends Animal {
     void walk() {
-        System.out.println("Walks");
+        System.out.println("walks on 4 legs");
     }
 }
 
-class Fish extends Animal {
-    void swim() {
-        System.out.println("Swime");
+class Chicken extends Animal {
+    void walk () {
+        System.out.println("walks on 2 legs");
     }
 }
 
-class Bird extends Animal {
-    void fly () {
-        System.out.println("Fly");
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// ===========================================================================================================
+// ===========================================================================================================
 
 
 
