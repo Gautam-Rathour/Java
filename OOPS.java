@@ -428,36 +428,56 @@
 // ===========================================================================================================
 // ===========================================================================================================
 
-
 // // Abstraction :-
 
 // public class OOPS {
 //     public static void main (String args[]) {
-//         Horse h = new Horse();
-//         h.eat();
-//         h.walk();
+//         // Horse h = new Horse();
+//         // h.eat();
+//         // h.walk();
+//         // System.out.println(h.color);
 
-//         Chicken c = new Chicken();
-//         c.eat();
-//         c.walk();
+//         Mustange myHorse = new Mustange();
+//         // Animal -> Horse -> Mustange   
 
 //     }
 // }
-
+// // main class   ------
 // abstract class Animal {
+//     String color;
+
+//     Animal() {
+//         System.out.println("Animal constructor called ");
+//     }
 //     void eat() {
 //         System.out.println("animal eats");
 //     }
 //     abstract void walk();
 // }
 
+// // ---------------------
 // class Horse extends Animal {
+//     Horse() {
+//         System.out.println("Horse constructor called ");
+//     }
+//     void changeColor() {
+//         color = "dark brown";
+//     }
 //     void walk() {
 //         System.out.println("walks on 4 legs");
 //     }
 // }
+// class Mustange extends Horse {
+//     Mustange() {
+//         System.out.println("Mustange constructor called ");
+//     }
+// }
 
+// // --------------------
 // class Chicken extends Animal {
+//     void changeColor() {
+//         color = "yellow";
+//     }
 //     void walk () {
 //         System.out.println("walks on 2 legs");
 //     }
@@ -466,11 +486,148 @@
 // ===========================================================================================================
 // ===========================================================================================================
 
+// // makeing a Chess-Game Interface :---
+
+// public class OOPS {
+//     public static void main (String args[]) {
+//         Queen q = new Queen();
+//         q.moves();
+        
+//     }
+// }
+
+// interface ChessPlayer {
+//     void moves();
+// }
+
+// class Queen implements ChessPlayer {
+//     public void moves() {
+//         System.out.println("up, down, left, right, diagonal (in all 4 directions)");
+//     }
+// }
+
+// class Rook implements ChessPlayer {
+//     public void moves() {
+//         System.out.println("up, down, left, right");
+//     }
+// }
+
+// class King implements ChessPlayer {
+//     public void moves() {
+//         System.out.println(" up, down, left, right, diagonal - ( by 1 step ) ");
+//     }
+// }
+
+// ===========================================================================================================
+// ===========================================================================================================
+
+
+// public class OOPS {
+//     public static void main (String args[]) {
+        
+//     }
+// }
+
+// interface Harbivore {
+//     void eat();
+// }
+
+// interface Carnivore {
+//     void eat();
+//     void breathe();
+// }
+
+// class Bear implements Harbivore, Carnivore {
+//     void eat() {
+//         System.out.println
+//     }
+// }
+
+// ===========================================================================================================
+// ===========================================================================================================
+
+// // Use of Static :-
+
+// public class OOPS {
+//     public static void main (String args[]) {
+//         Student s1 = new Student();
+//         s1.schoolName = "SSM";
+
+//         Student s2 = new Student();
+//         System.out.println("\nSecond student school name is : " + s2.schoolName);
+            
+        
+//     }
+// }
+
+// class Student {
+//     // if we use static ( Static ) keyword so , we do not have to use same code in multipal class :--
+//     static int returnPercentage(int math, int phy, int chem) {
+//         return (math + phy + chem) / 3;
+//     }
+//     String name ;
+//     int roll ;
+//     static String schoolName;
+
+//     void setName(String name) {
+//         this.name = name;
+//     }
+//     String getName() {
+//         return this.name;
+//     }
+// }
+
+// ===========================================================================================================
+// ===========================================================================================================
+
+// // Use of Super keyword :-
+
+// public class OOPS { 
+//     public static void main(String args[]) {
+//         Horse h = new Horse();
+//         System.out.println(h.color);
+//     }
+// }
+
+
+// class Animal {
+//     String color;
+//     Animal() {
+//         System.out.println("Animal constructor is called");
+//     }
+// }
+
+// class Horse extends Animal {
+//     Horse() {
+//         super.color = "brown";
+//         System.out.println("Horse constructor is called");
+//     }
+// }
+
+// ===========================================================================================================
+// ===========================================================================================================
+
+// Practice Question :--
+
 public class OOPS {
     public static void main (String args[]) {
-      
+        Student s = new Student();
+        s.name = "Rahul";
+        System.out.println(s.name);
     }
 }
+
+class Student {
+    String name;
+    int marks;
+}
+
+// ===========================================================================================================
+// ===========================================================================================================
+
+
+
+
 
 
 
