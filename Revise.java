@@ -2553,25 +2553,43 @@ public class Revise {
 // =======================================================================================================
 // =======================================================================================================
 
-// Linear Search :-
-import java.util.*;
-public class Revise {
-    public static void main(Strings args[]) {
-        int arr[] = {1,2,3,4,5,6,7,11};
-        int n = arr.length;
-        int key = 6;
+// // Linear Search :-
+// import java.util.*;
+// public class Revise {
+//     public static void main(Strings args[]) {
+//         int arr[] = {1,2,3,4,5,6,7,11};
+//         int n = arr.length;
+//         int key = 6;
 
-        for(int i=0; i<n; i++) {
+//         for(int i=0; i<n; i++) {
             
-            if(arr[i] == key) {
-                System.out.println("Element is present at index = " + i);
+//             if(arr[i] == key) {
+//                 System.out.println("Element is present at index = " + i);
+//             }
+//         }
+//     }
+// }
+
+// =======================================================================================================
+// =======================================================================================================
+
+// Revision :-
+public class Revise {
+    public static void main(String args[]) {
+        int a = 3; 
+        int n = 8; 
+        int ans = 1;
+
+        while (n > 0) {
+            if( n % 2 == 1) {
+                ans = ans * a;
             }
+            n = n / 2;
+            a = a * a;
         }
+        System.out.println(ans);
     }
 }
-
-
-
 
 
 
