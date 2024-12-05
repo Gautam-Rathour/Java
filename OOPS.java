@@ -607,28 +607,84 @@
 // ===========================================================================================================
 // ===========================================================================================================
 
-// Practice Question :--
+// // Practice Question :--
+
+// public class OOPS {
+//     public static void main (String args[]) {
+//         int a[] = {11, 12, 13, 14};
+//         Student s1 = new Student( a );
+        
+//         Student s2 = new Student(s1);
+//         // System.out.println(s2.name);
+//         // System.out.println(s2.rollNo);
+//         // System.out.println("");
+//         s1.display();
+//         s2.display();
+
+//         a[0] = 10;
+//         a[1] = 20;
+//         a[2] = 30;
+//         a[3] = 40;
+
+//         s1.display();
+//         s2.display();
+//     }
+// }
+
+// class Student {
+//     int arr[];
+//     String name;
+//     int rollNo;
+
+//     Student(int arr[]) {
+//         this.arr = new int[arr.length];
+
+//         for(int i=0; i<arr.length; i++) {
+//             this.arr[i] = arr[i];
+//         }
+//     }
+    
+//     // Basic copy constroctor 
+//     Student(Student s1) {
+//         this.arr = new int[s1.arr.length];
+
+//         for(int i=0; i<s1.arr.length; i++) {
+//             this.arr[i] = s1.arr[i];
+//         }
+//     }
+
+//     void display() {
+//         for(int i=0; i<arr.length; i++) {
+//             System.out.print(arr[i] + " ");
+//         }
+//         System.out.println();
+//     }
+// }
+
+// ===========================================================================================================
+// ===========================================================================================================
+
+// Question ( this question not related to this chepter ) :-
 
 public class OOPS {
     public static void main (String args[]) {
-        Student s = new Student();
-        s.name = "Sonu";
-        System.out.println(s.name);
+        int a[] = {2, 3, -1, -5, 10, 12};
+        int ans = 0;
+        int sum = 0;
+
+        for(int i = 0; i < a.length; i++ ) {
+            sum += a[i];
+
+            if(sum > ans) {
+                ans = sum;
+            }
+            if(sum < 0) {
+                sum = 0;
+            }
+        }
+        System.out.println(ans);
     }
 }
-
-class Student {
-    String name;
-    int marks;
-
-}
-
-// ===========================================================================================================
-// ===========================================================================================================
-
-
-
-
 
 
 // ===========================================================================================================
