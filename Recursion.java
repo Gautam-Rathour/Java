@@ -137,10 +137,74 @@
 // =======================================================================================================
 // =======================================================================================================
 
+// // Find the first Occurence :--
 
+// public class Recursion {
+//     public static int firstOccurence (int arr[], int key, int i) {
+//         if(i == arr.length) {
+//             return -1;
+//         }
+//         if(arr[i] == key) {
+//             return i;
+//         }
 
+//         return firstOccurence(arr, key, i+1);
+//     }
+//     public static void main(String args[]) {
+//         int arr[] = {8, 3, 6, 9, 5, 10, 2, 5, 3};
+//         int key = 5;
+//         System.out.println(firstOccurence(arr, key, 0));
+//     }
+// }
 
+// // =======================================================================================================
+// // =======================================================================================================
 
+// // Find the last Occurence :--
+
+// public class Recursion {
+//     public static int lastOccurence (int arr[], int key, int i) {
+//         if(i == arr.length) {
+//                 return -1;
+//             }
+
+//        int isFound = lastOccurence(arr, key, i+1);
+       
+//        if(isFound == -1 && arr[i] == key) {
+//         return i;
+//        }
+
+//        return isFound;
+//     }
+//     public static void main(String args[]) {
+//         int arr[] = {8, 3, 6, 9, 5, 10, 2, 5, 3};
+//         int key = 5;
+//         System.out.println(lastOccurence(arr, key, 0));
+//     }
+// }
+
+// =======================================================================================================
+// =======================================================================================================
+
+// Find the last Occurence :--
+
+public class Recursion {
+    public static int power(int x, int n) {
+        if(n == 0) {
+            return 1;
+        }
+        return x * power(x, n-1);
+    }
+    public static void main(String args[]) {
+        int x = 2;
+        int y = 10;
+        System.out.println(power(x, y));
+        
+    }
+}
+
+// =======================================================================================================
+// =======================================================================================================
 
 
 
