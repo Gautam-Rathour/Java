@@ -188,31 +188,153 @@
 
 // Find the last Occurence :--
 
+// public class Recursion {
+//     public static int power(int x, int n) {
+//         if(n == 0) {
+//             return 1;
+//         }
+//         return x * power(x, n-1);
+//     }
+//     public static void main(String args[]) {
+//         int x = 2;
+//         int y = 10;
+//         System.out.println(power(x, y));
+        
+//     }
+// }
+
+// =======================================================================================================
+// =======================================================================================================
+
+// public class Recursion {
+//     public static int optimizedPower(int a, int n) {
+//         if(n == 0) {
+//             return 1;
+//         }
+//     //    int halPowerSq = optimizedPowr(a, n/2) * optimizePower(a, n/2);
+//         int halfPower = optimizedPower(a, n/2);
+//         int halfPowerSq = halfPower * halfPower;
+
+//        //n is odd 
+//        if (n % 2 != 0) {
+//         halfPowerSq = a * halfPowerSq;
+//        }
+
+//        return halfPowerSq;
+//     }
+//     public static void main(String args[]) {
+//         int a = 2;
+//         int n = 10;
+//         System.out.println(optimizedPower(a, n));
+        
+//     }
+// }
+
+// =======================================================================================================
+// =======================================================================================================
+
+// // Revision :- 
+
+// public class Recursion {
+//     public static int firstOccurence(int arr[], int key, int i) {
+//         if(i == arr.length) {
+//             return -1;
+//         }
+//         if(arr[i] == key) {
+//             return i;
+//         }
+
+//         return firstOccurence(arr, key, i+1);
+//     }
+//     public static void main (String args[]) {
+//         int arr [] = {8, 3, 6, 9, 5, 10, 2, 5, 3};
+//         int key = 4;
+
+//         System.out.println(firstOccurence(arr, key, 0));
+//     }
+// }
+
+// =======================================================================================================
+// =======================================================================================================
+
+// // Revision :- 
+
+// public class Recursion {
+//     public static int lastOccurence(int arr[], int key, int i) {
+//         if(i == arr.length) {
+//             return -1;
+//         }
+//         int isFound = lastOccurence(arr, key, i+1);
+//         if(isFound == -1  && arr[i] == key) {
+//             return i;
+//         }
+
+//         return isFound;
+//     }
+   
+//     public static void main (String args[]) {
+//         int arr [] = {8, 3, 6, 9, 5, 10, 2, 5, 3};
+//         int key = 5;
+
+//         System.out.println(lastOccurence(arr, key, 0));
+//     }
+// }
+
+// // =======================================================================================================
+// // =======================================================================================================
+
+// // Revision :- (Power - x ^ n)
+
+// public class Recursion {
+//     public static int power(int x, int n ) {
+//         if(n == 0) {
+//             return 1;
+//         }
+//         return x * power(x , n-1);
+//     }
+   
+   
+//     public static void main (String args[]) {
+//         int x = 2;
+//         int n = 10;
+
+
+//         System.out.println(power(x, n));
+//     }
+// }
+
+// =======================================================================================================
+// =======================================================================================================
+
+// Revision :- (Power - x ^ n)
+
 public class Recursion {
-    public static int power(int x, int n) {
+    public static int optimizedPower(int a, int n) {
         if(n == 0) {
             return 1;
         }
-        return x * power(x, n-1);
+
+        int halfPowerSq = optimizedPower(a, n/2) * optimizedPower(a, n/2);
+
+        // n is odd 
+        if(n % 2 != 0) {
+            halfPowerSq = a * halfPowerSq;
+        }
+
+        return halfPowerSq;
     }
-    public static void main(String args[]) {
-        int x = 2;
-        int y = 10;
-        System.out.println(power(x, y));
-        
+   
+    public static void main (String args[]) {
+        int a = 2;
+        int n = 10;
+
+
+        System.out.println(optimizedPower(a, n));
     }
 }
 
 // =======================================================================================================
 // =======================================================================================================
-
-
-
-
-
-
-
-
 
 
 
