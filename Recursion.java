@@ -430,41 +430,54 @@
 // =======================================================================================================
 // =======================================================================================================
 
-// Print all binary strings of size N withour consecutive ones : -
+// // Print all binary strings of size N withour consecutive ones : -
+
+// public class Recursion {
+//     public static void printBinStrings(int n, int lastPlace, String str) {
+//         // base case
+//         if(n == 0) {
+//             System.out.println(str);
+//             return;
+//         }
+//         // //kaam
+//         // if(lastPlace == 0) {
+//         //     //sit 0 on chair lastPlace
+//         //     printBinStrings(n-1, 0, str+"0");
+//         //     printBinStrings(n-1, 1, str+"1");
+//         // } else {
+//         //     //sit 1 on chair lastPlace
+//         //     printBinStrings(n-1, 0, append("0"));
+//         // }
+
+//         printBinStrings(n-1, 0, str+"0");
+//         if(lastPlace == 0) {
+//             printBinStrings(n-1, 1, str+"1");
+//         }
+//     }
+//     public static void main(String args[]) {
+        
+//         printBinStrings(5, 0, "");
+//     }
+// }
+
+// =======================================================================================================
+// =======================================================================================================
+
+//   Tower of hanoi :--
 
 public class Recursion {
-    public static void printBinStrings(int n, int lastPlace, String str) {
-        // base case
+    public static void toh(int n, int A, int C, int B) {
         if(n == 0) {
-            System.out.println(str);
             return;
         }
-        // //kaam
-        // if(lastPlace == 0) {
-        //     //sit 0 on chair lastPlace
-        //     printBinStrings(n-1, 0, str+"0");
-        //     printBinStrings(n-1, 1, str+"1");
-        // } else {
-        //     //sit 1 on chair lastPlace
-        //     printBinStrings(n-1, 0, append("0"));
-        // }
-
-        printBinStrings(n-1, 0, str+"0");
-        if(lastPlace == 0) {
-            printBinStrings(n-1, 1, str+"1");
-        }
+        toh(n-1, A, B, C);
+        System.out.println("Moving " + n + "th disk from " + A + " to " + C);
+        toh(n-1, B, C, A);
     }
     public static void main(String args[]) {
-        
-        printBinStrings(5, 0, "");
+        toh(3, 10, 30, 20);
     }
 }
-
-
-// =======================================================================================================
-// =======================================================================================================
-
-
 
 
 
