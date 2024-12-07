@@ -399,40 +399,70 @@
 // =======================================================================================================
 // =======================================================================================================
 
-// Find Friends Pairing :- 
+// // Find Friends Pairing :- 
+
+// public class Recursion {
+//     public static int friendsPairing(int n) {
+//         if(n == 1 || n == 2) {
+//             return n;
+//         }
+        
+//         // // choice
+//         // //single
+//         // int fnm1 = friendsPairing(n-1);
+
+//         // //pair
+//         // int fnm2 = friendsPairing(n-2);
+//         // int pairWays = (n-1) * fnm2;
+
+//         // // totWays
+//         // int totWays = fnm1 + pairWays;
+//         // return totWays;
+
+//         return friendsPairing(n-1) + (n-1) * friendsPairing(n-2);
+//     }
+//     public static void main(String args[]) {
+//         System.out.println(friendsPairing(3));
+
+//     }
+// }
+
+// =======================================================================================================
+// =======================================================================================================
+
+// Print all binary strings of size N withour consecutive ones : -
 
 public class Recursion {
-    public static int friendsPairing(int n) {
-        if(n == 1 || n == 2) {
-            return n;
+    public static void printBinStrings(int n, int lastPlace, String str) {
+        // base case
+        if(n == 0) {
+            System.out.println(str);
+            return;
         }
-        
-        // // choice
-        // //single
-        // int fnm1 = friendsPairing(n-1);
+        // //kaam
+        // if(lastPlace == 0) {
+        //     //sit 0 on chair lastPlace
+        //     printBinStrings(n-1, 0, str+"0");
+        //     printBinStrings(n-1, 1, str+"1");
+        // } else {
+        //     //sit 1 on chair lastPlace
+        //     printBinStrings(n-1, 0, append("0"));
+        // }
 
-        // //pair
-        // int fnm2 = friendsPairing(n-2);
-        // int pairWays = (n-1) * fnm2;
-
-        // // totWays
-        // int totWays = fnm1 + pairWays;
-        // return totWays;
-
-        return friendsPairing(n-1) + (n-1) * friendsPairing(n-2);
+        printBinStrings(n-1, 0, str+"0");
+        if(lastPlace == 0) {
+            printBinStrings(n-1, 1, str+"1");
+        }
     }
     public static void main(String args[]) {
-        System.out.println(friendsPairing(3));
-
+        
+        printBinStrings(3, 0, "");
     }
 }
 
+
 // =======================================================================================================
 // =======================================================================================================
-
-
-
-
 
 
 
