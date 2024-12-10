@@ -463,32 +463,52 @@
 // =======================================================================================================
 // =======================================================================================================
 
-//   Tower of hanoi :--
-
-public class Recursion {
-    public static void toh(int n, int A, int C, int B) {
-        if(n == 0) {
-            return;
-        }
-        toh(n-1, A, B, C);
-        System.out.println("Moving " + n + "th disk from " + A + " to " + C);
-        toh(n-1, B, C, A);
-    }
-    public static void main(String args[]) {
-        toh(3, 10, 30, 20);
-    }
-}
-
-// =======================================================================================================
-// =======================================================================================================
+// //   Tower of hanoi :--
 
 // public class Recursion {
-//     public static void main (String args[]) {
-//         System.out.println("hello world");
+//     public static void toh(int n, int A, int C, int B , int D) {
+//         if(n == 0) {
+//             return;
+//         }
+//         toh(n-1, A, B, C ,D);
+//         System.out.println("Moving " + n + "th disk from " + A + " to " + C);
+//         toh(n-1, B, C, A ,D);
+//     }
+//     public static void main(String args[]) {
+//         toh(4, 10, 30, 20, 40);
 //     }
 // }
 
+// =======================================================================================================
+// =======================================================================================================
 
+public class Recursion {
+    public static int countSubs(String str, int si, int ei) {
+        if(si > ei) {
+            return 0;
+        }
+        int firstCharRemoved = countSubs(str, si+1, ei);
+        int lastCharRemoved = countSubs(str, si, ei-1);
+        int firstLastCharRemoved = countSubs(str, si+1, ei-1);  // common substrings after removing first and last char
+
+        int ans = firstCharRemoved + lastCharRemoved - firstLastCharRemoved ;
+
+        if(str.charAt(si) == str.charAt(ei)) {
+            ans++;
+        }
+
+        return ans;
+    }
+    public static void main(String args[]) {
+
+        String s = "aba";
+        int n = s.length();
+
+        int ans = countSubs(s, 0, n-1);  
+
+        System.out.println(ans);
+    }
+}
 
 
 // =======================================================================================================
