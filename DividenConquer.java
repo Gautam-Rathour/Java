@@ -191,78 +191,93 @@
 
 // =======================================================================================================
 // =======================================================================================================
+
+
+// public class DividenConquer {
+//     static void merge(int arr[], int l, int mid, int r) {
+//         int n1 = mid - l + 1;
+//         int n2 = r - mid;
+
+//         int L[] = new int[n1];
+//         int R[] = new int[n2];
+
+//         // Copy elements to temporary arrays
+//         for (int i = 0; i < n1; i++) {
+//             L[i] = arr[l + i];  // arr[l], arr[l+1], ...
+//         }
+//         for (int i = 0; i < n2; i++) {
+//             R[i] = arr[mid + 1 + i];  // arr[mid+1], arr[mid+2], ...
+//         }
+
+//         // Merge the arrays back into arr
+//         int i = 0, j = 0, k = l;
+
+//         while (i < n1 && j < n2) {
+//             if (L[i] <= R[j]) {
+//                 arr[k] = L[i];
+//                 i++;
+//             } else {
+//                 arr[k] = R[j];
+//                 j++;
+//             }
+//             k++;
+//         }
+
+//         // Copy remaining elements from L
+//         while (i < n1) {
+//             arr[k] = L[i];
+//             i++;
+//             k++;
+//         }
+
+//         // Copy remaining elements from R
+//         while (j < n2) {
+//             arr[k] = R[j];
+//             j++;
+//             k++;
+//         }
+//     }
+
+//     static void sort(int arr[], int l, int r) {
+//         if (l < r) {
+//             int mid = l + (r - l) / 2;
+
+//             // Sort the left and right halves
+//             sort(arr, l, mid);
+//             sort(arr, mid + 1, r);
+
+//             // Merge the sorted halves
+//             merge(arr, l, mid, r);
+//         }
+//     }
+
+//     public static void main(String args[]) {
+//         int arr[] = {9, 6, 3, 4, 2, 8, 7, 1};
+//         int n = arr.length;
+
+//         // Sort the array
+//         sort(arr, 0, n - 1);
+
+//         // Print the sorted array
+//         for (int i = 0; i < n; i++) {
+//             System.out.print(arr[i] + " ");
+//         }
+//         System.out.println();
+//     }
+// }
+
+// =======================================================================================================
+// =======================================================================================================
+
 public class DividenConquer {
-    static void merge(int arr[], int l, int mid, int r) {
-        int n1 = mid - l + 1;
-        int n2 = r - mid;
-
-        int L[] = new int[n1];
-        int R[] = new int[n2];
-
-        // Copy elements to temporary arrays
-        for (int i = 0; i < n1; i++) {
-            L[i] = arr[l + i];  // arr[l], arr[l+1], ...
-        }
-        for (int i = 0; i < n2; i++) {
-            R[i] = arr[mid + 1 + i];  // arr[mid+1], arr[mid+2], ...
-        }
-
-        // Merge the arrays back into arr
-        int i = 0, j = 0, k = l;
-        while (i < n1 && j < n2) {
-            if (L[i] <= R[j]) {
-                arr[k] = L[i];
-                i++;
-            } else {
-                arr[k] = R[j];
-                j++;
-            }
-            k++;
-        }
-
-        // Copy remaining elements from L
-        while (i < n1) {
-            arr[k] = L[i];
-            i++;
-            k++;
-        }
-
-        // Copy remaining elements from R
-        while (j < n2) {
-            arr[k] = R[j];
-            j++;
-            k++;
-        }
-    }
-
-    static void sort(int arr[], int l, int r) {
-        if (l < r) {
-            int mid = l + (r - l) / 2;
-
-            // Sort the left and right halves
-            sort(arr, l, mid);
-            sort(arr, mid + 1, r);
-
-            // Merge the sorted halves
-            merge(arr, l, mid, r);
-        }
-    }
-
     public static void main(String args[]) {
-        int arr[] = {9, 6, 3, 4, 2, 8, 7, 1};
-        int n = arr.length;
+        String str1 = "raju";
+        String str2 = "mohan";
 
-        // Sort the array
-        sort(arr, 0, n - 1);
-
-        // Print the sorted array
-        for (int i = 0; i < n; i++) {
-            System.out.print(arr[i] + " ");
-        }
+        System.out.println(str1.compareTo(str2));
     }
+    
 }
-
-
 
 
 
