@@ -145,59 +145,122 @@
 // =======================================================================================================
 // =======================================================================================================
 
+// public class DividenConquer {
+//     public static int search(int arr[], int tar, int si, int ei) {
+//         if(si > ei) {
+//             return -1;
+//         }
+
+//         //kaam
+//         int mid = si + (ei - si) / 2;
+
+//         // case FOUND
+//         if(arr[mid] == tar) {
+//             return mid;
+//         }
+
+//         //mid on L1
+//         if(arr[si] <= arr[mid]) {
+//             //case a : left
+//             if(arr[si] <= tar && tar <= arr[mid]) {
+//                 return search(arr, tar, si, mid);
+//             } else {
+//                 //case b : right
+//                 return search(arr, tar, mid+1, ei);
+//             }
+//         }
+
+//         // mid on L2
+//         else {
+//             //case c : left
+//             if(arr[mid] <= tar && tar <= arr[ei]) {
+//                 return search(arr, tar, mid+1, ei);
+//             } else { 
+//             // case d : right
+//             return search(arr, tar, si, mid-1);
+//             }
+//         }
+//     }
+//     public static void main(String args[]) {
+//         int arr[] = {4, 5, 6, 7, 0, 1, 2};
+//         int target = 0; // output -> 4
+//         int tarIdx = search(arr, target, 0, arr.length-1);
+//         System.out.println(tarIdx);
+//     }
+// }
+
+// =======================================================================================================
+// =======================================================================================================
 public class DividenConquer {
-    public static int search(int arr[], int tar, int si, int ei) {
-        if(si > ei) {
-            return -1;
+    static void merge(int arr[], int l, int mid, int r) {
+        int n1 = mid - l + 1;
+        int n2 = r - mid;
+
+        int L[] = new int[n1];
+        int R[] = new int[n2];
+
+        // Copy elements to temporary arrays
+        for (int i = 0; i < n1; i++) {
+            L[i] = arr[l + i];  // arr[l], arr[l+1], ...
+        }
+        for (int i = 0; i < n2; i++) {
+            R[i] = arr[mid + 1 + i];  // arr[mid+1], arr[mid+2], ...
         }
 
-        //kaam
-        int mid = si + (ei - si) / 2;
-
-        // case FOUND
-        if(arr[mid] == tar) {
-            return mid;
-        }
-
-        //mid on L1
-        if(arr[si] <= arr[mid]) {
-            //case a : left
-            if(arr[si] <= tar && tar <= arr[mid]) {
-                return search(arr, tar, si, mid);
+        // Merge the arrays back into arr
+        int i = 0, j = 0, k = l;
+        while (i < n1 && j < n2) {
+            if (L[i] <= R[j]) {
+                arr[k] = L[i];
+                i++;
             } else {
-                //case b : right
-                return search(arr, tar, mid+1, ei);
+                arr[k] = R[j];
+                j++;
             }
+            k++;
         }
 
-        // mid on L2
-        else {
-            //case c : left
-            if(arr[mid] <= tar && tar <= arr[ei]) {
-                return search(arr, tar, mid+1, ei);
-            } else { 
-            // case d : right
-            return search(arr, tar, si, mid-1);
-            }
+        // Copy remaining elements from L
+        while (i < n1) {
+            arr[k] = L[i];
+            i++;
+            k++;
+        }
+
+        // Copy remaining elements from R
+        while (j < n2) {
+            arr[k] = R[j];
+            j++;
+            k++;
         }
     }
+
+    static void sort(int arr[], int l, int r) {
+        if (l < r) {
+            int mid = l + (r - l) / 2;
+
+            // Sort the left and right halves
+            sort(arr, l, mid);
+            sort(arr, mid + 1, r);
+
+            // Merge the sorted halves
+            merge(arr, l, mid, r);
+        }
+    }
+
     public static void main(String args[]) {
-        int arr[] = {4, 5, 6, 7, 0, 1, 2};
-        int target = 0; // output -> 4
-        int tarIdx = search(arr, target, 0, arr.length-1);
-        System.out.println(tarIdx);
+        int arr[] = {9, 6, 3, 4, 2, 8, 7, 1};
+        int n = arr.length;
+
+        // Sort the array
+        sort(arr, 0, n - 1);
+
+        // Print the sorted array
+        for (int i = 0; i < n; i++) {
+            System.out.print(arr[i] + " ");
+        }
     }
 }
-
-
-
-// =======================================================================================================
-// =======================================================================================================
-
-
-
-
-
 
 
 
