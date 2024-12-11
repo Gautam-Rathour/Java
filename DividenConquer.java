@@ -99,7 +99,7 @@ public class DividenConquer {
         return i;
     }
     public static void main(String args[]) {
-        int arr[] = {6, 3, 9, 8, 5};
+        int arr[] = {6, 3, 9, 8, 2, 5};
         quickSort(arr, 0, arr.length-1);
 
         for(int i=0; i<arr.length; i++) {
