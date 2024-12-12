@@ -192,9 +192,10 @@
 // =======================================================================================================
 // =======================================================================================================
 
+// marge sort :--
 
 // public class DividenConquer {
-//     static void merge(int arr[], int l, int mid, int r) {
+//     static int merge(int arr[], int l, int mid, int r) {
 //         int n1 = mid - l + 1;
 //         int n2 = r - mid;
 
@@ -212,11 +213,13 @@
 //         // Merge the arrays back into arr
 //         int i = 0, j = 0, k = l;
 
+//         int ans = 0;
 //         while (i < n1 && j < n2) {
 //             if (L[i] <= R[j]) {
 //                 arr[k] = L[i];
 //                 i++;
 //             } else {
+//                 ans += (n1-i);
 //                 arr[k] = R[j];
 //                 j++;
 //             }
@@ -236,6 +239,7 @@
 //             j++;
 //             k++;
 //         }
+//         return ans;
 //     }
 
 //     static void sort(int arr[], int l, int r) {
@@ -252,7 +256,7 @@
 //     }
 
 //     public static void main(String args[]) {
-//         int arr[] = {9, 6, 3, 4, 2, 8, 7, 1};
+//         int arr[] = {9, 7, 5, 4};
 //         int n = arr.length;
 
 //         // Sort the array
@@ -271,14 +275,13 @@
 
 public class DividenConquer {
     public static void main(String args[]) {
-        String str1 = "raju";
-        String str2 = "mohan";
-
-        System.out.println(str1.compareTo(str2));
+        
     }
     
 }
 
+// =======================================================================================================
+// =======================================================================================================
 
 
 
