@@ -162,7 +162,7 @@ public class BackTracking {
 // =======================================================================================================
 // =======================================================================================================
 
-// Find how many way you can put count : - -
+// Find how many way you can put count : ----
 
 public class BackTracking {
     public static boolean isSafe(char board[][], int row, int col) {
