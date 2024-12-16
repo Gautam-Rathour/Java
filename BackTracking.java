@@ -90,31 +90,31 @@
 // =======================================================================================================
 // =======================================================================================================
 
-Find space for " Q "  : --
+// Find space for " Q "  : --
 
-public class BackTracking {
-    public static boolean isSafe(char board[][], int row, int col) {
-        // vertical up
-        for(int i=row-1; i>=0; i--) {
-            if(board[i][col] == 'Q') {
-                return false;
-            }
-        }
+// public class BackTracking {
+//     public static boolean isSafe(char board[][], int row, int col) {
+//         // vertical up
+//         for(int i=row-1; i>=0; i--) {
+//             if(board[i][col] == 'Q') {
+//                 return false;
+//             }
+//         }
 
-        // diag left up 
-        for(int i=row-1, j=col-1; i>=0 && j>=0; i-- , j--) {
-            if(board[i][j] == 'Q') {
-                return false;
-            }
-        }
+//         // diag left up 
+//         for(int i=row-1, j=col-1; i>=0 && j>=0; i-- , j--) {
+//             if(board[i][j] == 'Q') {
+//                 return false;
+//             }
+//         }
 
-        // diag right up
-        for(int i=row-1, j=col+1; i>=0 && j<board.length; i--, j++) {
-            if(board[i][j] == 'Q') {
-                return false;
-            }
-        }
-        return true;
+//         // diag right up
+//         for(int i=row-1, j=col+1; i>=0 && j<board.length; i--, j++) {
+//             if(board[i][j] == 'Q') {
+//                 return false;
+//             }
+//         }
+//         return true;
 //     }
 
 //     static int count = 0;
@@ -236,7 +236,7 @@ public class BackTracking {
         } else {
             System.out.println("solution is not possible");
         }
-        // System.out.println("Total ways to solve n queens = " + count);
+        System.out.println("Total ways to solve n queens = " + count);
     }
 }
 
@@ -365,6 +365,8 @@ public class BackTracking {
 
 
 
+// =======================================================================================================
+// =======================================================================================================
 
 
 
