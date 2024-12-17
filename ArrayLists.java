@@ -142,35 +142,113 @@
 //     }
 // }
 
-// =======================================================================================================
-// =======================================================================================================
+// // =======================================================================================================
+// // =======================================================================================================
 
 
-// Sort with help of Collections : -
+// // Multi dimensional array : -
 
-import java.util.ArrayList;
-import java.util.Collections;
-public class ArrayLists {
-    public static void main(String[] args) {
-        ArrayList<ArrayList<Integer>> mainList = new ArrayList();
-        ArrayList<Integer> list1 = new ArrayList();
-        list1.add(1); list1.add(2);
-        mainList.add(list1);
+// import java.util.ArrayList;
+// import java.util.Collections;
 
-        ArrayList<Integer> list2 = new ArrayList();
-        list2.add(3); list2.add(4);
-        mainList.add(list2);
+// public class ArrayLists {
+//     public static void main(String[] args) {
+//         ArrayList<ArrayList<Integer>> mainList = new ArrayList();
+//         ArrayList<Integer> list1 = new ArrayList();
+//         list1.add(1); list1.add(2);
+//         mainList.add(list1);
 
-        System.out.println(mainList);
+//         ArrayList<Integer> list2 = new ArrayList();
+//         list2.add(3); list2.add(4);
+//         mainList.add(list2);
+
+//         System.out.println(mainList);
+//         for(int i=0; i<mainList.size(); i++) {
+//             ArrayList<Integer> currList = mainList.get(i);
+//             for(int j=0; j<currList.size(); j++) {
+//                 System.out.print(currList.get(j) + " ");
+//             }
+//             // System.out.println(mainList.get(i));
+//             System.out.println();
+//         }
           
+//     }
+// }
+
+// =======================================================================================================
+// =======================================================================================================
+
+// // Sort with help of Collections : -
+
+// import java.util.*;
+// public class ArrayLists {
+//     public static void main(String[] args) {
+//         ArrayList<ArrayList<Integer>> mainList = new ArrayList<>();
+//         ArrayList<Integer> list1 = new ArrayList<>();
+//         ArrayList<Integer> list2 = new ArrayList<>();
+//         ArrayList<Integer> list3 = new ArrayList<>();
+        
+//         for(int i=1; i<=5; i++) {
+//             list1.add(i*1); // 1 2 3 4 5
+//             list2.add(i*2); // 2 4 6 8 10
+//             list3.add(i*3); // 3 6 9 12 15
+//         }
+//         mainList.add(list1);
+//         mainList.add(list2);
+//         mainList.add(list3);
+
+//         list2.remove(3);
+//         list2.remove(2);
+
+//         // Nested loop :-
+//         for(int i=0; i<mainList.size(); i++) {
+//             ArrayList<Integer> currList = mainList.get(i);
+//                 for(int j=0; j<currList.size(); j++) {
+//                     System.out.print(currList.get(j) + " ");
+//                 }
+//                 System.out.println();
+//         }
+//     }
+// }
+
+// =======================================================================================================
+// =======================================================================================================
+
+import java.util.*;
+public class ArrayLists {
+    public static int storeWater(ArrayList<Integer> height) {
+        int maxWater = 0;
+        //brute force
+        for(int i=0; i<height.size(); i++) {
+            for(int j=i+1; j<height.size(); j++) {
+                
+                int ht = Math.min(height.get(i), height.get(j));
+                int width = j - i;
+                int currWater = ht * width;
+                maxWater = Math.max(maxWater, currWater);
+            }
+        }
+        return maxWater;
+    }
+    public static void main(String args[]) {
+        ArrayList<Integer> height = new ArrayList<>();
+        // 1, 8, 6, 2, 5, 4, 8, 3, 7
+        height.add(1);
+        height.add(8);
+        height.add(6);
+        height.add(2);
+        height.add(5);
+        height.add(4);
+        height.add(8);
+        height.add(3);
+        height.add(7);
+
+        System.out.println(storeWater(height));
     }
 }
 
-
-
-
-
-
+// =======================================================================================================
+// =======================================================================================================
 
 
 
