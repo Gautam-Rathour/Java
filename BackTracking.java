@@ -361,48 +361,6 @@
 
 // =======================================================================================================
 // =======================================================================================================
- 
-// // Another Subject Question :- 
-// // TrapdeRainWater :-
-
-// public class BackTracking {
-//     public static int trapingWater(int arr[]) {
-//         int n = arr.length;
-
-//         //leftMax 
-//         int leftMax[] = new int [n];
-//         leftMax[0] = arr[0];
-//         for(int i=1; i<n; i++) {
-//             leftMax[i] =  Math.max(arr[i], leftMax[i-1]);
-//         }
-        
-//         //right
-//         int rightMax[] = new int[n];
-//         rightMax[n-1] = arr[n-1];
-//         for(int i=n-2; i>=0; i--) {
-//             rightMax[i] = Math.max(arr[i], rightMax[i+1]);
-//         }
-
-//         //loop
-//         int trapedWater = 0;
-//         for(int i=0; i<n; i++) {
-//             int waterLevel = Math.min(leftMax[i], rightMax[i]);
-
-//             trapedWater += waterLevel - arr[i];
-//         }
-//         return trapedWater;
-//     }
-//     public static void main(String args[]) {
-//         int arr[] = {3, 4, 2, 0, 6, 4, 0, 2, 5};
-
-//         int result = trapingWater(arr);
-
-//         System.out.println(result);
-//     }
-// }
-
-
-
 
 
 
