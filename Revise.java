@@ -2574,20 +2574,23 @@ public class Revise {
 // =======================================================================================================
 
 // Revision :-
+import java.util.*;
 public class Revise {
     public static void main(String args[]) {
-        int a = 3; 
-        int n = 8; 
-        int ans = 1;
+        HashMap<Integer, Integer> mp = new HashMap<>();
+        mp.put(7, 10);
+        mp.put(3, 5);
+        mp.put(9, 11);
 
-        while (n > 0) {
-            if( n % 2 == 1) {
-                ans = ans * a;
-            }
-            n = n / 2;
-            a = a * a;
-        }
-        System.out.println(ans);
+        // System.out.println("5 " + mp.containsKey(7));
+        // System.out.println("10 " + mp.containsKey(10));
+        // System.out.println("9 " + mp.containsKey(9));
+
+        // System.out.println(mp.size());
+
+        System.out.println(mp.get(7));
+        System.out.println(mp.get(3));
+        System.out.println(mp.get(9));
     }
 }
 
