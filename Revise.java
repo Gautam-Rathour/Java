@@ -2573,34 +2573,37 @@ public class Revise {
 // =======================================================================================================
 // =======================================================================================================
 
-// Revision :-
-import java.util.*;
-public class Revise {
-    public static void main(String args[]) {
-        HashMap<Integer, Integer> mp = new HashMap<>();
-        mp.put(7, 10);
-        mp.put(3, 5);
-        mp.put(9, 11);
+// // Revision :-
+// import java.util.*;
+// public class Revise {
+//     public static void main(String args[]) {
+//         HashMap<Integer, Integer> mp = new HashMap<>();
+//         mp.put(7, 10);
+//         mp.put(3, 5);
+//         mp.put(9, 11);
 
-        System.out.println("7 " + mp.containsKey(7));
-        System.out.println("10 " + mp.containsKey(10));
-        System.out.println("9 " + mp.containsKey(9));
+//         System.out.println("7 " + mp.containsKey(7));
+//         System.out.println("10 " + mp.containsKey(10));
+//         System.out.println("9 " + mp.containsKey(9));
 
-        // System.out.println(mp.size());
+//         // System.out.println(mp.size());
 
-        // System.out.println(mp.get(7));
-        // System.out.println(mp.get(3));
-        // System.out.println(mp.get(9));
-    }
-}
+//         // System.out.println(mp.get(7));
+//         // System.out.println(mp.get(3));
+//         // System.out.println(mp.get(9));
+//     }
+// }
 
 // =======================================================================================================
 // =======================================================================================================
 
+// // Revision :-
 
 
 
 
+// =======================================================================================================
+// =======================================================================================================
 
 
 
