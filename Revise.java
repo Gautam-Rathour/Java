@@ -2600,6 +2600,16 @@ public class Revise {
 
 // // Revision :-
 
+Node prev = head;
+Node curr = prev.next;
+
+while(prev.next != null) {
+    Node temp = prev.next.next;
+    prev.next = curr;
+    curr = prev.next;
+    prev.next.next = temp;
+}
+
 
 
 
