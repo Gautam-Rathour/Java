@@ -27,6 +27,7 @@ public class LinkedList {
         newNode.next = head;
         head = newNode;
     }
+// =======================================================================================================
 
     //addLast : - 
     public void addLast(int data) {
@@ -39,7 +40,8 @@ public class LinkedList {
         tail = newNode;
 
     }
- 
+ // =======================================================================================================
+
 
     // Print : --
     public void print() {
@@ -51,7 +53,8 @@ public class LinkedList {
         }
         System.out.println("null");
     }
- 
+ // =======================================================================================================
+
 
     // add :--
     public void add(int idx, int data) {
@@ -70,6 +73,7 @@ public class LinkedList {
         newNode.next = temp.next;
         temp.next = newNode;
     }
+// =======================================================================================================
 
     //Remove First :- 
     public int removeFirst() {
@@ -87,6 +91,7 @@ public class LinkedList {
         size--;
         return val;
     }
+// =======================================================================================================
 
     //Remove Last :-
     public int removeLast() {
@@ -113,23 +118,119 @@ public class LinkedList {
         size--;
         return val;
     }
+// =======================================================================================================
+
+    // Search in LinkedList :-
+    public int search(int key) {
+        Node temp = head;
+        int i = 0;
+        
+        while(temp != null) {
+            if(temp.data == key) {
+                System.out.println("Element is found on index = " + i);
+                return i;
+            } else {
+                temp = temp.next;
+                i++;
+            }
+        }
+        return -1;
+    }
+// =======================================================================================================
+
+    // Recursive Search :-
+    public int helper(Node head, int key) {  // O(n)
+        if(head == null) {
+            return -1;
+        }
+        if(head.data == key) {
+            return 0;
+        }
+        int idx = helper(head.next, key);
+        if(idx == -1) {
+            return -1;
+        }
+
+        return idx+1;
+    }
+    public int recSearch(int key) {
+        return helper(head, key);
+    }
+// =======================================================================================================
+  
+    //Reverse a Linked List :-
+    public void reverseList() {
+        Node prev = null;
+        Node curr = head;
+
+        while(curr != null) {
+            Node temp = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = temp;
+        }
+        head = prev;
+    }
+// =======================================================================================================
+  
+    // Delete Nth From End :-
+    public void deleteNthfromEnd(int n) {
+        // calculate size
+        int sz = 0;
+        Node temp = head;
+        while(temp != null) {
+            temp = temp.next;
+            sz++;
+        }
+        
+        if(n == sz) {
+            head = head.next; //removeFirst
+            return;
+        }
+        // sz-n
+        int i = 1;
+        int iToFind = sz-n;
+        Node prev = head;
+        while(i < iToFind) {
+            prev = prev.next;
+            i++;
+        }
+
+        prev.next = prev.next.next;
+        return;
+    }
+// =======================================================================================================
+  
+
     public static void main(String args[]) {
         LinkedList ll = new LinkedList();
         ll.addFirst(2);
         ll.addFirst(1);
         ll.addLast(4);
         ll.addLast(6);
-        ll.addLast(8);
+
 
         ll.add(2, 3);
         ll.add(4, 5);
         ll.add(6, 7);
-
         ll.print();  //1->2->9->3->4
-        // System.out.println(ll.size);
-        ll.removeFirst();
-        ll.removeLast();;
+
+        // // System.out.println(ll.size);
+        // ll.removeFirst();
+        // ll.print();
+
+        // ll.removeLast();;
+        // ll.print();
+
+        // ll.search(7);
+        // System.out.println(ll.recSearch(7));
+
+        // ll.reverseList();
+        // ll.print();
+
+        ll.deleteNthfromEnd(4);
         ll.print();
+
     }
 }
 
