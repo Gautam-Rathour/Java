@@ -70,6 +70,49 @@ public class LinkedList {
         newNode.next = temp.next;
         temp.next = newNode;
     }
+
+    //Remove First :- 
+    public int removeFirst() {
+        if(size == 0) {
+            System.out.println("LinkedList is allready empty !");
+            return Integer.MIN_VALUE;
+        } else if(size == 1){
+            int val = head.data;
+            head = tail = null;
+            size = 0;
+            return val;
+        }
+        int val = head.data;
+        head = head.next;
+        size--;
+        return val;
+    }
+
+    //Remove Last :-
+    public int removeLast() {
+        if(size == 0) {
+            System.out.println("LL is empty");
+            return Integer.MIN_VALUE;
+        } else if(size == 1){
+            int val = head.data;
+            head = tail = null;
+            size = 0;
+            return val;
+        }
+        //prev
+        Node lastNode = head.next;
+        Node secondLast = head;
+
+        while (lastNode.next != null) {
+            secondLast = lastNode;
+            lastNode = lastNode.next;
+        }
+        int val = secondLast.next.data; //tail.data
+        secondLast.next = null;
+        tail = secondLast;
+        size--;
+        return val;
+    }
     public static void main(String args[]) {
         LinkedList ll = new LinkedList();
         ll.addFirst(2);
@@ -83,7 +126,10 @@ public class LinkedList {
         ll.add(6, 7);
 
         ll.print();  //1->2->9->3->4
-        System.out.println(ll.size);
+        // System.out.println(ll.size);
+        ll.removeFirst();
+        ll.removeLast();;
+        ll.print();
     }
 }
 
@@ -113,22 +159,25 @@ public class LinkedList {
 // =======================================================================================================
 // =======================================================================================================
 
-// Reverse LinkedList :--
+// // Reverse LinkedList :--
 
-class Solution {
-    public ListNode reverseList(ListNode head) {
-        ListNode curr = head;
-        ListNode prev = null;
+// class Solution {
+//     public ListNode reverseList(ListNode head) {
+//         ListNode curr = head;
+//         ListNode prev = null;
 
-        while (curr != null) {
-            ListNode temp = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = temp;
-        }
-        return prev;
-    }
-}
+//         while (curr != null) {
+//             ListNode temp = curr.next;
+//             curr.next = prev;
+//             prev = curr;
+//             curr = temp;
+//         }
+//         return prev;
+//     }
+// }
+
+// =======================================================================================================
+// =======================================================================================================
 
 
 
