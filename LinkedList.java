@@ -283,57 +283,15 @@
 //     }
 // }
 
-// =======================================================================================================
-// =======================================================================================================
-
-// public class LinkedList {
-//     public void addFirst(int data) {
-//         //step1 = create new node
-//         Node newNode = new Node(data);
-
-//         int temp = head;
-//         int i = 2;
-//         while()
-
-//     } 
-
-//     public static void main(String args[]) {
-//         LinkedList ll = new LinkedList();
-//         ll.addFirst(3);
-//         ll.addFirst(1);
-//         ll.addLast(4);
-
-//     }
-// }
-
-// =======================================================================================================
-// =======================================================================================================
-
-// // Reverse LinkedList :--
-
-// class Solution {
-//     public ListNode reverseList(ListNode head) {
-//         ListNode curr = head;
-//         ListNode prev = null;
-
-//         while (curr != null) {
-//             ListNode temp = curr.next;
-//             curr.next = prev;
-//             prev = curr;
-//             curr = temp;
-//         }
-//         return prev;
-//     }
-// }
 
 // =======================================================================================================
 // =======================================================================================================
 // =======================================================================================================
 // =======================================================================================================
 
- // Secoond Lecture ;--
+//  // Secoond Lecture ;--
 
-    // Detecting Cycle code :----
+//     // Detecting Cycle code :----
 
 import java.util.*;
  public class LinkedList {
@@ -361,14 +319,49 @@ import java.util.*;
         }
         return false;  // cycle doesn't exist
     } 
+// =======================================================================================================
+
+    // Remove Cycle Code :--
+    public static void removeCycle() {
+        // detect cycle
+        Node slow = head;
+        Node fast = head;
+        boolean cycle = false;
+        while(fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if(fast == slow) {
+                cycle = true;
+                break;
+            }
+        }
+        if(cycle == false) {
+            return ;
+        }
+
+        //find meeting point :--
+        slow = head;
+        Node prev = null; // last node
+        while (slow != fast) {
+            prev = fast;
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        //remove cycle -> last.next = null
+        prev.next = null;
+    }
  
     public static void main(String args[]) {
         // LinkedList ll = new LinkedList();
         head = new Node(1);
-        head.next = new Node(2);
+        Node temp = new Node(2);
+        head.next = temp;
         head.next.next = new Node(3);
-        head.next.next.next = head;
+        head.next.next.next = temp;
         // 1->2->3->1
+         System.out.println(isCycle());
+         removeCycle();
          System.out.println(isCycle());
     }
  }

@@ -1,9 +1,14 @@
-  // //Remove First :- 
-    // public void removeFirst() {
-    //     if(head == null) {
-    //         System.out.println("List is allready empty !");
-    //         return ;
-    //     }
-    //     head = head.next;
+class Solution {
+    public ListNode reverseList(ListNode head) {
+        ListNode curr = head;
+        ListNode prev = null;
 
-    // }
+        while (curr != null) {
+            ListNode temp = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = temp;
+        }
+        return prev;
+    }
+}
