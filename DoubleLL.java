@@ -28,6 +28,11 @@ public class DoubleLL {
         head = newNode;
     }
 
+    // addLast --
+
+
+
+
     //print --
     public void print() {
         if(head == null) {
@@ -50,8 +55,35 @@ public class DoubleLL {
             System.out.println("dll is empty");
             return;
         }
+        if(head.next == null) {
+            head = tail = null;
+        }
+
         head = head.next;
         head.prev = null;
+    }
+
+    // removeLast --
+
+
+
+
+
+
+    // reverse ---
+    public void reverse() {
+        Node curr = head;
+        Node prev = null;
+    
+        while(curr != null) { 
+            Node next = curr.next;
+            curr.next = prev;
+            curr.prev = next;
+
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
     }
 
     public static void main(String args []) {
@@ -61,8 +93,12 @@ public class DoubleLL {
         dll.addFirst(1);
 
         dll.print();
-        System.out.println(dll.size);
-        dll.removeFirst();
+        // System.out.println(dll.size);
+        // dll.removeFirst();
+        // dll.print();
+        // System.out.println(dll.size);
+
+        dll.reverse();
         dll.print();
     }
 }
