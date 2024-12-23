@@ -51,7 +51,7 @@ public class DoubleLL {
             return;
         }
         head = head.next;
-        head.prev = head;
+        head.prev = null;
     }
 
     public static void main(String args []) {
@@ -61,6 +61,8 @@ public class DoubleLL {
         dll.addFirst(1);
 
         dll.print();
-        System.out.println(size);
+        System.out.println(dll.size);
+        dll.removeFirst();
+        dll.print();
     }
 }
