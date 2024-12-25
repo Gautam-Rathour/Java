@@ -699,28 +699,57 @@
 // =======================================================================================================
 // =======================================================================================================
 
+// public class Recursion {
+//     public static String keypad [] = {".", "abc", "def", "ghi", "jkl", "mon"};
+//         public static void printComb(String str, int idx, String combination) {
+//             if(idx == str.length()) {
+//                 System.out.println(combination);
+//                 return;
+//             }
+//             char currChar = str.charAt(idx);
+//             String mapping = keypad[currChar - '0'];
+
+//             for(int i=0; i<mapping.length(); i++) {
+//                 printComb(str, idx+1, combination+mapping.charAt(i));
+
+//             }
+//         }
+
+//     public static void main(String args[]) {
+//         String str = "23";
+//         printComb(str, 0, "");
+//     }
+// }
+
+// =======================================================================================================
+// =======================================================================================================
+
+import java.util.*;
 public class Recursion {
-    public static String keypad [] = {".", "abc", "def", "ghi", "jkl", "mon"};
-        public static void printComb(String str, int idx, String combination) {
-            if(idx == str.length()) {
-                System.out.println(combination);
+
+        public static void addAtBottom(Stack<Integer> st, int num) {
+            if(st.isEmpty()) {
+                st.push(num);
                 return;
             }
-            char currChar = str.charAt(idx);
-            String mapping = keypad[currChar - '0'];
-
-            for(int i=0; i<mapping.length(); i++) {
-                printComb(str, idx+1, combination+mapping.charAt(i));
-
-            }
+            int tp = st.pop();
+            addAtBottom(st, num);
+            st.push(tp);
         }
-
     public static void main(String args[]) {
-        String str = "4";
-        printComb(str, 0, "");
+        Stack<Integer> st = new Stack();
+        st.push(3);
+        st.push(5);
+        st.push(7);
+        
+        addAtBottom(st, 1);
+
+        while(!st.isEmpty()) {
+            int tp = st.pop();
+            System.out.println(tp);
+        }
     }
 }
-
 
 
 
