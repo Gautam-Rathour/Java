@@ -676,28 +676,50 @@
 // =======================================================================================================
 
 
-public class Recursion {
-    public static void subsequences(String str, int idx, String newString) {
-        if(idx == str.length()) {
-            System.out.println(newString);
-            return;
-        }
+// public class Recursion {
+//     public static void subsequences(String str, int idx, String newString) {
+//         if(idx == str.length()) {
+//             System.out.println(newString);
+//             return;
+//         }
         
-        char currChar = str.charAt(idx);
+//         char currChar = str.charAt(idx);
 
-        //to be
-        subsequences(str, idx+1, newString + currChar);
-        //or not to be 
-        subsequences(str, idx+1, newString);
+//         //to be
+//         subsequences(str, idx+1, newString + currChar);
+//         //or not to be 
+//         subsequences(str, idx+1, newString);
+//     }
+//     public static void main(String[] args) {
+//         String str = "abc";
+//         subsequences(str, 0, "");
+//     } 
+// }
+
+// =======================================================================================================
+// =======================================================================================================
+
+public class Recursion {
+    public static String keypad [] = {".", "abc", "def", "ghi", "jkl", "mon"};
+        public static void printComb(String str, int idx, String combination) {
+            if(idx == str.length()) {
+                System.out.println(combination);
+                return;
+            }
+            char currChar = str.charAt(idx);
+            String mapping = keypad[currChar - '0'];
+
+            for(int i=0; i<mapping.length(); i++) {
+                printComb(str, idx+1, combination+mapping.charAt(i));
+
+            }
+        }
+
+    public static void main(String args[]) {
+        String str = "4";
+        printComb(str, 0, "");
     }
-    public static void main(String[] args) {
-        String str = "abc";
-        subsequences(str, 0, "");
-    } 
 }
-
-
-
 
 
 
