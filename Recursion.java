@@ -482,54 +482,219 @@
 // =======================================================================================================
 // =======================================================================================================
 
+// // 
+
+// public class Recursion {
+//     public static int countSubs(String str, int si, int ei) {
+//         if(si > ei) {
+//             return 0;
+//         }
+//         int firstCharRemoved = countSubs(str, si+1, ei);
+//         int lastCharRemoved = countSubs(str, si, ei-1);
+//         int firstLastCharRemoved = countSubs(str, si+1, ei-1);  // common substrings after removing first and last char
+
+//         int ans = firstCharRemoved + lastCharRemoved - firstLastCharRemoved ;
+
+//         if(str.charAt(si) == str.charAt(ei)) {
+//             ans++;
+//         }
+
+//         return ans;
+//     }
+//     public static void main(String args[]) {
+
+//         String s = "aba";
+//         int n = s.length();
+
+//         int ans = countSubs(s, 0, n-1);  
+
+//         System.out.println(ans);
+//     }
+// }
+
+
+// =======================================================================================================
+// =======================================================================================================
+
+// // Tower of hinoi  :--
+
+// public class Recursion {
+    
+//     public static void towerOfHanoi(int n, String src, String helper, String dest) {
+//         if(n == 1) {
+//             System.out.println("  Transfer disk " + n + " from " + src + " to " + dest);
+//             return ;
+//         }
+//         towerOfHanoi(n-1, src, dest, helper);
+//         System.out.println("  Transfer disk " + n + " from " + src + " to " + dest);
+        
+//         towerOfHanoi(n-1, helper, src, dest);
+       
+//     }
+//     public static void main(String args[]) {
+//         int n = 8;
+//         towerOfHanoi(n, "S", "H", "D");
+//     }
+// }
+
+
+// =======================================================================================================
+// =======================================================================================================
+
+// // Reverse string :----
+// public class Recursion { 
+// public static void printRev (String str, int idx) {
+//     if(idx == 0) {
+//         System.out.println(str.charAt(idx));
+//         return;
+//     }
+
+//     System.out.print(str.charAt(idx));
+//     printRev(str, idx-1);
+// }
+// public static void main(String args[]) {
+//     String str = "abcd";
+
+//     printRev(str, str.length()-1);
+//     }
+// }
+
+
+// =======================================================================================================
+// =======================================================================================================
+
+// // Find Occurance : --
+
+// public class Recursion { 
+//     public static int first = -1;
+//     public static int last = -1;
+
+//     public static void findOccurance (String str, int idx, char element) {
+//         if(idx == str.length()-1) {
+//             System.out.println(first);
+//             System.out.println(last);
+//             return;
+//         }
+//         char currChar = str.charAt(idx);
+//         if(currChar == element) {
+//             if(first == -1) {
+//                 first = idx;
+//             } else {
+//                 last = idx;
+//             }
+//         }
+
+//         findOccurance(str, idx+1, element);
+//     }
+// public static void main(String args[]) {
+//     String str = "abaacdaefaah";
+
+//      findOccurance(str, 0, 'a');
+//     }
+// }
+
+// // =======================================================================================================
+// // =======================================================================================================
+
+// // Check is Sorted or not : ---
+// public class Recursion {
+//     public static boolean isSorted(int arr[], int idx) {
+//         if(idx == arr.length-1) {
+//             return true;
+//         }
+
+//         if(arr[idx] < arr[idx+1]) {
+//             // array is sorted
+//             return isSorted (arr, idx+1);
+//         } else {
+//             return false;
+//         }
+//     }
+
+//     public static void main(String args[]) {
+//         int arr[] = {1, 2, 3, 4, 6, 5};
+
+//         System.out.println(isSorted(arr, 0));
+//     }
+// }
+
+// =======================================================================================================
+// =======================================================================================================
+
+// public class Recursion {
+//     public static void moveAllX(String str, int idx, int count, String newString) {
+//         if(idx == str.length()) {
+//             System.out.print(newString);
+//             for(int i=0; i<count; i++) {
+//                 System.out.print("x");
+//             }
+//             return;
+//         }
+//         char currChar = str.charAt(idx);
+//         if(currChar == 'x') {
+//             count++;
+//             moveAllX(str, idx+1, count, newString);
+//         } else {
+//             newString += currChar; // newString = newString + currChar;
+//             moveAllX(str, idx+1, count, newString);
+//         }
+//     }
+//     public static void main(String args[]) {
+//         String str = "axbcxxd";
+//         moveAllX(str, 0, 0, "");
+//     }
+// }
+
+// =======================================================================================================
+// =======================================================================================================
+
+// public class Recursion {
+//     public static boolean map [] = new boolean [26];
+//     public static void removeDuplicates(String str, int idx, String newString) {
+//         if(idx == str.length()) {
+//             System.out.println(newString);
+//             return;
+//         }
+
+//         char currChar = str.charAt(idx);
+//         if(map[currChar - 'a'] == true) {
+//             removeDuplicates(str, idx+1, newString);
+//         } else {
+//             newString += currChar;
+//             map[currChar - 'a'] = true;
+//             removeDuplicates(str, idx+1, newString);
+//         }
+//      }
+
+//     public static void main(String args[]) {
+//         String str = "abbccda";
+//         removeDuplicates(str, 0, "");
+//     }
+// }
+
+// =======================================================================================================
+// =======================================================================================================
+
+
 public class Recursion {
-    public static int countSubs(String str, int si, int ei) {
-        if(si > ei) {
-            return 0;
+    public static void subsequences(String str, int idx, String newString) {
+        if(idx == str.length()) {
+            System.out.println(newString);
+            return;
         }
-        int firstCharRemoved = countSubs(str, si+1, ei);
-        int lastCharRemoved = countSubs(str, si, ei-1);
-        int firstLastCharRemoved = countSubs(str, si+1, ei-1);  // common substrings after removing first and last char
+        
+        char currChar = str.charAt(idx);
 
-        int ans = firstCharRemoved + lastCharRemoved - firstLastCharRemoved ;
-
-        if(str.charAt(si) == str.charAt(ei)) {
-            ans++;
-        }
-
-        return ans;
+        //to be
+        subsequences(str, idx+1, newString + currChar);
+        //or not to be 
+        subsequences(str, idx+1, newString);
     }
-    public static void main(String args[]) {
-
-        String s = "aba";
-        int n = s.length();
-
-        int ans = countSubs(s, 0, n-1);  
-
-        System.out.println(ans);
-    }
+    public static void main(String[] args) {
+        String str = "abc";
+        subsequences(str, 0, "");
+    } 
 }
-
-
-// =======================================================================================================
-// =======================================================================================================
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
