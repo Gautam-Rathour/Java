@@ -724,34 +724,72 @@
 // =======================================================================================================
 // =======================================================================================================
 
+// Add at Bottom :---
+
+// import java.util.*;
+// public class Recursion {
+
+//         public static void addAtBottom(Stack<Integer> st, int num) {
+//             if(st.isEmpty()) {
+//                 st.push(num);
+//                 return;
+//             }
+//             int tp = st.pop();
+//             addAtBottom(st, num);
+//             st.push(tp);
+//         }
+//     public static void main(String args[]) {
+//         Stack<Integer> st = new Stack();
+//         st.push(3);
+//         st.push(5);
+//         st.push(7);
+        
+//         addAtBottom(st, 1);
+
+//         while(!st.isEmpty()) {
+//             int tp = st.pop();
+//             System.out.println(tp);
+//         }
+//     }
+// }
+
+// =======================================================================================================
+// =======================================================================================================
+
+// 
+
 import java.util.*;
 public class Recursion {
-
-        public static void addAtBottom(Stack<Integer> st, int num) {
-            if(st.isEmpty()) {
-                st.push(num);
-                return;
-            }
-            int tp = st.pop();
-            addAtBottom(st, num);
-            st.push(tp);
+    static void reverseStack(Stack<Integer> st) {
+        if(st.isEmpty()) {
+            return;
         }
+
+        int tp = st.pop();
+        reverseStack(st);
+        addAtBottom(st, tp); // ---------> O(n)
+    }
+
+    public static void addAtBottom(Stack<Integer> st, int num) {
+        if(st.isEmpty()) {
+            st.push(num);
+            return;
+        }
+        int tp = st.pop();
+        addAtBottom(st, num);
+        st.push(tp);
+    }
     public static void main(String args[]) {
-        Stack<Integer> st = new Stack();
-        st.push(3);
-        st.push(5);
-        st.push(7);
-        
-        addAtBottom(st, 1);
+       Stack<Integer> st = new Stack();
+       st.add(1);
+       st.add(2);
+       st.add(3);
 
-        while(!st.isEmpty()) {
-            int tp = st.pop();
-            System.out.println(tp);
-        }
+       System.out.println(st);
+       reverseStack(st);
+       System.out.println(st);
     }
 }
-
-
 
 
 
