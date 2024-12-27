@@ -1,0 +1,336 @@
+%-------------------------
+% Resume in Latex
+% Author : Abey George
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\usepackage{graphicx}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+\RequirePackage{tikz}
+\RequirePackage{xcolor}
+\RequirePackage{fontawesome}
+\usepackage{tikz}
+\usetikzlibrary{svg.path}
+
+
+\definecolor{cvblue}{HTML}{0E5484}
+\definecolor{black}{HTML}{130810}
+\definecolor{darkcolor}{HTML}{0F4539}
+\definecolor{cvgreen}{HTML}{3BD80D}
+\definecolor{taggreen}{HTML}{00E278}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\colorlet{name}{black}
+\colorlet{tagline}{darkcolor}
+\colorlet{heading}{darkcolor}
+\colorlet{headingrule}{cvblue}
+\colorlet{accent}{darkcolor}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+% \pagestyle{fancy}
+% \fancyhf{}  % clear all header and footer fields
+% \fancyfoot{}
+% \renewcommand{\headrulewidth}{0pt}
+% \renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\classesList}[4]{
+    \item\small{
+        {#1 #2 #3 #4 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{\large#1} & \textbf{\small #2} \\
+      \textit{\large#3} & \textit{\small #4} \\
+      
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+
+\newcommand\sbullet[1][.5]{\mathbin{\vcenter{\hbox{\scalebox{#1}{$\bullet$}}}}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+
+
+\begin{center}
+    {\Huge \scshape Gautam Rathour} \\ \vspace{1pt}
+    123 Buxar Road, Bhabua, Bihar 821110 \\ \vspace{1pt}
+    \small \href{tel:#}{ \raisebox{-0.1\height}\faPhone\ \underline{+91-7491818284} ~} \href{mailto:gau321tam@gmail.com}{\raisebox{-0.2\height}\faEnvelope\  \underline{gau321tam@gmail.com}} ~ 
+    \href{https://linkedin.com/in/gautam-rathour}{\raisebox{-0.2\height}\faLinkedinSquare\ \underline{gautam-rathour}}  ~
+    \href{https://github.com/Gautam-Rathour}{\raisebox{-0.2\height}\faGithub\ \underline{Gautam-Rathour}} ~
+    \href{https://x.com/Gautam__Rathour}{\raisebox{-0.2\height}{\includegraphics[height=0.3cm, width=0.3cm]{X.png}}\ \underline{Gautam\_\_Rathour}}
+    \\ \vspace{-8pt}
+   
+
+
+%-----------EDUCATION-----------
+\section{EDUCATION}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Lovely Professional University - (Punjab)}{2023 – 2027}
+      {Computer Science and Engineering - \textbf{CGPA} - \textbf{8.1}}{Jalandhar, Punjab}
+  \resumeSubHeadingListEnd
+  
+%   \resumeSubHeadingListStart
+%     \resumeSubheading
+%       {College Name}{MM YYYY -- MM YYYY}
+%       {Exam Name - Course Name  - \textbf{Percentage} - \textbf{xx\%}}{city, country}
+%   \resumeSubHeadingListEnd
+
+%------RELEVANT COURSEWORK-------
+\section{COURSEWORK - SKILLS}
+    %\resumeSubHeadingListStart
+        \begin{multicols}{4}
+            \begin{itemize}[itemsep=-2pt, parsep=5pt]
+                \item Data Structures
+                \item Algorithms
+                \item Database Management
+                \item Computer Networks
+                \item Using Cloud 
+                \item Java Development
+                % \item System Design
+                
+                \item Development
+            \end{itemize}
+        \end{multicols}
+        \vspace*{2.0\multicolsep}
+    %\resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{WORK EXPERIENCE}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Intern at Coaching Institute {\raisebox{-0.1\height}\faExternalLink }}{Feb 2023 - Nov 2024} 
+      {\underline{Learning and Teaching}}{Varanasi, UP}
+      \resumeItemListStart
+        \resumeItem{\normalsize{Learned and Implemented\textbf{Advanced Data Structure and Algorithms, ArrayList, LList, Tree.}}}
+        \resumeItem{\normalsize{Working in a coaching Institute}}
+        
+       
+        \resumeItem{\normalsize{Handle  front-end using \textbf{HTML, CSS and JavaScript.}}}
+        
+  
+      \resumeItemListEnd  
+  \resumeSubHeadingListEnd
+\vspace{-12pt}
+
+%-----------PROJECTS-----------
+\section{PROJECTS}
+    \vspace{-5pt}
+    \resumeSubHeadingListStart
+     \resumeProjectHeading
+      {\href{#}{\textbf{\large{\underline{E-Commerce Website}}} \href{Project Link}{\raisebox{-0.1\height}\faExternalLink }} $|$ \large{\underline{HTML, CSS, JavaScript, (Development), IDE - VS Code}}}{August - 2024}\
+\resumeItemListStart
+\resumeItem {\normalsize{Designed and developed a user-friendly interface for browsing and purchasing products.}}
+\resumeItem {\normalsize{Implemented responsive layouts to enhance the user experience on different devices.}}
+\resumeItem {\normalsize{Created interactive features using JavaScript, such as product search and dynamic cart updates.}}
+\resumeItem {\normalsize{Ensured cross-browser compatibility and optimized website performance.}}
+\resumeItem {\normalsize{Deployed the project locally using Visual Studio Code for testing and debugging.}}
+            
+            
+          \resumeItemListEnd 
+          \vspace{-13pt}
+    \resumeProjectHeading
+          {\textbf{\large{\underline{Zerodha Clone Website}}} $|$ \large{\underline{HTML, CSS, JavaScript (Development), IDE - VS Code}}}{June - 2024}\
+\resumeItemListStart
+\resumeItem {\normalsize{Developed a static web page mimicking the design of the Zerodha platform.}}
+\resumeItem {\normalsize{Created responsive layouts for better accessibility across different screen sizes.}}
+\resumeItem {\normalsize{Added interactive elements like navigation menus and buttons using JavaScript.}}
+\resumeItem {\normalsize{Ensured cross-browser compatibility and optimized the design for performance.}}
+\resumeItem {\normalsize{Tested and debugged the website using Visual Studio Code.}}
+            
+            
+          \resumeItemListEnd 
+          \vspace{-13pt}
+          
+         
+          
+          
+      \resumeProjectHeading
+          {\textbf{\large{\underline{Todo Game Website - \textbf{Stone Paper Scissors}}}} $|$ \large{\underline{HTML, CSS, JavaScript (Development)}}}{February 2024}\
+\resumeItemListStart
+\resumeItem {\normalsize{Developed the \textbf{front-end} of the Stone Paper Scissors game.}}
+\resumeItem {\normalsize{Designed an interactive and user-friendly interface for playing the game.}}
+\resumeItem {\normalsize{Added features like tracking scores and displaying game outcomes dynamically using JavaScript.}}
+\resumeItem {\normalsize{Implemented responsive design to ensure smooth gameplay on different devices.}}
+\resumeItem {\normalsize{Tested and debugged the application for a seamless user experience.}}
+\resumeItemListEnd
+          
+        % \resumeProjectHeading
+        %   {\href{https://github.com/FusionIIIT/Fusion/tree/main/FusionIIIT/applications/counselling_cell}{\textbf{\large{\underline{Counselling Cell - \textbf{Fusion IIIT}}}} \href{Project Link}{\raisebox{-0.1\height}\faExternalLink }} $|$ \large{\underline{HTML, CSS, Django, PostgreSQL}}}{2021-22}
+        %   \resumeItemListStart
+        %      \resumeItem{\normalsize{Develop the \textbf{front-end} of Counselling Cell module in Fusion IIIT.}}
+        %     \resumeItem{\normalsize{Module Consists of 4-5 different types of users with different functionalities.}}
+        %     \resumeItem{\normalsize{Added \textbf{10-12 new features} like organize the user interface of the Module's \textbf{Home Page}}}
+        %     \resumeItem{\normalsize{Handle the database and integrated the module with other existing modules.}}
+        %   \resumeItemListEnd
+        % \vspace{-13pt}
+          
+    \resumeSubHeadingListEnd
+% \vspace{-12pt}
+
+%
+
+
+%-----------EXPERIENCE-----------
+% \section{INTERNSHIP}
+%   \resumeSubHeadingListStart
+
+%     \resumeSubheading
+%       {Company Name \href{certificate Link}{\raisebox{-0.1\height}\faExternalLink }}{MM YYYY -- MM YYYY} 
+%       {\underline{Role Name}}{city, country}
+%       \resumeItemListStart
+%         \resumeItem{\normalsize{About the role \textbf{and responsibilities carried out.}}}
+  
+%       \resumeItemListEnd  
+%   \resumeSubHeadingListEnd
+% \vspace{-12pt}
+%-----------PROGRAMMING SKILLS-----------
+\section{TECHNICAL SKILLS}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{\normalsize{Programming Languages:}}{  \normalsize{Java, JavaScript, SQL}} \\
+     \textbf{\normalsize{Technologies:}}{  \normalsize{HTML, CSS, Express, SQL, Javascript}} \\
+     \textbf{\normalsize{Developer Tools:}}{  \normalsize{VS Code, Sublime,  Canva }} \\
+    }}
+ \end{itemize}
+ \vspace{-15pt}
+
+
+%-----------INVOLVEMENT---------------
+\section{CODING PLATFORMS}
+    \resumeSubHeadingListStart
+            \resumeItemListStart
+                \resumeItem{\normalsize{Solved \textbf{14+} Problems on \textbf{Leetcode}.
+                \href{https://leetcode.com/u/Gautam__Rathour/}{\raisebox{-0.1\height}\faExternalLink }}}
+                \resumeItem{\normalsize{Solved \textbf{5+} Problems across \textbf{GeeksforGeeks}
+                \href{}{\raisebox{-0.1\height}\faExternalLink }}}
+                \href{https://codeforces.com/profile/alwaysAnewbie}{\raisebox{-0.1\height}\faExternalLink }}}
+                % \resumeItem{\normalsize{Participation Certificate. \href{ParticipationCertificateLink.com}{\raisebox{-0.1\height}\faExternalLink }}}
+            \resumeItemListEnd
+    \resumeSubHeadingListEnd
+ \vspace{-11pt}
+ 
+  %-----------CERTIFICATIONS---------------
+\section{CERTIFICATIONS}
+
+\begin{itemize}[leftmargin=0.15in, label={$\sbullet[.75]$}]
+    \item {\href{apnacollege.in/path-player?courseid=sigma-5&unit=672b171e3c33c36b830d8e5aUnit}{\textbf{Learn Data Structure and Algorithms - Apna College}}}
+    \item {\href{apnacollege.in/certificate/java-course}{\textbf{Java - Apna College}}}
+    \item {\href{certificateLink.com}{\textbf{MERN Stack Development - Apna College}}}
+\end{itemize}
+
+
+
+
+
+ \section{EXTRACURRICULAR}
+    \resumeSubHeadingListStart
+        % \resumeSubheading{Organization Name \href{Certificate Proof link}{\raisebox{-0.1\height}\faExternalLink } }{05-2021 -- 12-2021}{\underline{Role}}{Location}
+        
+            \resumeItemListStart
+                \resumeItem{\normalsize{Taught basic Java (DSA) in offline Mode.         - In our Coaching}}
+                \resumeItem{\normalsize{RSS Member from 2019 to NOW }}
+                \resumeItem{\normalsize{I like Traveling and Playing Chess}}
+            \resumeItemListEnd
+    \resumeSubHeadingListEnd
+ \vspace{-11pt}
+ 
+ \end{document}
+ 0
