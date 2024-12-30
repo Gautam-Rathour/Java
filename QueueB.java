@@ -461,5 +461,6 @@ public class QueueB {
         while(!q.isEmpty()) {
             System.out.print(q.remove() + " ");
         }
+        System.out.println();
     }
 }
