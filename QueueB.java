@@ -569,33 +569,102 @@
 
 // // Stack & Queue using Deque :--
 
+// import java.util.*;
+// public class QueueB {
+//     static class Queue {
+//         Deque<Integer> deque = new LinkedList<>();
+
+//         public void add(int data) {
+//             deque.addLast(data);
+//         }
+
+//         public int remove() {
+//             return deque.removeFirst();
+//         }
+
+//         public int peek() {
+//             return deque.getFirst();
+//         }
+//     }
+//     public static void main (String args[]) {
+//         Queue q = new Queue();
+//         q.add(1);
+//         q.add(2);
+//         q.add(3);
+
+
+//         System.out.println("Peek = " + q.peek());
+//         System.out.println(q.remove());
+//         System.out.println(q.remove());
+//         System.out.println(q.remove());
+//     }
+// }
+
+// =======================================================================================================
+// =======================================================================================================
+
 import java.util.*;
 public class QueueB {
-    static class Queue {
-        Deque<Integer> deque = new LinkedList<>();
+    static void reverseQueueFirstKElementsUsingStack(Queue<Integer> queue, int k) {
+        if (queue.isEmpty() == true || k > queue.size())
+            return;
+        if (k <= 0)
+            return;
 
-        public void add(int data) {
-            deque.addLast(data);
+            Stack<Integer> stack = new Stack<Integer>();
+
+            //push the first K elements into a Stack
+            for (int i=0; i<k; i++) {
+                stack.push(queue.peek());
+                queue.remove();
+            }
+
+            // Enqueue the contents of stack
+            // at the back of the queue
+            while (!stack.empty()) {
+                queue.add(stack.peek());
+                stack.pop();
+            }
+
+            // Remove the remaining elements and enqueue
+            // them at the end of the Queue
+            for(int i=0; i<queue.size() - k; i++) {
+                queue.add(queue.peek());
+                queue.remove();
+            }
         }
 
-        public int remove() {
-            return deque.removeFirst();
+        static void reverseQueueFirstKElementsUsingRecursion(Queue<Integer> queue, int k) {
+            helper(queue, k);   // Step 1 and 2
+            int sz = queue.size() - k;  // Step 3
+            while(sz-- > 0) {
+                int x = queue.poll();
+                queue.add(x);
+            }
+        }
+        static void helper(Queue<Integer> queue, int k) {
+            if(k == 0) return;
+            int front = queue.peek();
+            queue.poll();
+            helper(queue, k-1);
+            queue.add(front);
         }
 
-        public int peek() {
-            return deque.getFirst();
-        }
-    }
-    public static void main (String args[]) {
-        Queue q = new Queue();
-        q.add(1);
-        q.add(2);
-        q.add(3);
+    public static void main(String args[]) {
+        Queue<Integer> queue = new LinkedList<>();
+        queue.add(10);
+        queue.add(20);
+        queue.add(30);
+        queue.add(40);
+        queue.add(50);
+        queue.add(60);
+        queue.add(70);
+        queue.add(80);
+        queue.add(90);
+        queue.add(100);
 
+        int k = 5;
 
-        System.out.println("Peek = " + q.peek());
-        System.out.println(q.remove());
-        System.out.println(q.remove());
-        System.out.println(q.remove());
+        reverseQueueFirstKElementsUsingStack(queue, k);
     }
 }
