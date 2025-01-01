@@ -603,6 +603,8 @@
 // =======================================================================================================
 // =======================================================================================================
 
+// Reverse Half Queue  : ---
+
 import java.util.*;
 public class QueueB {
     static void reverseQueueFirstKElementsUsingStack(Queue<Integer> queue, int k) {
@@ -634,21 +636,21 @@ public class QueueB {
             }
         }
 
-        static void reverseQueueFirstKElementsUsingRecursion(Queue<Integer> queue, int k) {
-            helper(queue, k);   // Step 1 and 2
-            int sz = queue.size() - k;  // Step 3
-            while(sz-- > 0) {
-                int x = queue.poll();
-                queue.add(x);
-            }
-        }
-        static void helper(Queue<Integer> queue, int k) {
-            if(k == 0) return;
-            int front = queue.peek();
-            queue.poll();
-            helper(queue, k-1);
-            queue.add(front);
-        }
+        // static void reverseQueueFirstKElementsUsingRecursion(Queue<Integer> queue, int k) {
+        //     helper(queue, k);   // Step 1 and 2
+        //     int sz = queue.size() - k;  // Step 3
+        //     while(sz-- > 0) {
+        //         int x = queue.poll();
+        //         queue.add(x);
+        //     }
+        // }
+        // static void helper(Queue<Integer> queue, int k) {
+        //     if(k == 0) return;
+        //     int front = queue.peek();
+        //     queue.poll();
+        //     helper(queue, k-1);
+        //     queue.add(front);
+        // }
 
     public static void main(String args[]) {
         Queue<Integer> queue = new LinkedList<>();
@@ -666,5 +668,10 @@ public class QueueB {
         int k = 5;
 
         reverseQueueFirstKElementsUsingStack(queue, k);
+
+        while(!queue.isEmpty()) {
+            System.out.print(queue.poll() + " ");
+        }
+        System.out.println();
     }
 }
