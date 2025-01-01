@@ -603,75 +603,104 @@
 // =======================================================================================================
 // =======================================================================================================
 
-// Reverse Half Queue  : ---
+// // Reverse Half Queue  : ---
+
+// import java.util.*;
+// public class QueueB {
+//     static void reverseQueueFirstKElementsUsingStack(Queue<Integer> queue, int k) {
+//         if (queue.isEmpty() == true || k > queue.size())
+//             return;
+//         if (k <= 0)
+//             return;
+
+//             Stack<Integer> stack = new Stack<Integer>();
+
+//             //push the first K elements into a Stack
+//             for (int i=0; i<k; i++) {
+//                 stack.push(queue.peek());
+//                 queue.remove();
+//             }
+
+//             // Enqueue the contents of stack
+//             // at the back of the queue
+//             while (!stack.empty()) {
+//                 queue.add(stack.peek());
+//                 stack.pop();
+//             }
+
+//             // Remove the remaining elements and enqueue
+//             // them at the end of the Queue
+//             for(int i=0; i<queue.size() - k; i++) {
+//                 queue.add(queue.peek());
+//                 queue.remove();
+//             }
+//         }
+
+//         // static void reverseQueueFirstKElementsUsingRecursion(Queue<Integer> queue, int k) {
+//         //     helper(queue, k);   // Step 1 and 2
+//         //     int sz = queue.size() - k;  // Step 3
+//         //     while(sz-- > 0) {
+//         //         int x = queue.poll();
+//         //         queue.add(x);
+//         //     }
+//         // }
+//         // static void helper(Queue<Integer> queue, int k) {
+//         //     if(k == 0) return;
+//         //     int front = queue.peek();
+//         //     queue.poll();
+//         //     helper(queue, k-1);
+//         //     queue.add(front);
+//         // }
+
+//     public static void main(String args[]) {
+//         Queue<Integer> queue = new LinkedList<>();
+//         queue.add(10);
+//         queue.add(20);
+//         queue.add(30);
+//         queue.add(40);
+//         queue.add(50);
+//         queue.add(60);
+//         queue.add(70);
+//         queue.add(80);
+//         queue.add(90);
+//         queue.add(100);
+
+//         int k = 5;
+
+//         reverseQueueFirstKElementsUsingStack(queue, k);
+
+//         while(!queue.isEmpty()) {
+//             System.out.print(queue.poll() + " ");
+//         }
+//         System.out.println();
+//     }
+// }
+
+// =======================================================================================================
+// =======================================================================================================
+
+// Sliding window maximum :---
 
 import java.util.*;
 public class QueueB {
-    static void reverseQueueFirstKElementsUsingStack(Queue<Integer> queue, int k) {
-        if (queue.isEmpty() == true || k > queue.size())
-            return;
-        if (k <= 0)
-            return;
+    static void printSlidingWindowMaximumBruteForce(int arr[], int N, int K) {
+        for(int i=0; i<=N - K; i++) {
+            int currMax = arr[i];
 
-            Stack<Integer> stack = new Stack<Integer>();
-
-            //push the first K elements into a Stack
-            for (int i=0; i<k; i++) {
-                stack.push(queue.peek());
-                queue.remove();
-            }
-
-            // Enqueue the contents of stack
-            // at the back of the queue
-            while (!stack.empty()) {
-                queue.add(stack.peek());
-                stack.pop();
-            }
-
-            // Remove the remaining elements and enqueue
-            // them at the end of the Queue
-            for(int i=0; i<queue.size() - k; i++) {
-                queue.add(queue.peek());
-                queue.remove();
-            }
+            for(int j = i; j< i + K; j++) {
+                if(arr[j] > currMax)
+                    currMax = arr[j];
+            } 
+            System.out.print(currMax + " ");
         }
-
-        // static void reverseQueueFirstKElementsUsingRecursion(Queue<Integer> queue, int k) {
-        //     helper(queue, k);   // Step 1 and 2
-        //     int sz = queue.size() - k;  // Step 3
-        //     while(sz-- > 0) {
-        //         int x = queue.poll();
-        //         queue.add(x);
-        //     }
-        // }
-        // static void helper(Queue<Integer> queue, int k) {
-        //     if(k == 0) return;
-        //     int front = queue.peek();
-        //     queue.poll();
-        //     helper(queue, k-1);
-        //     queue.add(front);
-        // }
-
+    }
+ 
     public static void main(String args[]) {
-        Queue<Integer> queue = new LinkedList<>();
-        queue.add(10);
-        queue.add(20);
-        queue.add(30);
-        queue.add(40);
-        queue.add(50);
-        queue.add(60);
-        queue.add(70);
-        queue.add(80);
-        queue.add(90);
-        queue.add(100);
+        int arr[] = {1,3,-1,-3,5,3,6,7};
+        int N = arr.length;
+        int K = 3;
+        printSlidingWindowMaximumBruteForce(arr, N, K);
 
-        int k = 5;
-
-        reverseQueueFirstKElementsUsingStack(queue, k);
-
-        while(!queue.isEmpty()) {
-            System.out.print(queue.poll() + " ");
-        }
-        System.out.println();
     }
 }
+
