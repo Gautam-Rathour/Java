@@ -8,11 +8,11 @@ public class BinaryTreesB {
         Node left;
         Node right;
 
-        Node(int data) [
+        Node(int data) { 
             this.data = data;
             this.left = null;
             this.right = null;
-        ]
+        }
     }
 
     static class BinaryTree {
@@ -23,7 +23,7 @@ public class BinaryTreesB {
                 return null;
             }
 
-            Node newNode = new Node (node[idx]);
+            Node newNode = new Node (nodes[idx]);
             newNode.left = buildTree(nodes);
             newNode.right = buildTree(nodes);
 
