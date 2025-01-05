@@ -268,20 +268,45 @@ public class BinaryTreesB {
     }
 
     // Find Diameter  : ---
-    public static int diameter(Node root) {   // O(n^2)
+    public static int diameter2(Node root) {   // O(n^2)
         if(root == null) {
             return 0;
         }
 
-        int ld = diameter(root.left);
+        int ld = diameter2(root.left);
         int lh = height(root.left);
-        int rd = diameter(root.right);
+        int rd = diameter2(root.right);
         int rh = height(root.right);
 
         int selfDiam = lh + rh + 1;
 
         return Math.max(selfDiam, Math.max(ld, rd));
     }
+
+    // Approach 2  : ---
+    static class Info {
+        int diam;
+        int ht;
+
+        public Info(int diam, int ht) {
+            this.diam = diam;
+            this.ht = ht;
+        }
+    }
+    public static Info diameter(Node root) {  // O(n)
+        if(root == null) {
+            return new Info(0, 0);
+        }
+
+        Info leftInfo = diameter(root.left);
+        Info rightInfo = diameter(root.right);
+
+        int diam = Math.max(Math.max(leftInfo.diam, leftInfo.diam), rightInfo.ht + rightInfo.ht + 1);
+        int ht = Math.max(leftInfo.ht, rightInfo.ht) + 1;
+
+        return new Info(diam, ht);
+    }
+
     public static void main(String args[]) {
             /* 
                          1
@@ -298,6 +323,6 @@ public class BinaryTreesB {
             root.right.left = new Node(6);
             root.right.right = new Node (7);
 
-            System.out.println(diameter(root));
+            System.out.println(diameter(root).diam);
     }
 }
