@@ -471,6 +471,23 @@ public class BinaryTreesB {
         }
         System.out.println();
     }
+// =======================================================================================================
+
+
+    // Print K - Level :  ----
+    public static void KLevel(Node root, int level, int k) {
+        if(root == null) {
+            return;
+        }
+        if(level == k) {
+            System.out.print(root.data + " ");
+            return;
+        }
+        KLevel(root.left, level+1, k);
+        KLevel(root.right, level+1, k);
+    }
+// =======================================================================================================
+
 
     public static void main(String args[]) {
          /* 
@@ -488,6 +505,7 @@ public class BinaryTreesB {
             root.right.left = new Node(6);
             root.right.right = new Node (7);
 
-            topView(root);
+            // topView(root);
+            KLevel(root, 1, 3);
     }
 }
