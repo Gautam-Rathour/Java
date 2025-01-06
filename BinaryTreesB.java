@@ -490,7 +490,7 @@ public class BinaryTreesB {
     }
 // =======================================================================================================
 
-    //  Lowest Common Ancestor  : --
+    //  Lowest Common Ancestor  : --  ( Approach-1 )
     public static boolean getPath(Node root, int n, ArrayList<Node> path) {
         if(root == null) {
             return false;
@@ -511,7 +511,7 @@ public class BinaryTreesB {
         path.remove(path.size()-1);
         return false;
     }
-    public static Node lca (Node root, int n1, int n2) {
+    public static Node lca (Node root, int n1, int n2) {  //O(n)
         ArrayList<Node> path1 = new ArrayList<>();
         ArrayList<Node> path2 = new ArrayList<>();
 
@@ -530,6 +530,27 @@ public class BinaryTreesB {
         Node lca = path1.get(i-1);
         return lca;
     }
+// ==============================================
+    //  Lowest Common Ancestor  : --  ( Approach-2 )
+
+public static Node lca2(Node root, int n1, int n2) {
+    if(root == null || root.data == n1 || root.data == n2) {
+        return root;
+    }
+
+    Node leftLca = lca2(root.left, n1, n2);
+    Node rightLca = lca2(root.right, n1, n2);
+
+    //leftLCA = val   rightLCA = null
+    if(rightLca == null) {
+        return leftLca;
+    }
+    if(leftLca == null) {
+        return rightLca;
+    }
+
+    return root;
+}
 
     public static void main(String args[]) {
          /* 
@@ -550,7 +571,7 @@ public class BinaryTreesB {
             // topView(root);
             // KLevel(root, 1, 2);
 
-            int n1 = 4, n2 = 2;
-            System.out.println(lca(root, n1, n2).data);
+            int n1 = 4, n2 = 6;
+            System.out.println(lca2(root, n1, n2).data);
     }
 }
