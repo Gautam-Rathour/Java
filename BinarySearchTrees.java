@@ -57,9 +57,9 @@ public class BinarySearchTrees {
         int valuse[] = {5, 1, 3, 4, 2, 7};
         Node root = null;
 
-        for(int i=0; i<valuse.length; i++) {
-            root = insert(root, valuse[i]);
-        }
+        // for(int i=0; i<valuse.length; i++) {
+        //     root = insert(root, valuse[i]);
+        // }
 
         // inorder(root);
 
