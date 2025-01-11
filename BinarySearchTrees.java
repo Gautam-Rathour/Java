@@ -146,6 +146,7 @@ public class BinarySearchTrees {
         } 
         return root;
     }
+// =======================================================================================================
 
     //Print  In Range  : --
     public static void printInRange(Node root, int k1, int k2) {
@@ -158,13 +159,75 @@ public class BinarySearchTrees {
             System.out.print(root.data + " ");
             printInRange(root.right, k1, k2);
         } else if (root.data <= k1){
-            printInRange(root.left, k1, k2);
-        } else {
             printInRange(root.right, k1, k2);
+        } else {
+            printInRange(root.left, k1, k2);
         }
     }
+// =======================================================================================================
+
+    // Print Root to leaf  :---
+    public static void printPath(ArrayList<Integer> path) {
+        for(int i=0; i<path.size()-1; i++) {
+            System.out.print(path.get(i) + "->");
+        }
+        System.out.println("Null");
+    }
+    public static void printRoot2leaf(Node root, ArrayList<Integer> path) {
+        if(root == null) {
+            return;
+        }
+        path.add(root.data);
+        if(root.left == null && root.right == null) {
+            printPath(path);
+        }
+        printRoot2leaf(root.left, path);
+        printRoot2leaf(root.right, path);
+    }
+// =======================================================================================================
+
+    // Find Valid BST or not  : ---
+    public static boolean isValidBST(Node root, Node min, Node max) {
+        if(root == null) {
+            return true;
+        }
+
+        if(min != null && root.data <= min.data) {
+            return false;
+        }
+        else if(max != null && root.data >= max.data) {
+            return false;
+        }
+
+        return isValidBST(root.left, min, root)
+         && isValidBST(root.right, root, max);
+    }
+// =======================================================================================================
+
+    // Mirror a BST  : ---
+    public static Node mirror(Node root) {
+        if(root == null) {
+            return null;
+        }
+        Node leftAns = mirror(root.left);
+        Node rightAns = mirror(root.right);
+
+        root.left = leftAns;
+        root.right = rightAns;
+        return root;
+    }
+
+    public static void preorder(Node root) {
+        if(root == null) {
+            return;
+        }
+        System.out.print(root.data + " ");
+        preorder(root.left);
+        preorder(root.right);
+    }
     public static void main(String args[]) {
-        int values[] = {8, 5, 3, 1, 4, 6, 10, 11, 14};
+        // int values[] = {8, 5, 3, 1, 4, 6, 10, 11, 14};
+        int values[] = {8, 5, 3, 6, 10, 11, 14};
         Node root   = null;
 
         for(int i=0; i<values.length; i++) {
@@ -174,11 +237,22 @@ public class BinarySearchTrees {
         inorder(root);
         System.out.println();
 
-        // root = delete(root, 4);
-        // System.out.println();
-        // inorder(root);
+        // // root = delete(root, 4);
+        // // System.out.println();
+        // // inorder(root);
 
-        printInRange(root, 5, 12);
+        // // printInRange(root, 9, 12);
+
+        // // printRoot2leaf(root, new ArrayList<>() );
+
+        // if(isValidBST(root, null, null)) {
+        //     System.out.println("Valid");
+        // } else {
+        //     System.out.println("Not Valid");
+        // }
+
+        root = mirror(root);
+        preorder(root);
     }
 }
 
