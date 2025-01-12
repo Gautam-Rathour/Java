@@ -355,7 +355,6 @@ public class BinarySearchTrees {
         if(root == null) {
             return;
         }
-
         getInorder(root.left, inorder);
         inorder.add(root.data);
         getInorder(root.right, inorder);
@@ -369,7 +368,7 @@ public class BinarySearchTrees {
         int mid = (start + end) / 2;
         Node root = new Node(inorder.get(mid));
         root.left = createBST(inorder, start, mid - 1);
-        rooot.right = createBST(inorder, mid + 1, end);
+        root.right = createBST(inorder, mid + 1, end);
         return root;
     }
     public static Node balanceBST(Node root) {
@@ -378,14 +377,45 @@ public class BinarySearchTrees {
         getInorder(root, inorder);
 
         // sorted inorder -> balanced BST
+        root = createBST (inorder, 0, inorder.size()-1);
+        return root;
     }
 
     public static void main(String args[]) {
-        int arr [] = {3, 5, 6, 8, 10, 11, 12};
-        int start = 0;
-        int end = arr.length-1;
+        // int arr [] = {3, 5, 6, 8, 10, 11, 12};
+        // int start = 0;
+        // int end = arr.length-1;
 
-        Node root = createBST(arr, start, end);
+        /*
+                    8
+                   / \
+                  6   10
+                 /      \
+                5        11
+               /           \
+              3             12
+        given BST
+         */
+
+        Node root = new Node(8);
+        root.left = new Node(6);
+        root.left.left = new Node(5);
+        root.left.left.left = new Node(3);
+
+        root.right = new Node(10);
+        root.right.right = new Node(11);
+        root.right.right.right = new Node(12);
+            /*
+                            8
+                           / \
+                          5   11
+                         / \   / \
+                        3   6 10 12
+                expected BST
+
+         */
+
+        root = balanceBST(root);
         preorder(root);
     }
 }
