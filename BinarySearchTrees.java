@@ -550,7 +550,8 @@ public class BinarySearchTrees {
         getInorder(root2, arr2);
 
         //merge
-        int i=0; j=0;
+        int i=0, j=0;
+        ArrayList<Integer> finalArr = new ArrayList<>();
         while(i<arr1.size() && j<arr2.size()) {
             if(arr1.get(i) <= arr2.get(j)) {
                 finalArr.add(arr1.get(i));
