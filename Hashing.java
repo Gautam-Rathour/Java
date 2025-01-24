@@ -296,43 +296,127 @@
 //     }
 // }
 
-// // =======================================================================================================
 // =======================================================================================================
- // Valid Anagram  :  --
+// =======================================================================================================
+//  // Valid Anagram  :  --
 
- import java.util.*;
- public class Hashing {
-    public static boolean isAnangram(String s, String t) { 
-        if(s.length() != t.length()) {
-            return false;
-        }
-        
-        HashMap<Character, Integer> map = map = new HashMap<>();
+//  import java.util.*;
+//  public class Hashing {
+//     public static boolean isAnangram(String s, String t) { 
+//         if(s.length() != t.length()) {
+//             return false;
+//         }
 
-        for(int i=0; i<s.length(); i++) {
-            char ch = s.charAt(i);
-            map.put(ch, map.getOrDefault(ch, 0) + 1);
-        }
+//         HashMap<Character, Integer> map = map = new HashMap<>();
 
-        for(int i=0; i<t.length(); i++) {
-            char ch = t.charAt(i);
-            if(map.get(ch) != null) {
-                if(map.get(ch) == 1) {
-                    map.remove(ch);
-                } else {
-                    map.put(ch, map.get(ch) - 1);
-                }
-            } else {
-                return false;
-            }
-        }
+//         for(int i=0; i<s.length(); i++) {
+//             char ch = s.charAt(i);
+//             map.put(ch, map.getOrDefault(ch, 0) + 1);
+//         }
 
-        return map.isEmpty();
-    }
+//         for(int i=0; i<t.length(); i++) {
+//             char ch = t.charAt(i);
+//             if(map.get(ch) != null) {
+//                 if(map.get(ch) == 1) {
+//                     map.remove(ch);
+//                 } else {
+//                     map.put(ch, map.get(ch) - 1);
+//                 }
+//             } else {
+//                 return false;
+//             }
+//         }
+
+//         return map.isEmpty();
+//     }
+//     public static void main(String args[]) {
+//         String s = "race";
+//         String t = "care";
+
+//         System.out.println(isAnangram(s, t));
+//     }
+//  }
+
+// =======================================================================================================
+// =======================================================================================================
+
+// // Hash - set   :  -----
+
+// import java.util.*;
+// public class Hashing {
+
+//     public static void main(String args[]) { 
+//         HashSet<Integer> set = new HashSet<> ();
+//         set.add(1);
+//         set.add(2);
+//         set.add(4);
+//         set.add(2);
+//         set.add(1);
+
+//         System.out.println(set);
+//         set.clear();
+//         System.out.println(set.size());
+//         System.out.println(set.isEmpty());
+
+//         set.remove(2);
+//         if(set.contains(2)) {
+//             System.out.println("Set contains 2");
+//         }
+//         if(set.contains(3)) {
+//             System.out.println("Set contains 3");
+//         }
+//     }
+// }
+
+// =======================================================================================================
+// =======================================================================================================
+
+// // Iteration on HashSet  : ---
+
+// import java.util.*;
+// public class Hashing {
+
+//     public static void main(String args[]) {
+//         HashSet<String> cities = new HashSet<>();
+//         cities.add("Delhi");
+//         cities.add("Mumbai");
+//         cities.add("Noida");
+//         cities.add("Bengalure");
+
+//         // Iterator it = cities.iterator();
+//         // while(it.hasNext()) {
+//         //     System.out.println(it.next());
+//         // }
+
+//         for(String city : cities) {
+//             System.out.println(city);
+//         }
+//     }
+// }
+
+// =======================================================================================================
+// =======================================================================================================
+
+//
+
+import java.util.*;
+public class Hashing {
+
     public static void main(String args[]) {
-        String s = "race";
-        String t = "care";
+        HashSet<String> cities = new HashSet<>();
+        cities.add("Delhi");
+        cities.add("Mumbai");
+        cities.add("Noida");
+        cities.add("Bengalure");
+        System.out.println(cities);
 
-        System.out.println(isAnangram(s, t));
+        LinkedHashSet<String> lhs = new LinkedHashSet<>();
+        lhs.add("Delhi");
+        lhs.add("Mumbai");
+        lhs.add("Noida");
+        lhs.add("Bengalure");
+        System.out.println(lhs);
+
+     
     }
- }
+}
