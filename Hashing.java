@@ -487,6 +487,70 @@
 // ========================================================================================================
 // ========================================================================================================
 
+// // Find Itinerary for tickets
 
+// import java.util.*;
+// public class Hashing {
+//     public static String getStart(HashMap<String, String> tickets) {
+//         HashMap<String, String>revMap = new HashMap<>();
 
+//         for(String key : tickets.keySet()) {
+//             revMap.put(tickets.get(key), key);
+//         }
 
+//         for(String key : tickets.keySet()) {
+//             if(!revMap.containsKey(key)) {
+//                 return key;  // starting point
+//             }
+//         }
+
+//         return null;
+//     }
+//     public static void main(String args[]) {
+//         HashMap<String, String>tickets = new HashMap<>();
+//         tickets.put("Chennai", "Bengaluru");
+//         tickets.put("Mumbai", "Delhi");
+//         tickets.put("Goa", "Chennai");
+//         tickets.put("Delhi", "Goa");
+
+//         String start = getStart(tickets);
+//         System.out.print(start);
+//         for(String key : tickets.keySet()) {
+//             System.out.print(" -> " + tickets.get(start));
+//             start = tickets.get(start);
+//         }
+
+//         System.out.println();
+//     }
+// }
+
+// ========================================================================================================
+// ========================================================================================================
+
+// Largest subarray with 0 sum  :  ----
+import java.util.*;
+public class Hashing {
+    public static void main(String args[]) {  //O(n)
+        int arr[] = {15, -2, 2, -8, 1, 7, 10, 23};
+
+        HashMap<Integer, Integer> map = new HashMap<>();
+        // (sum, idx)
+
+        int sum = 0;
+        int len = 0;
+
+        for(int j=0; j<arr.length; j++) {
+            sum += arr[j];
+            if(map.containsKey(sum)) {
+                len = Math.max(len, j-map.get(sum));
+            } else {
+                map.put(sum, j);
+            }
+        }
+
+        System.out.println("Largest subarray with sum as 0 => " + len);
+    }
+}
+
+// ========================================================================================================
+// ========================================================================================================
