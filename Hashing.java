@@ -527,32 +527,118 @@
 // ========================================================================================================
 // ========================================================================================================
 
-// Largest subarray with 0 sum  :  ----
-import java.util.*;
-public class Hashing {
-    public static void main(String args[]) {  //O(n)
-        int arr[] = {15, -2, 2, -8, 1, 7, 10, 23};
+// // Largest subarray with 0 sum  :  ----
+// import java.util.*;
+// public class Hashing {
+//     public static void main(String args[]) {  //O(n)
+//         int arr[] = {15, -2, 2, -8, 1, 7, 10, 23};
 
-        HashMap<Integer, Integer> map = new HashMap<>();
-        // (sum, idx)
+//         HashMap<Integer, Integer> map = new HashMap<>();
+//         // (sum, idx)
 
-        int sum = 0;
-        int len = 0;
+//         int sum = 0;
+//         int len = 0;
 
-        for(int j=0; j<arr.length; j++) {
-            sum += arr[j];
-            if(map.containsKey(sum)) {
-                len = Math.max(len, j-map.get(sum));
-            } else {
-                map.put(sum, j);
-            }
+//         for(int j=0; j<arr.length; j++) {
+//             sum += arr[j];
+//             if(map.containsKey(sum)) {
+//                 len = Math.max(len, j-map.get(sum));
+//             } else {
+//                 map.put(sum, j);
+//             }
+//         }
+
+//         System.out.println("Largest subarray with sum as 0 => " + len);
+//     }
+// }
+
+// ========================================================================================================
+// ========================================================================================================
+
+// // Subarray Sum equal to K  : ---
+
+// import java.util.*;
+// public class Hashing {
+
+//     public static void main(String args[]) {
+//         int arr[] = {10, 2, -2, -20, 10};
+//         int k = -10;
+
+//         HashMap<Integer, Integer> map = new HashMap<>();
+//         //(sum, count)
+//         map.put(0, 1);
+
+//         int sum = 0; 
+//         int ans = 0;
+
+//         for (int j=0; j<arr.length; j++) {   //O(n)
+//             sum += arr[j]; //sum(j)
+//             if(map.containsKey(sum-k)) {
+//                 ans += map.get(sum-k);
+//             }
+//             map.put(sum, map.getOrDefault(sum, 0) + 1);
+//         }
+
+//         System.out.println(ans);
+//     }
+// }
+
+// ========================================================================================================
+// ========================================================================================================
+// ========================================================================================================
+// ========================================================================================================
+// ========================================================================================================
+// ========================================================================================================
+
+// // Live Lecture  :  ----
+
+// import java.util.*;
+// public class Hashing {
+//     public static void main(String args[]) {
+//         HashMap<String, Integer> map = new HashMap<>();
+
+//         map.put("India", 40);  //key value
+//         map.put("Aus", 4);
+//         map.put("Eng", 43);
+//         map.put("India", 45);
+
+//         if(map.containsKey("Eng")) {
+//             System.out.println(map.get("Eng"));
+//         }
+
+//         // int x = 0;
+//         // if(map.containsKey("England")) {
+//         //     x = map.get("England");
+//         // }
+//         int x = map.getOrDefault("Eng", 21313);
+
+
+//         System.out.println(map);
+//         System.out.println(x);
+//     }
+// }
+// ========================================================================================================
+// ========================================================================================================
+
+public String frequencySort(String s) {
+    HashMap<Character, Integer> fmap = new HashMap<>();
+
+    for(int i=0; i<s.length(); i++) {
+        char ch = s.charAt(i);
+
+        if(fmap.constainsKey(ch)) {
+            int currFre = fmap.get(ch);
+            fmap.put(ch, currFre + 1);
+        } else {
+            fmap.put(ch, 1);
         }
-
-        System.out.println("Largest subarray with sum as 0 => " + len);
     }
+
+    //getting all the keys from map
+    ArrayList<Character> keys = new ArrayList<>(fmap.keySet());
+
+    PriorityQueue<Character> pq = new PriorityQueue((Character t, Character o) -> {
+        return fmap.get(o) - fmap.get(t);  // o - t => bigger object -> higher priority (max Heap)
+                                            // t - o => smaller object -> higher priority (min heap)
+    });
 }
-
-// ========================================================================================================
-// ========================================================================================================
-
-// 
