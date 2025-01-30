@@ -1,6 +1,7 @@
 // ========================================================================================================
 // ========================================================================================================
  
+import java.util.*;
 public class Tries {
     static class Node {
         Node children[] = new Node[26];
@@ -26,7 +27,7 @@ public class Tries {
             curr = curr.children[idx];
         }
 
-        curr.eow = true;
+        curr.isEndOfWord = true;   
     }
 
     //  Search  : ---
@@ -40,7 +41,7 @@ public class Tries {
             curr = curr.children[idx];
         }
 
-        return curr.eow = true;
+        return curr.isEndOfWord = true;
     }
 
     public static void main(String args[]) {
@@ -50,8 +51,8 @@ public class Tries {
             insert(words[i]);
         }
 
-        System.out.println(search("thee"));
-        System.out.ptintln(search("thor"));
+        System.out.println(search("any"));
+        System.out.println(search("an"));
     }
 }
 
