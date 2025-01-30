@@ -4,10 +4,10 @@
 import java.util.*;
 public class Tries {
     static class Node {
-        Node children[] = new Node[26];
+        Node children[] = new Node[26]; //'a' - 'z'
         boolean isEndOfWord;
 
-        Node() {
+        public Node() {
             for(int i=0; i<26; i++) {
                 children[i] = null;
             }
@@ -44,15 +44,35 @@ public class Tries {
         return curr.isEndOfWord = true;
     }
 
-    public static void main(String args[]) {
-        String words[] = {"the", "a", "there", "their", "any", "thee"};
 
-        for(int i=0; i<words.length; i++) {
-            insert(words[i]);
+    // Word Break  :  ---
+    public static boolean wordBreak(String key) {
+        if(key.length() == 0) {
+            return true;
+        }
+        for(int i=1; i<=key.length(); i++) {
+            if(search(key.substring(0, i)) && 
+            wordBreak(key.substring(i))) {
+                return true;
+            }
         }
 
-        System.out.println(search("any"));
-        System.out.println(search("an"));
+        return false;
+    }
+
+    public static void main(String args[]) {
+        // String words[] = {"the", "a", "there", "their", "any", "thee"};
+        String arr[] = {"i", "like", "sam", "samsung", "mobile", "ice"};
+
+        for(int i=0; i<arr.length; i++) {
+            insert(arr[i]);
+        }
+
+        // System.out.println(search("any"));
+        // System.out.println(search("an"));
+
+        String key = "ilikesamsung";
+        System.out.println(wordBreak(key));
     }
 }
 
