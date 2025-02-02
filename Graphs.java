@@ -417,32 +417,37 @@
 // // ==========================================================================================================
 // // ==========================================================================================================
 
-//  Live Lecture  :  ---  ( BFS )
+// //  Live Lecture  :  ---  ( BFS )
 
-import java.util.*;
-public class Graphs {
+// import java.util.*;
+// public class Graphs {
 
-    static ArrayList<Integer> bfs(ArrayList<ArrayList<Integer>> adj) {
-        int n = adj.size();
+//     static ArrayList<Integer> bfs(ArrayList<ArrayList<Integer>> adj) {
+//         int n = adj.size();
 
-        ArrayList<Integer> ans = new ArrayList<>();
-        Queue<Integer> q = new LinkedList<>();
-        int vis[] = new int[n];
-        q.add(0);
-        vis[0] = 1;
+//         ArrayList<Integer> ans = new ArrayList<>();
+//         Queue<Integer> q = new LinkedList<>();
+//         int vis[] = new int[n];
+//         q.add(0);
+//         vis[0] = 1;
 
-        while(!q.isEmpty()) {
-            int curr = q.remove();
-            ans.add(curr);
+//         while(!q.isEmpty()) {
+//             int curr = q.remove();
+//             ans.add(curr);
 
-            for(int conn : adj.get(curr)) {
+//             for(int conn : adj.get(curr)) {
 
-                if(vis[conn] == 0) {
-                    vis[conn] = 1;
-                    q.add(conn);
-                }
-            }
-        }
-        return ans;
-    }
-}
+//                 if(vis[conn] == 0) {
+//                     vis[conn] = 1;
+//                     q.add(conn);
+//                 }
+//             }
+//         }
+//         return ans;
+//     }
+// }
+
+// ==========================================================================================================
+// ==========================================================================================================
+
+// 2.  Live Lecture  :  --- 
