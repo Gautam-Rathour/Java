@@ -308,7 +308,8 @@ public class Graphs2 {
     //     graph[2].add(new Edge(2, 3));
     //     graph[3].add(new Edge(3, 0));
     // }
-    // graph2 - false
+
+    // // graph2 - false
     static void createGraph(ArrayList<Edge> graph[]) {
         for(int i=0; i<graph.length; i++) {
             graph[i] = new ArrayList<>();
