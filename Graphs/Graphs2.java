@@ -284,7 +284,7 @@
 // ==========================================================================================================
 // ==========================================================================================================
 
-// Cycle Detection (Directed graph ) - DFS  :  ----
+// Cycle Detection (Directed graph ) - DFS  :  -----
 
 import java.util.*;
 public class Graphs2 {
@@ -334,7 +334,8 @@ public class Graphs2 {
         }
         return false;
     }
-
+    
+    // Is Cycle  
     public static boolean isCycleUtil(ArrayList<Edge>[] graph, int curr, boolean vis[], boolean stack[]) {
         vis[curr] = true;
         stack[curr] = true;
