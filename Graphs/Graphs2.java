@@ -429,8 +429,62 @@
 //     }
 // }
 
+
 // ==========================================================================================================
 // ==========================================================================================================
+
+// // 2.  Live Lecture  :  -----
+
+// import java.util.*;
+// public class Graphs {
+//     static boolean cycleUsingBfs(int source, ArrayList<ArrayList<Integer>> adj, boolean isVisited[]) {
+//         Queue <Integer> q = new LinkedList<>();
+//         q.add( source );
+//         isVisited[source] = true;
+
+//         while(q.isEmpty() == false) {
+//             int curr = q.remove();
+
+//             for(int conn : adj.get(curr)) {
+//                 if(isVisited[conn] == true) {
+//                     //there is a cycle
+//                     return true;
+//                 } else {
+//                     isVisited[conn] = true;
+//                     q.add(conn);
+//                 }
+//             }
+//         }
+//         // no cycle
+//         return false;
+//     }
+
+//     static boolean detect(ArrayList<ArrayList<Integer>> adj, booealn isVisited[]) {
+//         int n = adj.size();
+//         for(int i=0; i<n; i++) {
+//             if(isVisited[i] == false) {
+
+//                 boolean result = cycleUsingBfs(i, adj, isVisited);
+//                 if(result == true) {
+//                     return true;
+//                 }
+//             }
+//         }
+//         return false;
+//     }
+//     public static void main(String args[]) {
+
+//     }
+// }
+// ==========================================================================================================
+// ==========================================================================================================
+// ==========================================================================================================
+// ==========================================================================================================
+// ==========================================================================================================
+
+
+// //           Lecture - 3  -----------
+
 
 // Topological Sort using BFS  ( Kahns Algrothem ) : ---
 
@@ -510,17 +564,73 @@
 // ==========================================================================================================
 // ==========================================================================================================
 
-// All Paths from Source to Target  :  ----
+// // All Paths from Source to Target  :  ----
+
+// import java.util.*;
+// public class Graphs2{
+//     static class Edge {
+//         int src; 
+//         int dest;
+
+//         public Edge (int s, int d) {
+//             this.src = s;
+//             this.dest = d;
+//         }
+//     }
+
+//     static void createGraph(ArrayList<Edge> graph[]) {
+//         for(int i=0; i<graph.length; i++) {
+//             graph[i] = new ArrayList<>();
+//         }
+
+//         graph[0].add(new Edge(0, 3));
+//         graph[2].add(new Edge(2, 3));
+
+//         graph[3].add(new Edge(3, 1));
+
+//         graph[4].add(new Edge(4, 0));
+//         graph[4].add(new Edge(4, 1));
+
+//         graph[5].add(new Edge(5, 0));
+//         graph[5].add(new Edge(5, 2));
+//     }
+//     public static void printAllPath(ArrayList<Edge> graph[], int src, int dest, String path) {
+//         if(src == dest) {
+//             System.out.println(path + dest);
+//             return;
+//         }
+
+//         for(int i=0; i<graph[src].size(); i++) {
+//             Edge e = graph[src].get(i);
+//             printAllPath(graph, e.dest, dest, path+src);
+//         }
+//     }
+//     public static void main(String args[]) {
+//         int V = 6;
+//         ArrayList<Edge> graph[] = new ArrayList[V];
+//         createGraph(graph);
+
+//         int src = 5, dest = 1;
+//         printAllPath(graph, src, dest, " ");
+//     }
+// }
+
+// ==========================================================================================================
+// ==========================================================================================================
+
+//  Dijkstra's Algorithm (Code)  :  ---
 
 import java.util.*;
-public class Graphs2{
-    static class Edge {
+public class Graphs2 {
+        static class Edge {
         int src; 
         int dest;
+        int wt;
 
-        public Edge (int s, int d) {
+        public Edge (int s, int d, int w) {
             this.src = s;
             this.dest = d;
+            this.wt = w;
         }
     }
 
@@ -529,28 +639,69 @@ public class Graphs2{
             graph[i] = new ArrayList<>();
         }
 
-        graph[0].add(new Edge(0, 3));
-        graph[2].add(new Edge(2, 3));
+        graph[0].add(new Edge(0, 1, 2));
+        graph[0].add(new Edge(0, 2, 4));
 
-        graph[3].add(new Edge(3, 1));
+        graph[1].add(new Edge(1, 3, 7));
+        graph[1].add(new Edge(1, 2, 1));
 
-        graph[4].add(new Edge(4, 0));
-        graph[4].add(new Edge(4, 1));
+        graph[2].add(new Edge(2, 4, 3));
 
-        graph[5].add(new Edge(5, 0));
-        graph[5].add(new Edge(5, 2));
+        graph[3].add(new Edge(3, 5, 1));
+
+        graph[4].add(new Edge(4, 3, 2));
+        graph[4].add(new Edge(4, 5, 5));
     }
+    static class Pair implements Comparable<Pair> {
+        int n;
+        int path;
 
-    public static void printAllPath(ArrayList<Edge> graph[], int src, int dest, String path) {
-        if(src == dest) {
-            System.out.println(path + dest);
-            return;
+        public Pair(int n, int path) {
+            this.n = n;
+            this.path = path;
         }
 
-        for(int i=0; i<graph[src].size(); i++) {
-            Edge e = graph[src].get(i);
-            printAllPath(graph, e.dest, dest, path+src);
+        @Override
+        public int compareTo(Pair p2) {
+            return this.path - p2.path;  // path based sorting for my pairs
         }
+    }
+    public static void dijkstra(ArrayList<Edge> graph[], int src) {
+        int dist[] = new int[graph.length]; //dest[i] -> src
+        for(int i=0; i<graph.length; i++) {
+            if(i != src) {
+                dist[i] = Integer.MAX_VALUE; // +infinity
+            }
+        }
+
+        boolean vis[] = new boolean[graph.length];
+        PriorityQueue<Pair> pq = new PriorityQueue<>();
+        pq.add(new Pair(src, 0));
+        // loop
+        while(!pq.isEmpty()) {
+            Pair curr = pq.remove();
+            if(!vis[curr.n]) {
+                vis[curr.n] = true;
+                //neighbours
+                for(int i=0; i<graph[curr.n].size(); i++) {
+                    Edge e = graph[curr.n].get(i);
+                    int u = e.src;
+                    int v = e.dest;
+                    int wt = e.wt;
+
+                    if(dist[u] + wt < dist[v]) { // update distance of src to v;
+                        dist[v] = dist[u] + wt;
+                        pq.add(new Pair(v, dist[v]));
+                    }
+                }
+            }
+        }
+
+        //print all source to vertices shortest dist
+        for(int i=0; i<dist.length; i++) {
+            System.out.print(dist[i] + " ");
+        }
+        System.out.println();
     }
 
     public static void main(String args[]) {
@@ -558,56 +709,7 @@ public class Graphs2{
         ArrayList<Edge> graph[] = new ArrayList[V];
         createGraph(graph);
 
-        int src = 5, dest = 1;
-        printAllPath(graph, src, dest, " ");
+        int src = 0;
+        dijkstra(graph, src);
     }
 }
-
-// ==========================================================================================================
-// ==========================================================================================================
-
-// // 2.  Live Lecture  :  -----
-
-// import java.util.*;
-// public class Graphs {
-//     static boolean cycleUsingBfs(int source, ArrayList<ArrayList<Integer>> adj, boolean isVisited[]) {
-//         Queue <Integer> q = new LinkedList<>();
-//         q.add( source );
-//         isVisited[source] = true;
-
-//         while(q.isEmpty() == false) {
-//             int curr = q.remove();
-
-//             for(int conn : adj.get(curr)) {
-//                 if(isVisited[conn] == true) {
-//                     //there is a cycle
-//                     return true;
-//                 } else {
-//                     isVisited[conn] = true;
-//                     q.add(conn);
-//                 }
-//             }
-//         }
-//         // no cycle
-//         return false;
-//     }
-
-//     static boolean detect(ArrayList<ArrayList<Integer>> adj, booealn isVisited[]) {
-//         int n = adj.size();
-//         for(int i=0; i<n; i++) {
-//             if(isVisited[i] == false) {
-
-//                 boolean result = cycleUsingBfs(i, adj, isVisited);
-//                 if(result == true) {
-//                     return true;
-//                 }
-//             }
-//         }
-//         return false;
-//     }
-//     public static void main(String args[]) {
-
-//     }
-// }
-// ==========================================================================================================
-// ==========================================================================================================
