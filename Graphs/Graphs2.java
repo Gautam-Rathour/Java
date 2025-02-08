@@ -435,48 +435,48 @@
 
 // // 2.  Live Lecture  :  -----
 
-import java.util.*;
-public class Graphs {
-    static boolean cycleUsingBfs(int source, ArrayList<ArrayList<Integer>> adj, boolean isVisited[]) {
+// import java.util.*;
+// public class Graphs {
+//     static boolean cycleUsingBfs(int source, ArrayList<ArrayList<Integer>> adj, boolean isVisited[]) {
 
-        Queue <Integer> q = new LinkedList<>();
-        q.add( source );
-        isVisited[source] = true;
+//         Queue <Integer> q = new LinkedList<>();
+//         q.add( source );
+//         isVisited[source] = true;
 
-        while(q.isEmpty() == false) {
-            int curr = q.remove();
+//         while(q.isEmpty() == false) {
+//             int curr = q.remove();
 
-            for(int conn : adj.get(curr)) {
-                if(isVisited[conn] == true) {
-                    //there is a cycle
-                    return true;
-                } else {
-                    isVisited[conn] = true;
-                    q.add(conn);
-                }
-            }
-        }
-        // no cycle
-        return false;
-    }
+//             for(int conn : adj.get(curr)) {
+//                 if(isVisited[conn] == true) {
+//                     //there is a cycle
+//                     return true;
+//                 } else {
+//                     isVisited[conn] = true;
+//                     q.add(conn);
+//                 }
+//             }
+//         }
+//         // no cycle
+//         return false;
+//     }
 
-    static boolean detect( ArrayList<ArrayList<Integer>> adj, booealn isVisited[]) {
-        int n = adj.size();
-        for(int i=0; i<n; i++) {
-            if(isVisited[i] == false) {
+//     static boolean detect( ArrayList<ArrayList<Integer>> adj, booealn isVisited[]) {
+//         int n = adj.size();
+//         for(int i=0; i<n; i++) {
+//             if(isVisited[i] == false) {
 
-                boolean result = cycleUsingBfs(i, adj, isVisited);
-                if(result == true) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-    public static void main(String args[]) {
+//                 boolean result = cycleUsingBfs(i, adj, isVisited);
+//                 if(result == true) {
+//                     return true;
+//                 }
+//             }
+//         }
+//         return false;
+//     }
+//     public static void main(String args[]) {
 
-    }
-}
+//     }
+// }
 
 // ==========================================================================================================
 // ==========================================================================================================
@@ -716,6 +716,91 @@ public class Graphs {
 //     }
 // }
 
+// // ==========================================================================================================
+// // ==========================================================================================================
+ 
+//           Live  ----------  ( Lecture - 3)  --
+// Topological Sort : --
+
+import java.util.*;
+public class Graphs2 {
+    static ArrayList<Integer> topoSort( ArrayList<ArrayList<Integer>> adj ) {
+
+        int n = adj.size();
+        int indegree[] = new int [n];
+        for(int curr=0; curr<n; curr++) {
+            for(int conn : adj.get(curr)) {
+                indegree[conn]++;
+            }
+        }
+        Queue<Integer> q = new LinkedList<>();
+        for(int i=0; i<n; i++) {
+            if(indegree[i] == 0) {
+                q.add(i);
+            }
+        }
+
+        ArrayList<Integer> ans = new ArrayList<>();
+        while(!q.isEmpty()) {
+            int curr = q.remove();
+            ans.add(curr);
+            for(int conn : adj.get(curr)) {
+                indegree[conn]--;
+                if(indegree[conn] == 0) {
+                    q.add(conn);
+                }
+            }
+        }
+        return ans;
+    }
+    public static void main(String args[]) {
+
+    }
+}
+
+// // ==========================================================================================================
+// // ==========================================================================================================
+ 
+
+import java.util.*;
+public class Graphs2 {
+    static boolean detectCycleInDirectedGraph( ArrayList<ArrayList<Integer>> adj ) {
+
+        int n = adj.size();
+        int indegree[] = new int [n];
+        for(int curr=0; curr<n; curr++) {
+            for(int conn : adj.get(curr)) {
+                indegree[conn]++;
+            }
+        }
+        Queue<Integer> q = new LinkedList<>();
+        for(int i=0; i<n; i++) {
+            if(indegree[i] == 0) {
+                q.add(i);
+            }
+        }
+
+        ArrayList<Integer> ans = new ArrayList<>();
+        while(!q.isEmpty()) {
+            int curr = q.remove();
+            ans.add(curr);
+            for(int conn : adj.get(curr)) {
+                indegree[conn]--;
+                if(indegree[conn] == 0) {
+                    q.add(conn);
+                }
+            }
+        }
+        if(ans.size() == n ) { // No cycle
+            return false;
+        } else { // cycle Found
+            return true;
+        }
+    }
+    public static void main(String args[]) {
+
+    }
+}
 // // ==========================================================================================================
 // // ==========================================================================================================
  
