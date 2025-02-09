@@ -719,88 +719,135 @@
 // // ==========================================================================================================
 // // ==========================================================================================================
  
-//           Live  ----------  ( Lecture - 3)  --
-// Topological Sort : --
+// //           Live  ----------  ( Lecture - 3)  --
+// // Topological Sort : --
 
+// import java.util.*;
+// public class Graphs2 {
+//     static ArrayList<Integer> topoSort( ArrayList<ArrayList<Integer>> adj ) {
+
+//         int n = adj.size();
+//         int indegree[] = new int [n];
+//         for(int curr=0; curr<n; curr++) {
+//             for(int conn : adj.get(curr)) {
+//                 indegree[conn]++;
+//             }
+//         }
+//         Queue<Integer> q = new LinkedList<>();
+//         for(int i=0; i<n; i++) {
+//             if(indegree[i] == 0) {
+//                 q.add(i);
+//             }
+//         }
+
+//         ArrayList<Integer> ans = new ArrayList<>();
+//         while(!q.isEmpty()) {
+//             int curr = q.remove();
+//             ans.add(curr);
+//             for(int conn : adj.get(curr)) {
+//                 indegree[conn]--;
+//                 if(indegree[conn] == 0) {
+//                     q.add(conn);
+//                 }
+//             }
+//         }
+//         return ans;
+//     }
+//     public static void main(String args[]) {
+
+//     }
+// }
+
+// // // ==========================================================================================================
+// // // ==========================================================================================================
+ 
+
+// import java.util.*;
+// public class Graphs2 {
+//     static boolean detectCycleInDirectedGraph( ArrayList<ArrayList<Integer>> adj ) {
+
+//         int n = adj.size();
+//         int indegree[] = new int [n];
+//         for(int curr=0; curr<n; curr++) {
+//             for(int conn : adj.get(curr)) {
+//                 indegree[conn]++;
+//             }
+//         }
+//         Queue<Integer> q = new LinkedList<>();
+//         for(int i=0; i<n; i++) {
+//             if(indegree[i] == 0) {
+//                 q.add(i);
+//             }
+//         }
+
+//         ArrayList<Integer> ans = new ArrayList<>();
+//         while(!q.isEmpty()) {
+//             int curr = q.remove();
+//             ans.add(curr);
+//             for(int conn : adj.get(curr)) {
+//                 indegree[conn]--;
+//                 if(indegree[conn] == 0) {
+//                     q.add(conn);
+//                 }
+//             }
+//         }
+//         if(ans.size() == n ) { // No cycle
+//             return false;
+//         } else { // cycle Found
+//             return true;
+//         }
+//     }
+//     public static void main(String args[]) {
+
+//     }
+// }
+// ==========================================================================================================
+// ==========================================================================================================
+ 
+// Sunday Live : -----
 import java.util.*;
-public class Graphs2 {
-    static ArrayList<Integer> topoSort( ArrayList<ArrayList<Integer>> adj ) {
+public DSU {
+    int [] parent;
+    int [] size;
 
-        int n = adj.size();
-        int indegree[] = new int [n];
-        for(int curr=0; curr<n; curr++) {
-            for(int conn : adj.get(curr)) {
-                indegree[conn]++;
-            }
-        }
-        Queue<Integer> q = new LinkedList<>();
-        for(int i=0; i<n; i++) {
-            if(indegree[i] == 0) {
-                q.add(i);
-            }
+    DSU(int n) {
+        this.parent = new int[n];
+        for(int idx=0; idx<n; idx++) {
+            parent[idx] = idx;
         }
 
-        ArrayList<Integer> ans = new ArrayList<>();
-        while(!q.isEmpty()) {
-            int curr = q.remove();
-            ans.add(curr);
-            for(int conn : adj.get(curr)) {
-                indegree[conn]--;
-                if(indegree[conn] == 0) {
-                    q.add(conn);
-                }
-            }
+        this.weight = new int[n];
+        for(int idx=0; idx<n; idx++) {
+            weight[idx] = 1;
         }
-        return ans;
     }
+
+    // path compression
+    int find(int idx) {
+        if(parent[idx] == idx) return idx;
+        return parent[idx] = find(parent[idx];)
+    }
+
+    // weight compression
+    void union(int a, int b) {
+        int pa = find(a);
+        int pb = find(b);
+
+        if(pa == pb) return;
+
+        if(weight[pa] > weight[pb]) {
+            parent[pb] = pa;
+            weight[pa] += weight[pb];
+        } else {
+            parent[pa] = pb;
+            weight[pb] += weight[pa];
+        }
+    }
+}
+
+
+public class Solution {
     public static void main(String args[]) {
 
     }
 }
-
-// // ==========================================================================================================
-// // ==========================================================================================================
- 
-
-import java.util.*;
-public class Graphs2 {
-    static boolean detectCycleInDirectedGraph( ArrayList<ArrayList<Integer>> adj ) {
-
-        int n = adj.size();
-        int indegree[] = new int [n];
-        for(int curr=0; curr<n; curr++) {
-            for(int conn : adj.get(curr)) {
-                indegree[conn]++;
-            }
-        }
-        Queue<Integer> q = new LinkedList<>();
-        for(int i=0; i<n; i++) {
-            if(indegree[i] == 0) {
-                q.add(i);
-            }
-        }
-
-        ArrayList<Integer> ans = new ArrayList<>();
-        while(!q.isEmpty()) {
-            int curr = q.remove();
-            ans.add(curr);
-            for(int conn : adj.get(curr)) {
-                indegree[conn]--;
-                if(indegree[conn] == 0) {
-                    q.add(conn);
-                }
-            }
-        }
-        if(ans.size() == n ) { // No cycle
-            return false;
-        } else { // cycle Found
-            return true;
-        }
-    }
-    public static void main(String args[]) {
-
-    }
-}
-// // =========================================================================================================
-// // =========================================================================================================
- 
