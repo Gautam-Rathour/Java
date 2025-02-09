@@ -142,81 +142,148 @@
 // ==========================================================================================================
 // ==========================================================================================================
 
-// Minimum Spanning Tree  (MST) :  ----
+// // Minimum Spanning Tree  (MST) :  ----
+
+// import java.util.*;
+// public class Graphs4 {
+//     static class Edge {
+//         int src;
+//         int dest;
+//         int wt;
+
+//         public Edge(int s, int d, int w) {
+//             this.src = s;
+//             this.dest = d;
+//             this.wt = w;
+//         }
+//     }
+    
+//     static void createGraph(ArrayList<Edge> graph[]) {
+//         for(int i=0; i<graph.length; i++) {
+//             graph[i] = new ArrayList<>();
+//         }
+
+//         graph[0].add(new Edge(0, 1, 10));
+//         graph[0].add(new Edge(0, 2, 15));
+//         graph[0].add(new Edge(0, 3, 30));
+
+//         graph[1].add(new Edge(1, 0, 10));
+//         graph[1].add(new Edge(1, 3, 40));
+
+//         graph[2].add(new Edge(2, 2, 15));
+//         graph[2].add(new Edge(2, 2, 50));
+
+//         graph[3].add(new Edge(3, 2, 40));
+//         graph[3].add(new Edge(3, 2, 50));
+//     }
+
+//     static class Pair implements Comparable<Pair> {
+//         int v;
+//         int cost;
+
+//         public Pair(int v, int c) {
+//             this.v = v;
+//             this.cost = c;
+//         }
+
+//         @Override
+//         public int compareTo(Pair p2) {
+//             return this.cost - p2.cost;
+//         }
+//     }
+//     public static void prims(ArrayList<Edge> graph[]) {
+//         boolean vis[] = new boolean[graph.length];
+//         PriorityQueue<Pair> pq = new PriorityQueue<>();
+//         pq.add(new Pair(0, 0));
+//         int finalCost = 0; //MST Cost/total min Weight
+
+//         while(!pq.isEmpty()) {
+//             Pair curr = pq.remove();
+//             if(!vis[curr.v]) {
+//                 vis[curr.v] = true;
+//                 finalCost += curr.cost;
+
+//                 for(int i=0; i<graph[curr.v].size(); i++) {
+//                     Edge e = graph[curr.v].get(i);
+//                     pq.add(new Pair(e.dest, e.wt));
+//                 }
+//             }
+//         }
+//         System.out.println("Final (min) cost of MST = " + finalCost);
+//     }
+//     public static void main(String args[]) {
+//         int V = 4;
+//         ArrayList<Edge> graph[] = new ArrayList[V];
+//         createGraph(graph);
+
+//         prims(graph);
+//     }
+// }
+
+// ==========================================================================================================
+// ==========================================================================================================
+// ==========================================================================================================
+// ==========================================================================================================
+
+
+
+
+
+
+
+
+// Not Confome but  --  I think ki  ( Lecture - 5 ) :   -------
 
 import java.util.*;
-public class Graphs4 {
-    static class Edge {
-        int src;
-        int dest;
-        int wt;
+public class Graph4 {
 
-        public Edge(int s, int d, int w) {
-            this.src = s;
-            this.dest = d;
-            this.wt = w;
+    static String alienDictionary (List<String> words) {
+        HashMap<Character, Integer> indegree = new HashMap<>();
+        HashMap<Character, ArrayList<Character>> adj = new HashMap<>();
+        int n = words.size();
+        for(char ch = 'a'; ch<='z'; ch++) {
+            indegree.put(ch, 0);
+            adj.put(ch, new ArrayList<Character>());
         }
-    }
-    
-    static void createGraph(ArrayList<Edge> graph[]) {
-        for(int i=0; i<graph.length; i++) {
-            graph[i] = new ArrayList<>();
+        for(int i=0; i<n-1; i++) {
+            String s1 = words.get(i);
+            String s2 = words.get(i+1);
+
+            for(int j=0; j<Math.min(s1.length(), s2.length()); j++) {
+                char ch1 = s1.charAt(j);
+                char ch2 = s2.charAt(j);
+
+                if(ch1 != ch2) {
+                    // ch1 -> ch2
+                    adj.get(ch1).add(ch2); //adj[ch1] = [ch2];
+                    indegree.put(ch2, indegree.get(ch2) + 1);
+                }
+            }
+        } 
+
+        Queue<Character> q = new LinkedList<>();
+
+        for(char ch = 'a'; ch<='z'; ch++) {
+            if(indegree.get(ch) == 0) {
+                q.add(ch);
+            }
         }
+        String ans = "";
+        while(q.isEmpty() == false) {
+            char curr = q.remove();
+            ans += curr;
+            for(char conn : adj.get(curr)) {
+                indegree.put(conn, indegree.get(conn)-1);
 
-        graph[0].add(new Edge(0, 1, 10));
-        graph[0].add(new Edge(0, 2, 15));
-        graph[0].add(new Edge(0, 3, 30));
-
-        graph[1].add(new Edge(1, 0, 10));
-        graph[1].add(new Edge(1, 3, 40));
-
-        graph[2].add(new Edge(2, 2, 15));
-        graph[2].add(new Edge(2, 2, 50));
-
-        graph[3].add(new Edge(3, 2, 40));
-        graph[3].add(new Edge(3, 2, 50));
-    }
-
-    static class Pair implements Comparable<Pair> {
-        int v;
-        int cost;
-
-        public Pair(int v, int c) {
-            this.v = v;
-            this.cost = c;
-        }
-
-        @Override
-        public int compareTo(Pair p2) {
-            return this.cost - p2.cost;
-        }
-    }
-    public static void prims(ArrayList<Edge> graph[]) {
-        boolean vis[] = new boolean[graph.length];
-        PriorityQueue<Pair> pq = new PriorityQueue<>();
-        pq.add(new Pair(0, 0));
-        int finalCost = 0; //MST Cost/total min Weight
-
-        while(!pq.isEmpty()) {
-            Pair curr = pq.remove();
-            if(!vis[curr.v]) {
-                vis[curr.v] = true;
-                finalCost += curr.cost;
-
-                for(int i=0; i<graph[curr.v].size(); i++) {
-                    Edge e = graph[curr.v].get(i);
-                    pq.add(new Pair(e.dest, e.wt));
+                if(indegree.get(conn) == 0) {
+                    q.add(conn);
                 }
             }
         }
-        System.out.println("Final (min) cost of MST = " + finalCost);
+        return ans;
     }
     public static void main(String args[]) {
-        int V = 4;
-        ArrayList<Edge> graph[] = new ArrayList[V];
-        createGraph(graph);
 
-        prims(graph);
     }
 }
 
