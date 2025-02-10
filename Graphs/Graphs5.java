@@ -1,11 +1,16 @@
 // ==========================================================================================================
 // ==========================================================================================================
 
-package Graphs;
+// Cheapest Flights within K Stops  :  ----
+
 import java.util.*;
+
+
 public class Graphs5 {
     static class Edge {
-        int src, dest, wt;
+        int src;
+        int dest;
+        int wt;
 
         public Edge(int s, int d, int wt) {
             this.src = s;
@@ -86,7 +91,8 @@ public class Graphs5 {
         int flights[][] = {{0,1,100},{1,2,100},{2,0,100},{1,3,600},{2,3,200}};
         int src = 0, dst = 3, k = 1;
 
-        ArrayList<Edge> graph[] = new ArrayList[n];
+
+        System.out.println("Cheapest flight cost = " + cheapestFlight(n, flights, src, dst, k));
     }
 }
 
