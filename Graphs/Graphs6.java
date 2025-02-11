@@ -131,13 +131,13 @@ public class Graphs6 {
 
         graph[3].add (new Edge(3, 0));
         graph[3].add (new Edge(3, 4));
-        graph[3].add (new Edge(3, 5));
+        // graph[3].add (new Edge(3, 5));
 
         graph[4].add (new Edge(4, 3));
-        graph[4].add (new Edge(4, 5));
+        // graph[4].add (new Edge(4, 5));
 
-        graph[5].add (new Edge(5, 3));
-        graph[5].add (new Edge(5, 4));
+        // graph[5].add (new Edge(5, 3));
+        // graph[5].add (new Edge(5, 4));
     }
 
     public static void dfs(ArrayList<Edge> graph[], int curr, int par, int dt[], int low[], boolean vis[], int time) {
@@ -173,10 +173,13 @@ public class Graphs6 {
         }
     }
     public static void main(String args[]) {
-        int V = 6;
+        int V = 5;
         ArrayList<Edge> graph[] = new ArrayList[V];
         createGraph(graph);
 
         tarjanBridge(graph, V);
     }
 }
+
+// ==========================================================================================================
+// ==========================================================================================================
