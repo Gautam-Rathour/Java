@@ -184,46 +184,78 @@
 // =======================================================================================================
 // =======================================================================================================
 
-// Unbounded Knapsack ( Tabulation )  :  ----
-// 1. We can include the item any number of times.
+// // Unbounded Knapsack ( Tabulation )  :  ----
+// // 1. We can include the item any number of times.
+
+// import java.util.*;
+// public class DP2 {
+//     //O(n * w)
+//     public static int unboundedKnapsack(int val[], int wt[], int W) {
+//         int n = val.length;
+//         int dp[][] = new int[n+1][W+1];
+
+//         for(int i=0; i<n+1; i++) {
+//             dp[i][0] = 0;
+//         }
+//         for(int j=0; j<W+1; j++) {
+//             dp[0][j] = 0;
+//         }
+
+//         for(int i=1; i<n+1; i++) {
+//             for(int j=1; j<W+1; j++) {
+//                 if(wt[i-1] <= j) { //valid
+//                     dp[i][j] = Math.max(val[i-1] + dp[i][j-wt[i-1]], dp[i-1][j]);
+//                 } else { // inValid
+//                     dp[i][j] = dp[i-1][j];
+//                 }
+//             }
+//         }
+
+//         return dp[n][W];
+//     }
+//     public static void  main(String args[]) {
+//         int val[] = {15, 14, 10, 45, 30};
+//         int wt[] = {2, 5, 1, 3, 4};
+//         int W = 7;
+
+//         System.out.println(unboundedKnapsack(val, wt, W));
+//     }
+// }
+
+// =======================================================================================================
+// =======================================================================================================
+
+// Live Lecture  :  ----
 
 import java.util.*;
 public class DP2 {
-
-    //O(n * w)
-    public static int unboundedKnapsack(int val[], int wt[], int W) {
-        int n = val.length;
-        int dp[][] = new int[n+1][W+1];
-
-        for(int i=0; i<n+1; i++) {
-            dp[i][0] = 0;
+    int rec (int i, int W, int val[], int wt[], int dp[][], int n) {
+        if(i == n || W == 0) {
+            return 0;
         }
-        for(int j=0; j<W+1; j++) {
-            dp[0][j] = 0;
+        if(dp[i][W] != -1) {
+            return dp[i][W];
         }
+        int ans = 0;
+        int take = 0;
+        int notTake = 0;
 
-        for(int i=1; i<n+1; i++) {
-            for(int j=1; j<W+1; j++) {
-                if(wt[i-1] <= j) { //valid
-                    dp[i][j] = Math.max(val[i-1] + dp[i][j-wt[i-1]], dp[i-1][j]);
-                } else { // inValid
-                    dp[i][j] = dp[i-1][j];
-                }
-            }
+        if(wt[i] > W) {
+            notTake = rec(i+1, W, val, wt, dp, n);
+        } else {
+            take = val[i] + rec(i+1, W, val, wt, dp, n);
         }
 
-        return dp[n][W];
+        ans = Math.max(take, notTake);
+        dp[i][W] = ans;
+
+        return ans;
+        
     }
-    public static void  main(String args[]) {
-        int val[] = {15, 14, 10, 45, 30};
-        int wt[] = {2, 5, 1, 3, 4};
-        int W = 7;
+    public static void main(String args[]) {
 
-        System.out.println(unboundedKnapsack(val, wt, W));
     }
 }
 
 // =======================================================================================================
 // =======================================================================================================
-
-
