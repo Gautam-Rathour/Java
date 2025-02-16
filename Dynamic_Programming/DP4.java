@@ -147,49 +147,126 @@
 // =======================================================================================================
 // =======================================================================================================
 
-//  String Conversion  :  -------
+// //  String Conversion  :  -------
 
+// public class DP4 {
+//     // Function to find the length of Longest Common Subsequence (LCS)
+//     private static int findLCS(String A, String B) {
+//         int m = A.length(), n = B.length();
+//         int[][] dp = new int[m + 1][n + 1];
+
+//         // Fill the DP table
+//         for (int i = 1; i <= m; i++) {
+//             for (int j = 1; j <= n; j++) {
+//                 if (A.charAt(i - 1) == B.charAt(j - 1)) {
+//                     dp[i][j] = 1 + dp[i - 1][j - 1];
+//                 } else {
+//                     dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
+//                 }
+//             }
+//         }
+//         return dp[m][n];
+//     }
+
+//     // Function to find minimum insertions and deletions
+//     public static void minInsertDelete(String A, String B) {
+//         int lcsLength = findLCS(A, B);
+
+//         int deletions = A.length() - lcsLength;
+//         int insertions = B.length() - lcsLength;
+
+//         System.out.println("Minimum Deletions: " + deletions);
+//         System.out.println("Minimum Insertions: " + insertions);
+
+//         System.out.println("Total Action = " + (deletions + insertions));
+//     }
+
+//     public static void main(String[] args) {
+//         String A = "heap";
+//         String B = "pea";
+
+//         minInsertDelete(A, B);
+//     }
+// }
+
+// =======================================================================================================
+// =======================================================================================================
+
+// // Live Lecture  :  ------
+
+// public class DP4 {
+//     public static void findFeb(int n) {
+//         int dp[] = new int[n];
+//         dp[0] = 0;
+//         dp[1] = 0;
+//         dp[2] = 1;
+
+//         for(int i=3; i<n; i++) {
+//             dp[i] = dp[i-1] + dp[i-2] + dp[i-3];
+//         }
+
+//         for(int i=0; i<n; i++) {
+//             System.out.println(dp[i] + " ");
+//         }
+//     }
+//     public static void main(String args[]) {
+//         int n = 10;
+
+//         findFeb(n);
+//     }
+// }
+
+// =======================================================================================================
+// =======================================================================================================
+
+// Generate Parentheses  : ------- ( Live ) --
+
+import java.util.*;
 public class DP4 {
-    // Function to find the length of Longest Common Subsequence (LCS)
-    private static int findLCS(String A, String B) {
-        int m = A.length(), n = B.length();
-        int[][] dp = new int[m + 1][n + 1];
-
-        // Fill the DP table
-        for (int i = 1; i <= m; i++) {
-            for (int j = 1; j <= n; j++) {
-                if (A.charAt(i - 1) == B.charAt(j - 1)) {
-                    dp[i][j] = 1 + dp[i - 1][j - 1];
-                } else {
-                    dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
-                }
-            }
+    public static void helper(int open, int close, String str, int n, List<String> ans) {
+        if(open == n && close == n) {
+            ans.add(str);
+            return;
         }
-        return dp[m][n];
+
+        if(open < n) {
+            helper(open + 1, close, str + "(", n, ans);
+        }
+        if(close < open) { 
+            helper(open, close + 1, str + ")", n, ans);
+        }
     }
 
-    // Function to find minimum insertions and deletions
-    public static void minInsertDelete(String A, String B) {
-        int lcsLength = findLCS(A, B);
-
-        int deletions = A.length() - lcsLength;
-        int insertions = B.length() - lcsLength;
-
-        System.out.println("Minimum Deletions: " + deletions);
-        System.out.println("Minimum Insertions: " + insertions);
-
-        System.out.println("Total Action = " + (deletions + insertions));
+    public static List<String> generateParenthesis(int n) {
+        List<String> ans = new ArrayList<>();
+        helper(0, 0, "", n, ans);
+        return ans;
     }
 
-    public static void main(String[] args) {
-        String A = "heap";
-        String B = "pea";
+    public static void main(String args[]) {
+        int n = 3;
+        List<String> result = generateParenthesis(n);
 
-        minInsertDelete(A, B);
+        System.out.println(result);
     }
 }
 
 // =======================================================================================================
 // =======================================================================================================
 
+// Best Time to Buy and Sell Stocks - (II) 
 
+
+
+
+
+
+
+
+
+
+// =======================================================================================================
+// =======================================================================================================
+
+// Longest commen Subsiquence  :  -------
+https://google.com

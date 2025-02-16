@@ -122,6 +122,7 @@
 //     }
 
 //   // Longest Common Subsequence ( Tabulation )  :  -----
+
 //     public static int lcsTab(String str1, String str2) { // O(n * m)
 //         int n = str1.length();
 //         int m = str2.length();
@@ -174,38 +175,95 @@
 // =======================================================================================================
 // =======================================================================================================
 
+// // =======================================================================================================
+// // =======================================================================================================
+
+// // Live Lecture  :  ----
+
+// import java.util.*;
+// public class DP3 {
+//     public static int longestIncPath(int[][] mat, int dp[][], int i, int j, int n, int m) {
+//         if(i == n-1 && j == m-1) {
+//             return 1;
+//         }
+
+//         if(dp[i][j] != -1) {
+//             return dp[i][j];
+//         }
+//         int ans = 1;
+
+//         if(i+1 < n && mat[i][j] < mat[i+1][j]) {
+//             ans = 1 + longestIncPath(mat, dp, i+1, j, n, m);
+//         }
+
+//         if(j+1 < m && mat[i][j] < mat[i][j+1]) {
+//             ans = Math.max(ans, 1 + longestIncPath(mat, dp, i, j+1, n, m));
+//         }
+
+//         System.out.println("Cell : " + i + "," + j + "===> " + ans);
+//         return dp[i][j] = ans;
+//     }
+//     public static void main(String args[]) {
+//         int [][] mat = {{1, 2, 3, 4},
+//                         {2, 3, 3, 5},
+//                         {3, 4, 3, 3},
+//                         {4, 5, 6, 5}};
+
+//                         int n = mat.length; 
+//                         int m = mat[0].length;
+
+//                         int dp[][] = new int [n][m];
+
+//                         for(int i=0; i<n; i++) {
+//                             Arrays.fill(dp[i], -1);
+//                         }
+
+//                         int ans = longestIncPath(mat, dp, 0, 0, n, m);
+
+//                         System.out.println(ans);
+//     }
+// }
+
 // =======================================================================================================
 // =======================================================================================================
 
-// Live Lecture  :  ----
+// Count Valid Parenthesis  :  ----
 
+import java.util.*;
 public class DP3 {
-    public static int longestIncPath(int[][] mat, int i, int j, int n, int m) {
-        if(i == n-1 && j == m-1) {
+    int countValidParenthesis(int dp[][], int open, int total, int n) {
+        if(total == 2 * n) {
             return 1;
         }
-        int ans = 0;
 
-        if(i+1 < n && mat[i][j] < mat[i+1][j]) {
-            ans = 1 + longestIncPath(mat, i+1, j, n, m);
+        if(dp[open][total] != -1) {
+            return dp[open][total];
         }
 
-        if(j+1 < m && mat[i][j] < mat[i][j+1]) {
-            ans = Math.max(ans, 1 + longestIncPath(mat, i, j+1, n, m));
+        int ans = 0; 
+        if(open < n) {
+            countValidParenthesis(dp, open+1, total+1, n);
         }
+        if((total-open)< open) {
+            ans += countValidParenthesis(dp, open, total+1, n);
+        }
+
+        dp[open][total] = ans;
         return ans;
     }
     public static void main(String args[]) {
-        int [][] mat = {{1, 2, 3, 4},
-                        {2, 3, 3, 5},
-                        {3, 4, 3, 3},
-                        {4, 5, 6, 7}};
+        int n = 3;
 
-                        int n = mat.length; 
-                        int m = mat[0].length;
+        int dp[][] = new int [n+1][2*n+1];
 
-                        int ans = longestIncPath(mat, 0, 0, n, m);
-
-                        System.out.println(ans);
+        for(int i=0; i<=n; i++) {
+            Arrays.fill(dp[i], -1);
+        }
+        
+        int ans = countValidParenthesis(dp, 0, 0, n);
+        System.out.println(ans);
     }
 }
+
+// =======================================================================================================
+// =======================================================================================================
