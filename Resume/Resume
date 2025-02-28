@@ -151,10 +151,11 @@
     {\Huge \scshape Gautam Rathour} \\ \vspace{1pt}
     123 Buxar Road, Bhabua, Bihar 821110 \\ \vspace{1pt}
     \small \href{tel:#}{ \raisebox{-0.1\height}\faPhone\ \underline{+91-7491818284} ~} \href{mailto:gau321tam@gmail.com}{\raisebox{-0.2\height}\faEnvelope\  \underline{gau321tam@gmail.com}} ~ 
-    \href{https://linkedin.com/in/gautam-rathour}{\raisebox{-0.2\height}\faLinkedinSquare\ \underline{gautam-rathour}}  ~
+    \href{https://linkedin.com/in/gartam-rathour}{\raisebox{-0.2\height}\faLinkedinSquare\ \underline{gartam-rathour}}  ~
     \href{https://github.com/Gautam-Rathour}{\raisebox{-0.2\height}\faGithub\ \underline{Gautam-Rathour}} ~
-    \href{https://x.com/Gautam__Rathour}{\raisebox{-0.2\height}{\includegraphics[height=0.3cm, width=0.3cm]{X.png}}\ \underline{Gautam\_\_Rathour}}
+    \href{https://x.com/Gautam__Rathour}{\raisebox{-0.2\height}{\includegraphics[height=0.3cm, width=0.3cm]{X.jpeg}}\ \underline{Gautam\_\_Rathour}}
     \\ \vspace{-8pt}
+    
    
 
 
@@ -163,7 +164,7 @@
   \resumeSubHeadingListStart
     \resumeSubheading
       {Lovely Professional University - (Punjab)}{2023 – 2027}
-      {Computer Science and Engineering - \textbf{CGPA} - \textbf{8.1}}{Jalandhar, Punjab}
+      {Computer Science  - \textbf{CGPA} - \textbf{8.1}}{Jalandhar, Punjab}
   \resumeSubHeadingListEnd
   
 %   \resumeSubHeadingListStart
@@ -173,7 +174,7 @@
 %   \resumeSubHeadingListEnd
 
 %------RELEVANT COURSEWORK-------
-\section{COURSEWORK - SKILLS}
+\section{COURSEWORK / SKILLS}
     %\resumeSubHeadingListStart
         \begin{multicols}{4}
             \begin{itemize}[itemsep=-2pt, parsep=5pt]
@@ -181,10 +182,8 @@
                 \item Algorithms
                 \item Database Management
                 \item Computer Networks
-                \item Using Cloud 
-                \item Java Development
                 % \item System Design
-                
+                \item Using Cloud 
                 \item Development
             \end{itemize}
         \end{multicols}
@@ -192,11 +191,11 @@
     %\resumeSubHeadingListEnd
 
 %-----------EXPERIENCE-----------
-\section{WORK EXPERIENCE}
+\section{EXPERIENCE}
   \resumeSubHeadingListStart
 
     \resumeSubheading
-      {Intern at Coaching Institute {\raisebox{-0.1\height}\faExternalLink }}{Feb 2023 - Nov 2024} 
+      {Intern at Coaching Institute {\raisebox{-0.1\height}\faExternalLink }}{2023 -  2024} 
       {\underline{Learning and Teaching}}{Varanasi, UP}
       \resumeItemListStart
         \resumeItem{\normalsize{Learned and Implemented\textbf{Advanced Data Structure and Algorithms, ArrayList, LList, Tree.}}}
@@ -215,7 +214,7 @@
     \vspace{-5pt}
     \resumeSubHeadingListStart
      \resumeProjectHeading
-      {\href{#}{\textbf{\large{\underline{E-Commerce Website}}} \href{Project Link}{\raisebox{-0.1\height}\faExternalLink }} $|$ \large{\underline{HTML, CSS, JavaScript, (Development), IDE - VS Code}}}{August - 2024}\
+      {\href{#}{\textbf{\large{\underline{E-Commerce Website}}} \href{Project Link}{\raisebox{-0.1\height}\faExternalLink }} $|$ \large{\underline{HTML, CSS, JavaScript, (Development), IDE - VS Code}}}{2024}\
 \resumeItemListStart
 \resumeItem {\normalsize{Designed and developed a user-friendly interface for browsing and purchasing products.}}
 \resumeItem {\normalsize{Implemented responsive layouts to enhance the user experience on different devices.}}
@@ -227,7 +226,7 @@
           \resumeItemListEnd 
           \vspace{-13pt}
     \resumeProjectHeading
-          {\textbf{\large{\underline{Zerodha Clone Website}}} $|$ \large{\underline{HTML, CSS, JavaScript (Development), IDE - VS Code}}}{June - 2024}\
+          {\textbf{\large{\underline{Zerodha Clone Website}}} $|$ \large{\underline{HTML, CSS, JavaScript (Development), IDE - VS Code}}}{2024}\
 \resumeItemListStart
 \resumeItem {\normalsize{Developed a static web page mimicking the design of the Zerodha platform.}}
 \resumeItem {\normalsize{Created responsive layouts for better accessibility across different screen sizes.}}
@@ -243,7 +242,7 @@
           
           
       \resumeProjectHeading
-          {\textbf{\large{\underline{Todo Game Website - \textbf{Stone Paper Scissors}}}} $|$ \large{\underline{HTML, CSS, JavaScript (Development)}}}{February 2024}\
+          {\textbf{\large{\underline{Todo Game Website - \textbf{Stone Paper Scissors}}}} $|$ \large{\underline{HTML, CSS, JavaScript (Development), IDE - VS Code}}}{2024}\
 \resumeItemListStart
 \resumeItem {\normalsize{Developed the \textbf{front-end} of the Stone Paper Scissors game.}}
 \resumeItem {\normalsize{Designed an interactive and user-friendly interface for playing the game.}}
@@ -285,9 +284,9 @@
 \section{TECHNICAL SKILLS}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{\normalsize{Programming Languages:}}{  \normalsize{Java, JavaScript, SQL}} \\
-     \textbf{\normalsize{Technologies:}}{  \normalsize{HTML, CSS, Express, SQL, Javascript}} \\
-     \textbf{\normalsize{Developer Tools:}}{  \normalsize{VS Code, Sublime,  Canva }} \\
+     \textbf{\normalsize{Languages:}}{  \normalsize{Java, JavaScript, SQL}} \\
+     \textbf{\normalsize{Technologies/Frameworks:}}{  \normalsize{HTML, CSS, Express, SQL, Javascript}} \\
+     \textbf{\normalsize{Developer Tools:}}{  \normalsize{VS Code, Sublime, Postman, Canva }} \\
     }}
  \end{itemize}
  \vspace{-15pt}
@@ -297,17 +296,16 @@
 \section{CODING PLATFORMS}
     \resumeSubHeadingListStart
             \resumeItemListStart
-                \resumeItem{\normalsize{Solved \textbf{14+} Problems on \textbf{Leetcode}.
+                \resumeItem{\normalsize{Solved \textbf{50+} Problems on \textbf{Leetcode}.
                 \href{https://leetcode.com/u/Gautam__Rathour/}{\raisebox{-0.1\height}\faExternalLink }}}
                 \resumeItem{\normalsize{Solved \textbf{5+} Problems across \textbf{GeeksforGeeks}
                 \href{}{\raisebox{-0.1\height}\faExternalLink }}}
-                \href{https://codeforces.com/profile/alwaysAnewbie}{\raisebox{-0.1\height}\faExternalLink }}}
                 % \resumeItem{\normalsize{Participation Certificate. \href{ParticipationCertificateLink.com}{\raisebox{-0.1\height}\faExternalLink }}}
             \resumeItemListEnd
     \resumeSubHeadingListEnd
  \vspace{-11pt}
  
-  %-----------CERTIFICATIONS---------------
+  %-----------CERTIFICATIONS--------------
 \section{CERTIFICATIONS}
 
 \begin{itemize}[leftmargin=0.15in, label={$\sbullet[.75]$}]
@@ -325,9 +323,8 @@
         % \resumeSubheading{Organization Name \href{Certificate Proof link}{\raisebox{-0.1\height}\faExternalLink } }{05-2021 -- 12-2021}{\underline{Role}}{Location}
         
             \resumeItemListStart
-                \resumeItem{\normalsize{Taught basic Java (DSA) in offline Mode.         - In our Coaching}}
+                \resumeItem{\normalsize{Taught basic Java/DSA in offline Mode.         - In our Coaching}}
                 \resumeItem{\normalsize{RSS Member from 2019 to NOW }}
-                \resumeItem{\normalsize{I like Traveling and Playing Chess}}
             \resumeItemListEnd
     \resumeSubHeadingListEnd
  \vspace{-11pt}
