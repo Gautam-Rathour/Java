@@ -320,45 +320,99 @@
 // =======================================================================================================
 // =======================================================================================================
 
-// Fractional Knapsack Code :  ----
+// // Fractional Knapsack Code :  ----
 
+// import java.util.*;
+// public class Greedy {
+//     public static void main(String args[]) {
+//         int val[] = {60, 100, 120};
+//         int weight[] = {10, 20, 30};
+//         int W = 50;
+
+//         double ratio[][] = new double[val.length][2];
+//         //0th col => idx. 1st col => ratio
+
+//         for(int i=0; i<val.length; i++) {
+//             ratio[i][0] = i;
+//             ratio[i][1] = val[i]/(double)weight[i];
+//         }
+
+//         //ascending order
+//         Arrays.sort(ratio, Comparator.comparingDouble(o -> o[1]));
+
+//         int capacity = W;
+//         int finalVal = 0;
+
+//         for(int i=ratio.length-1; i>=0; i--) {
+//             int idx = (int)ratio[i][0];
+//             if(capacity >= weight[idx]) {//include full item
+//                 finalVal += val[idx];
+//                 capacity -= weight[idx];    
+//             } else {
+//                 //include fractional item
+//                 finalVal += (ratio[i][1] * capacity);
+//                 capacity = 0;
+//                 break;
+//             }
+//         }
+
+//         System.out.println("Max Value = " + finalVal);
+//     }
+// }
+
+// =======================================================================================================
+// =======================================================================================================
+
+// // Min Absolute Difference Pairs  :  ---
+
+// import java.util.*;
+// public class Greedy {
+//     public static void main(String args[]) {
+//         int A [] = {4, 1, 8, 7};
+//         int B [] = {2, 3, 6, 5};
+
+//         Arrays.sort(A);
+//         Arrays.sort(B);
+
+//         int minDiff = 0; 
+
+//         for(int i=0; i<A.length; i++) {
+//             // Min Absolute
+//             minDiff += Math.abs(A[i]-B[i]);
+//         }
+
+//         System.out.println("Min absolute diff of pairs = " + minDiff);
+//     }
+// }
+
+// =======================================================================================================
+// =======================================================================================================
+ 
+// Max Length Chain of Pairs  : --
 import java.util.*;
 public class Greedy {
-    public static void main(String args[]) {
-        int val[] = {60, 100, 120};
-        int weight[] = {10, 20, 30};
-        int W = 50;
+    public static void main(String args[]) {//O(nlog n)
+        int pairs[][] = {{5, 24}, {39, 60}, {5, 28}, {27,40}, {50, 90}};
+         
+        int pair = 0;
+        Arrays.sort(pairs, Comparator.comparingDouble(o -> o[1]));
 
-        double ratio[][] = new double[val.length][2];
-        //0th col => idx. 1st col => ratio
+        int chainLen = 1;
+        int chainEnd = pairs[0][1]; //Last selected pair end   //chain end
 
-        for(int i=0; i<val.length; i++) {
-            ratio[i][0] = i;
-            ratio[i][1] = val[i]/(double)weight[i];
-        }
-
-        //ascending order
-        Arrays.sort(ratio, Comparator.comparingDouble(o -> o[1]));
-
-        int capacity = W;
-        int finalVal = 0;
-
-        for(int i=ratio.length-1; i>=0; i--) {
-            int idx = (int)ratio[i][0];
-            if(capacity >= weight[idx]) {//include full item
-                finalVal += val[idx];
-                capacity -= weight[idx];    
-            } else {
-                //include fractional item
-                finalVal += (ratio[i][1] * capacity);
-                capacity = 0;
-                break;
+        for(int i=1; i<pairs.length; i++) {
+            if(pairs[i][0] > chainEnd) {
+                chainLen++;
+                chainEnd = pairs[i][1];
             }
         }
 
-        System.out.println("Max Value = " + finalVal);
+        System.out.println("Max Chain Length = " + chainLen);
     }
 }
 
 // =======================================================================================================
 // =======================================================================================================
+ 
+
+
